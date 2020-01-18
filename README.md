@@ -1,6 +1,8 @@
 # Noita-Twitch-Integration
 
 ## Installation
+* Install [nodejs](https://nodejs.org/en/)
+
 * Download noita-ws-api and unzip the folders `TwitchIntegration` and `mod_ws_api` into your noita Mods folder
 [Download here](https://github.com/soler91/noita-ws-api/archive/master.zip)
 
