@@ -1,0 +1,19 @@
+{
+  "channel_name": "channelnamepls",
+  "highlighted-message": {
+    "enabled": false,
+    "comment": "Shows user message on stream",
+    "func": "GamePrintImportant(\"${name}:\",\"${message}\")"
+  },
+  "show_user_msg": true,
+  "custom-rewards": {
+    "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx": {
+      "enabled": false,
+      "name": "Example",
+      "comment": "Does nothing?, jk it spawns eEEeeeEeeeeEE's\nmaybe delet later",
+      "msg_head": "${name}:",
+      "msg_body": "${message}",
+      "func": "spawn_twitch_stuff(\"e\", 15)"
+    }
+  }
+}

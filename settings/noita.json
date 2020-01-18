@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "game_ui": true,
+  "obs_overlay": false,
+  "display_votes": true,
+  "time_between_votes": 120,
+  "voting_time": 60,
+  "options_per_vote": 4,
+  "option_types": [
+    {
+      "name": "good",
+      "rarity": 20
+    },
+    {
+      "name": "bad",
+      "rarity": 20
+    },
+    {
+      "name": "unknown",
+      "rarity": 40
+    },
+    {
+      "name": "legendary",
+      "rarity": 0.1
+    }
+  ]
+}

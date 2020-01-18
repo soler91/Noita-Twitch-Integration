@@ -1,0 +1,13 @@
+{
+    "vertical": true,
+    "divider": " | ",
+    "between_votes": "Next vote in ${seconds}s",
+    "during_voting": "Voting ends in ${seconds}s",
+    "choice": "${index}) ${choice} ${votes}",
+    "wrap_index_left": "",
+    "wrap_index_right": "",
+    "wrap_votes_left": "(",
+    "wrap_votes_right": ")",
+    "wrap_choice_left": "",
+    "wrap_choice_right": ""
+}
