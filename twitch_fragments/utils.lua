@@ -47,7 +47,7 @@ function generate_value_in_range(max_range, min_range, limit_axis)
     return (Random(0, range) + (min_range or 0)) * limit_axis
 end
 
-function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole)
+function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole, callback)
     async(function()
         local x, y = get_player_pos()
         y = y + 110
@@ -70,7 +70,8 @@ function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole
             EntityLoad("data/entities/projectiles/deck/black_hole.xml", dummy_x,
                        dummy_y)
         end
-        EntityLoad(entity_path, dummy_x, dummy_y)
+        local eid = EntityLoad(entity_path, dummy_x, dummy_y)
+        if callback then callback(eid); end
     end)
 end
 
