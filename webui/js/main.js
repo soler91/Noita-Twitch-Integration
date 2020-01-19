@@ -1,26 +1,119 @@
 Vue.component("comp-outcomes", {
     data: function () {
         return {
+            sampleChoices: 4,
+            sampleSize: 1000,
             model: {},
             temp: {},
+            choices: null,
             activeKey: ""
         }
     },
     beforeCreate: async function () {
         let outcomes = await axios.get("/outcomes")
+        let noita = await axios.get("/noita")//todo make this not need restart if noita settings change
         this.$set(this, "model", outcomes.data)
         this.$set(this, "temp", outcomes.data)
-        
+        this.$set(this, "choices", noita.data.option_types)
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
             this.activeKey = Object.keys(this.model)[0] || ""
         }
     },
     computed: {
+        sampled: function() {
+            if (Object.keys(this.temp) == 0 || !this.choices) { return }
+            let results = {}
+            for (let i = 0; i < this.sampleSize; i++) {
+                sample = this.drawByType(this.sampleChoices, this.choices)
+                for (const choice of sample) {
+                    if (typeof results[choice.id] == 'undefined') {
+                        results[choice.id] = {
+                            id: choice.id,
+                            name: choice.name,
+                            type: choice.type,
+                            rarity: choice.rarity,
+                            count: 0
+                        }
+                    }
+                    results[choice.id].count += 1
+                }
+            }
+            results = Object.values(results).sort((a,b) => a.type > b.type ? -1 : 1)
+            console.log(results)
+            return results
+        },
+        types: function() {
+            if (Object.keys(this.temp) == 0) { return }
+            let types = []
+            for (const choice of Object.values(this.temp)) {
+                if (types.indexOf(choice.type) == -1) {
+                    types.push(choice.type)
+                }
+            }
+            return types
+        },
         list: function(){
             return Object.keys(this.model)
         }
     },
     methods: {
+        drawByType: function(num, types) {
+            const options = Object.values(JSON.parse(JSON.stringify(this.temp)))
+            const counter = {}
+            for (let i = 1; i <= num; i++) {
+                let type = this.pickRandom(types)
+                if (typeof counter[type.name] == "undefined") {
+                    counter[type.name] = 0
+                }
+                counter[type.name] += 1
+            }
+            let final = []
+            for (const option of Object.keys(counter)) {
+                const filtered = options.filter((val) => {
+                    return val.enabled && val.type == option
+                })
+    
+                for (let i = 0; i < counter[option]; i++) {
+                    final.push(this.pickRandom(filtered, true))
+                }
+            }
+    
+            final = JSON.parse(JSON.stringify(final)).map(val => {
+                return val
+            })
+            return final
+        },
+        pickRandom: function(options, trim = false) {
+            let sum = options.reduce((accumulator, val) => accumulator + val.rarity, 0)
+            let rand = Math.random() * sum
+            let total = 0
+            let lastIdx = -1
+            let selectedIdx = null
+    
+            for (let i in options) {
+                let rarity = options[i].rarity
+                total += rarity
+                if (rarity > 0) {
+                    if (rand <= total) {
+                        selectedIdx = i
+                        break
+                    }
+                    lastIdx = i
+                }
+    
+                if (i === options.length - 1) {
+                    selectedIdx = lastIdx
+                }
+            }
+    
+            let result = options[selectedIdx]
+    
+            if (trim) {
+                options.splice(selectedIdx, 1)
+            }
+    
+            return result
+        },
         reset: function(){
             this.temp = JSON.parse(JSON.stringify(this.model))
         },
@@ -103,6 +196,34 @@ Vue.component("comp-outcomes", {
                     </v-row>
                 </v-card-actions>
             </v-card-text>
+        </v-card>
+    </v-container>
+    <v-container>
+        <v-card>
+            <v-card-title>Sample size {{sampleSize}} rolls x {{sampleChoices}} choices</v-card-title>
+            <v-divider></v-divider>
+            <v-simple-table :fixed-header="true" :height="600" >
+                <template v-slot:default>
+                    <thead>
+                    <tr>
+                        <th class="text-left">Type</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Rarity</th>
+                        <th class="text-left">Count</th>
+                        <th class="text-left">%</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="item in sampled" :key="item.id">
+                        <td>{{ item.type }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.rarity }}</td>
+                        <td>{{ item.count }}</td>
+                        <td>{{ (100*item.count)/(sampleSize*sampleChoices) }}%</td>
+                    </tr>
+                    </tbody>
+                </template>
+            </v-simple-table>
         </v-card>
     </v-container>
     </div>`
