@@ -1,20 +1,28 @@
 Vue.component("comp-outcomes", {
-    props: ["model"],
     data: function () {
         return {
+            model: {},
             temp: {},
             activeKey: ""
         }
     },
-    updated: function () {
+    beforeCreate: async function () {
+        let outcomes = await axios.get("/outcomes")
+        this.$set(this, "model", outcomes.data)
+        this.$set(this, "temp", outcomes.data)
+        
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
-            this.tempModel()
-            this.activeKey = Object.keys(this.$props.model)[0] || ""
+            this.activeKey = Object.keys(this.model)[0] || ""
+        }
+    },
+    computed: {
+        list: function(){
+            return Object.keys(this.model)
         }
     },
     methods: {
-        tempModel: function () {
-            this.temp = JSON.parse(JSON.stringify(this.$props.model))
+        reset: function(){
+            this.temp = JSON.parse(JSON.stringify(this.model))
         },
         apply: function (id) {
             axios.post(`/outcomes/${id}`, this.temp[id])
@@ -43,10 +51,11 @@ Vue.component("comp-outcomes", {
         <v-divider></v-divider>
 
     <v-list dense nav>
-        <v-list-item v-for="item in model" :key="item.title" link>
+        <v-list-item v-for="item in list" :key="item" link>
 
-            <v-list-item-content @click="activeKey = item.id">
-                <v-list-item-title>{{ item.name }}</v-list-item-title>
+            <v-list-item-content @click="activeKey = item">
+                <v-list-item-title>{{ temp[item].name }}</v-list-item-title>
+                <v-list-item-subtitle v-text="temp[item].rarity +' - '+ temp[item].type"></v-list-item-subtitle>
             </v-list-item-content>
 
         </v-list-item>
@@ -90,7 +99,7 @@ Vue.component("comp-outcomes", {
 
                 <v-card-actions>
                     <v-row align="center" justify="center">
-                    <v-btn @click="apply(temp[activeKey].id)">Apply</v-btn> <v-btn @click="tempModel()">Cancel</v-btn>
+                    <v-btn @click="apply(temp[activeKey].id)">Apply</v-btn> <v-btn @click="reset()">Cancel</v-btn>
                     </v-row>
                 </v-card-actions>
             </v-card-text>
@@ -100,22 +109,25 @@ Vue.component("comp-outcomes", {
 })
 
 Vue.component("comp-noita", {
-    props: ["model"],
     data: function () {
         return {
+            model: {},
             temp: {},
             activeKey: ""
         }
     },
-    created: function () {
+    beforeCreate: async function () {
+        let noita = await axios.get("/noita")
+        this.$set(this, "model", noita.data)
+        this.$set(this, "temp", noita.data)
+        
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
-            this.tempModel()
-            this.activeKey = Object.keys(this.$props.model)[0] || ""
+            this.activeKey = Object.keys(this.model)[0] || ""
         }
     },
     methods: {
-        tempModel: function () {
-            this.temp = JSON.parse(JSON.stringify(this.$props.model))
+        reset: function(){
+            this.temp = JSON.parse(JSON.stringify(this.model))
         },
         apply: function (id) {
             axios.post(`/noita`, this.temp)
@@ -178,7 +190,7 @@ Vue.component("comp-noita", {
                 <v-divider></v-divider>
                 <v-card-title>Options</v-card-title>
                 
-                <v-row v-for="(item, index) in temp.option_types">
+                <v-row v-for="(item, index) in temp.option_types" :key="item.name">
                     <v-col cols="5" md="5">
                         <v-text-field label="Name" v-model="temp.option_types[index].name" outlined>
                         </v-text-field>
@@ -197,7 +209,7 @@ Vue.component("comp-noita", {
 
                 <v-card-actions>
                     <v-row align="center" justify="center">
-                        <v-btn @click="apply()">Apply</v-btn> <v-btn @click="tempModel()">Cancel</v-btn>
+                        <v-btn @click="apply()">Apply</v-btn> <v-btn @click="reset()">Cancel</v-btn>
                     </v-row>
                 </v-card-actions>
             </v-card-text>
@@ -207,28 +219,32 @@ Vue.component("comp-noita", {
 })
 
 Vue.component("comp-twitch", {
-    props: ["model"],
     data: function () {
         return {
+            model:{},
             temp: {},
             tempId: "",
             activeKey: ""
         }
     },
-    created: function () {
+    beforeCreate: async function () {
+        let twitch = await axios.get("/twitch")
+        this.$set(this, "model", twitch.data)
+        this.$set(this, "temp", twitch.data)
+        
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
-            this.tempModel()
-            this.activeKey = Object.keys(this.$props.model)[0] || ""
+            this.activeKey = Object.keys(this.model)[0] || ""
         }
     },
     computed: {
         rewards: function() {
-            return Object.keys(this.temp["custom-rewards"])
+            let keys = this.temp["custom-rewards"] && Object.keys(this.temp["custom-rewards"])
+            return 
         }
     },
     methods: {
-        tempModel: function () {
-            this.temp = JSON.parse(JSON.stringify(this.$props.model))
+        reset: function(){
+            this.temp = JSON.parse(JSON.stringify(this.model))
         },
         apply: function (id) {
             axios.post(`/twitch`, this.temp)
@@ -249,7 +265,7 @@ Vue.component("comp-twitch", {
     },
     template: `
     <v-container fluid>
-        <v-card>
+        <v-card >
             <v-card-title>Twitch Settings</v-card-title>
             <v-divider></v-divider>
             <v-card-text>
@@ -265,6 +281,7 @@ Vue.component("comp-twitch", {
                 </v-row>
             </v-card-text>
             <v-divider></v-divider>
+            <template v-if="typeof temp['highlighted-message'] != 'undefined'">
             <v-card-title>
                 <span class="title">Highlighted Messages</span>
                 <v-checkbox v-model="temp['highlighted-message'].enabled">
@@ -284,7 +301,7 @@ Vue.component("comp-twitch", {
                     </v-col>
                 </v-row>
             </v-card-text>
-
+            </template>
             <v-divider></v-divider>
             <v-card-title>Custom Rewards</v-card-title>
             <v-divider></v-divider>
@@ -338,7 +355,7 @@ Vue.component("comp-twitch", {
             </v-col>
             <v-card-actions>
                     <v-row align="center" justify="center">
-                        <v-btn @click="apply()">Apply</v-btn> <v-btn @click="tempModel()">Cancel</v-btn>
+                        <v-btn @click="apply()">Apply</v-btn> <v-btn @click="reset()">Cancel</v-btn>
                     </v-row>
             </v-card-actions>
         </v-card>
@@ -436,5 +453,6 @@ let vm = new Vue({
 
         let noita = await axios.get("/noita")
         this.$set(this.models, "noita", noita.data)
+        console.log("data")
     }
 })
