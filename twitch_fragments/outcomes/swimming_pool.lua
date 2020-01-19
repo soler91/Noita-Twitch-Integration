@@ -1,5 +1,8 @@
--- name = "Instant swimming pool",
--- desc = "Don't forget your swimsuit",
+--Swimming Pool
+--Beach episode
+--unknown
+--49
+--todo
 function twitch_swimming_pool()
     spawn_item_in_range("data/entities/projectiles/deck/sea_water.xml", 0, 0,
                         40, 80, 0, -1, false)

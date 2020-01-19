@@ -1,5 +1,8 @@
--- name = "Explosives",
--- desc = "Might cause explosions!",
+--Explosives
+--Might cause explosions
+--bad
+--37
+--todo
 barrel_entities = {
     "data/entities/props/physics_propane_tank.xml",
     "data/entities/props/physics_pressure_tank.xml",

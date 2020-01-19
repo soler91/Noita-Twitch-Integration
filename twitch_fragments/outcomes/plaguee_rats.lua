@@ -1,5 +1,8 @@
--- name = "plaGUEE rats",
--- desc = "Hail the rat king",
+--plaGUEE Rats
+--Hail the rat king
+--bad
+--36
+--Spawns a bunch of normal rats, plague rats and 1 to 2 skullrats
 function twitch_plaguee_rats()
     local rats = Random(20, 30)
     local plague = Random(10, 20)

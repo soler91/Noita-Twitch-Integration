@@ -1,5 +1,8 @@
--- name = "Flask: " .. matname,
--- desc = "Enjoy",
+--Random Flask
+--What's in it?
+--good
+--15
+--todo
 function twitch_random_flask()
     local potion_material = ""
     if (Random(0, 100) <= 75) then

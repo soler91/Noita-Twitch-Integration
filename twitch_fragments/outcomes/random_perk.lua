@@ -1,5 +1,8 @@
--- name = "Random Perk",
--- desc = "Have fun",
+--Random Perk
+--Lucky... or maybe not?
+--unknown
+--10
+--todo
 function twitch_random_perk()
     local perk = perk_list[math.random(1, #perk_list)]
 

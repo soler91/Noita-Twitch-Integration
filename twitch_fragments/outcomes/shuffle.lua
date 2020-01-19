@@ -1,5 +1,8 @@
--- name = "SHUFFLE",
--- desc = "OOF!",
+--Shuffle
+--OOF
+--bad
+--22.5
+--todo
 function twitch_shuffle()
     local wands = GetWands()
     if wands == nil then return end

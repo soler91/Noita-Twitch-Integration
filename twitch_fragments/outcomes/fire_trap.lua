@@ -1,5 +1,8 @@
--- name = "FIRE FIRE",
--- desc = "Hot.",
+--Fiery Circle
+--Now that's hot
+--bad
+--40
+--todo
 function twitch_fire_trap()
     local above = false
     local rand = Random(0, 1)

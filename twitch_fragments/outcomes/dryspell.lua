@@ -1,5 +1,8 @@
--- name = "Dryspell"
--- desc = "Don't get lit on fire!"
+--Dryspell
+--Cool?
+--good
+--50
+--todo
 function twitch_dryspell()
     async(function()
         local px, py = get_player_pos()

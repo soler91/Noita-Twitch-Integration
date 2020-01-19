@@ -1,5 +1,8 @@
--- name = "CHONKY",
--- desc = "Big stomp for 2 mins!",
+--CHONKY
+--That's one CHONKY Noita
+--unknown
+--60
+--Makes the player stomp cause damage to the terrain
 function twitch_chonky()
     async(function()
         local playah = get_player()

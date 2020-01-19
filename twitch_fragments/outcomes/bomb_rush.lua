@@ -1,5 +1,8 @@
--- name = "Bomb rush",
--- desc = "You better run",
+--Bomb Rush
+--BOOM
+--bad
+--30
+--Spawns waves of explosives, TNT -> Spark bomb -> Bomb -> Holy Bomb (Far from player)
 function twitch_bomb_rush()
     async(function()
         local tnt = Random(5, 9)

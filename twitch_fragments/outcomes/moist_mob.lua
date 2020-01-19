@@ -1,5 +1,8 @@
--- name = "THE MOIST MOB",
--- desc = "because why not",
+--THE MOIST MOB
+--Slurp slurp slurp
+--bad
+--34
+--todo
 function twitch_moist_mob()
     local rnd = Random(10, 20)
     spawn_something("data/entities/animals/frog_big.xml", 30, 180, true)

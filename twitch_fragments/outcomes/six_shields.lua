@@ -1,5 +1,8 @@
--- name = "6 Shields... WHAT!?",
--- desc = "but projectiles hit like a truck :)",
+--6 SHIELDS WHAT?!?!?
+--But projectiles hit like a truck!
+--good
+--15
+--todo
 function twitch_six_shields()
     local player = get_player()
     local shieldrad = tonumber(GlobalsGetValue("twitch_shieldsize", "10"))

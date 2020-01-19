@@ -1,5 +1,8 @@
--- name = "ACID??",
--- desc = "Who thought this was a good idea",
+--ACID??
+--Who thought this was a good idea
+--bad
+--25
+--some random comment
 function twitch_acid_trap()
     local above = false
     local rand = Random(0, 1)
