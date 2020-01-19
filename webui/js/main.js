@@ -358,13 +358,16 @@ Vue.component("comp-misc", {
             if (isNaN(val)) {
                 return
             }
-            axios.post("/timeleft", {val: Math.floor(val)})
+            axios.post("/misc/timeleft", {val: Math.floor(val)})
         },
         rmTime(val) {
             if (isNaN(val)) {
                 return
             }
-            axios.post("/timeleft", {val: Math.floor(val - val*2)})
+            axios.post("/misc/timeleft", {val: Math.floor(val - val*2)})
+        },
+        reloadOutcomes(val) {
+            axios.post("/misc/reload_outcomes", {})
         },
         isNumber(val) {
             if (typeof val == "number") {
@@ -397,6 +400,10 @@ Vue.component("comp-misc", {
                                 <v-btn depressed tile @click="rmTime(minusTime)">Send</v-btn>
                             </template>
                         </v-text-field>
+                    </v-col>
+                    <v-divider></v-divider>
+                    <v-col cols="4" md="4">
+                        <v-btn @click="reloadOutcomes()">Reload Outcomes</v-btn>
                     </v-col>
                 </v-row>
             </v-card-text>
