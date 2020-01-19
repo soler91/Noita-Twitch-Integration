@@ -1,4 +1,40 @@
 {
+  "acid_trap": {
+    "id": "acid_trap",
+    "name": "ACID??",
+    "enabled": true,
+    "comment": "some random comment",
+    "description": "Who thought this was a good idea",
+    "type": "bad",
+    "rarity": 25
+  },
+  "angry_steve": {
+    "id": "angry_steve",
+    "name": "Angry Steve",
+    "enabled": true,
+    "comment": "todo",
+    "description": "Steve is out to getcha!",
+    "type": "bad",
+    "rarity": 20
+  },
+  "biggest_worm": {
+    "id": "biggest_worm",
+    "name": "Biggest Worm",
+    "enabled": true,
+    "comment": "todo",
+    "description": "OH NONONONO",
+    "type": "bad",
+    "rarity": 15
+  },
+  "big_worm": {
+    "id": "big_worm",
+    "name": "Big Worm",
+    "enabled": true,
+    "comment": "todo",
+    "description": "That's one big worm",
+    "type": "bad",
+    "rarity": 30
+  },
   "bomb_rush": {
     "id": "bomb_rush",
     "name": "Bomb Rush",
@@ -12,7 +48,7 @@
     "id": "boost_wands",
     "name": "Boost Wands",
     "enabled": true,
-    "comment": "Boosts wand stats of 1 to 4 wands (in order)\nAlways boosts Mana, Mana Regen and capacity\n50% chance to boost Cast delay\n50% chance to boost Recharge delay\n50% chance to reduce Spread\n50% chance to remove Shuffle",
+    "comment": "Boosts wand stats of 1 to 4 wands (in order)\\nAlways boosts Mana, Mana Regen and capacity\\n50% chance to boost Cast delay\\n50% chance to boost Recharge delay\\n50% chance to reduce Spread\\n50% chance to remove Shuffle",
     "description": "Lucky you!!",
     "type": "good",
     "rarity": 10
@@ -24,7 +60,7 @@
     "comment": "Makes the player stomp cause damage to the terrain",
     "description": "That's one CHONKY Noita",
     "type": "unknown",
-    "rarity": 65
+    "rarity": 60
   },
   "couple_worms": {
     "id": "couple_worms",
@@ -33,7 +69,7 @@
     "comment": "Spawns 2 worms",
     "description": "Just a couple",
     "type": "bad",
-    "rarity": 50
+    "rarity": 40
   },
   "deers": {
     "id": "deers",
@@ -42,13 +78,13 @@
     "comment": "Spawns some normal deers with deercoys mixed in",
     "description": "Oh dear...",
     "type": "unknown",
-    "rarity": 60
+    "rarity": 50
   },
   "dryspell": {
     "id": "dryspell",
     "name": "Dryspell",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Cool?",
     "type": "good",
     "rarity": 50
@@ -57,95 +93,95 @@
     "id": "explosives",
     "name": "Explosives",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Might cause explosions",
     "type": "bad",
-    "rarity": 50
+    "rarity": 37
   },
   "fire_trap": {
     "id": "fire_trap",
     "name": "Fiery Circle",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Now that's hot",
     "type": "bad",
-    "rarity": 50
+    "rarity": 40
   },
   "full_health": {
     "id": "full_health",
     "name": "Full Health",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Chat giveth",
     "type": "good",
-    "rarity": 50
+    "rarity": 20
   },
   "gold_rush": {
     "id": "gold_rush",
     "name": "Gold Rush",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Quick, before it disappears!",
     "type": "good",
     "rarity": 50
   },
   "health_down": {
     "id": "health_down",
-    "name": "Health down",
+    "name": "Health Down",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Unlucky :(",
     "type": "bad",
-    "rarity": 50
+    "rarity": 30
   },
   "health_up": {
     "id": "health_up",
     "name": "Health Up",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Lucky you!",
     "type": "good",
-    "rarity": 50
+    "rarity": 30
   },
   "holy_bombastic": {
     "id": "holy_bombastic",
     "name": "Holy Bombastic",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "What does this do ?",
     "description": "BOOM?",
     "type": "unknown",
-    "rarity": 50
+    "rarity": 35
   },
   "lava_sea": {
     "id": "lava_sea",
     "name": "Sea of Lava",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Watch your step",
     "type": "bad",
-    "rarity": 50
+    "rarity": 42
   },
   "moist_mob": {
     "id": "moist_mob",
     "name": "THE MOIST MOB",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Slurp slurp slurp",
     "type": "bad",
-    "rarity": 50
+    "rarity": 34
   },
   "nerf_wands": {
     "id": "nerf_wands",
     "name": "Nerf Wands",
     "enabled": true,
-    "comment": "Nerfs wand stats of 1 to 4 wands (in order)\nAlways boosts Mana, Mana Regen <- intended BOOST\n50% chance to nerf Cast delay\n50% chance to nerf Recharge delay\n50% chance to add Spread\n50% chance to add Shuffle",
+    "comment": "Nerfs wand stats of 1 to 4 wands (in order)\\nAlways boosts Mana, Mana Regen <- intended BOOST\\n50% chance to nerf Cast delay\\n50% chance to nerf Recharge delay\\n50% chance to add Spread\\n50% chance to add Shuffle",
     "description": "Unfortunate :(",
     "type": "bad",
     "rarity": 10
   },
   "noitlocke": {
     "id": "noitlocke",
-    "name": "Noitlocke",
+    "name": "NOITLOCKE",
     "enabled": true,
     "comment": "Can't edit wands at all, not even with Edit Wands Everywhere.",
     "description": "Is this Pokiman?!?!",
@@ -154,146 +190,110 @@
   },
   "plaguee_rats": {
     "id": "plaguee_rats",
-    "name": "PlaGUEE Rats",
+    "name": "plaGUEE Rats",
     "enabled": true,
     "comment": "Spawns a bunch of normal rats, plague rats and 1 to 2 skullrats",
     "description": "Hail the rat king",
     "type": "bad",
-    "rarity": 40
+    "rarity": 36
   },
   "random_flask": {
     "id": "random_flask",
     "name": "Random Flask",
     "enabled": true,
-    "comment": "TODO",
-    "description": "What's in it ?",
+    "comment": "todo",
+    "description": "What's in it?",
     "type": "good",
-    "rarity": 50
+    "rarity": 15
   },
   "random_perk": {
     "id": "random_perk",
     "name": "Random Perk",
     "enabled": true,
-    "comment": "TODO",
-    "description": "Lucky... or maybe not ?",
-    "type": "good",
-    "rarity": 50
+    "comment": "todo",
+    "description": "Lucky... or maybe not?",
+    "type": "unknown",
+    "rarity": 10
   },
   "random_wand": {
     "id": "random_wand",
     "name": "Random Wand",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "WOW!!",
     "type": "good",
-    "rarity": 50
+    "rarity": 18
   },
   "secret_ending": {
     "id": "secret_ending",
     "name": "Secret Ending",
     "enabled": true,
     "comment": "Spawns the portal to the hentai dimension (tentacles)",
-    "description": "Jebaited",
+    "description": "Jebaited!",
     "type": "bad",
-    "rarity": 50
+    "rarity": 27
   },
   "shuffle": {
     "id": "shuffle",
     "name": "Shuffle",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "OOF",
     "type": "bad",
-    "rarity": 50
+    "rarity": 22.5
   },
   "six_shields": {
     "id": "six_shields",
     "name": "6 SHIELDS WHAT?!?!?",
     "enabled": true,
-    "comment": "Adds 6 shields with nerfed recharge to the player each time, no limit\nbut also multiplies projectile dmg x2 each time",
+    "comment": "todo",
     "description": "But projectiles hit like a truck!",
     "type": "good",
-    "rarity": 10
+    "rarity": 15
   },
   "spell_refresher": {
     "id": "spell_refresher",
     "name": "Spell Refresher",
     "enabled": true,
-    "comment": "TODO",
-    "description": "Do you even need it ?",
+    "comment": "todo",
+    "description": "Do you even need it?",
     "type": "good",
-    "rarity": 50
+    "rarity": 48
   },
   "swimming_pool": {
     "id": "swimming_pool",
     "name": "Swimming Pool",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Beach episode",
     "type": "unknown",
-    "rarity": 50
+    "rarity": 49
   },
   "thunderstone_madness": {
     "id": "thunderstone_madness",
     "name": "THUNDERSTONES!?!",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Ay",
     "type": "unknown",
-    "rarity": 50
+    "rarity": 39
   },
   "unshuffle": {
     "id": "unshuffle",
     "name": "Unshuffle",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "Yay!",
     "type": "good",
-    "rarity": 50
+    "rarity": 22.5
   },
   "worm_can": {
     "id": "worm_can",
     "name": "Can of Worms",
     "enabled": true,
-    "comment": "TODO",
+    "comment": "todo",
     "description": "That's annoying",
     "type": "bad",
-    "rarity": 50
-  },
-  "acid_trap": {
-    "id": "acid_trap",
-    "name": "ACID!?!?",
-    "enabled": true,
-    "comment": "TODO",
-    "description": "Why would you do this!?",
-    "type": "unknown",
-    "rarity": 50
-  },
-  "angry_steve": {
-    "id": "angry_steve",
-    "name": "Angry Steve",
-    "enabled": true,
-    "comment": "TODO",
-    "description": "Steve is out to getcha!",
-    "type": "unknown",
-    "rarity": 50
-  },
-  "biggest_worm": {
-    "id": "biggest_worm",
-    "name": "Biggest Worm",
-    "enabled": true,
-    "comment": "TODO",
-    "description": "OH NONONONO",
-    "type": "unknown",
-    "rarity": 50
-  },
-  "big_worm": {
-    "id": "big_worm",
-    "name": "Big Worm",
-    "enabled": true,
-    "comment": "TODO",
-    "description": "That's one big worm",
-    "type": "unknown",
-    "rarity": 50
+    "rarity": 45.5
   }
 }
