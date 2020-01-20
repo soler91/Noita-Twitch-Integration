@@ -2,6 +2,10 @@ function insert_constant(outcome)
     table.insert(outcome_generators, function() return outcome end)
 end
 
+function get_players()
+    return EntityGetWithTag( "player_unit" ) or {};
+end
+
 function resolve_localized_name(s, default)
     if s:sub(1, 1) ~= "$" then return s end
     local rep = GameTextGet(s)
