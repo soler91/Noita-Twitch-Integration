@@ -1,7 +1,7 @@
 --Avoid the Void!™️
 --It's time to play AVOID!! THE!! VOID!!
 --unknown
---50
+--32
 --todo
 function twitch_void_circle()
     local above = false
