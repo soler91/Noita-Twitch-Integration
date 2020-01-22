@@ -28,7 +28,9 @@ function twitch_random_circle()
 
     spawn_something("data/entities/projectiles/deck/circle_acid.xml", 80, 160, above, true, function(circle)
         async(function()
-            ComponentSetValue( EntityGetFirstComponent( circle, "ParticleEmitterComponent" ), "emitter_lifetime_frames", "300" );
+            ComponentSetValue( EntityGetFirstComponent( circle, "LifetimeComponent" ), "lifetime", "900" )
+            ComponentSetValue( EntityGetFirstComponent( circle, "ParticleEmitterComponent" ), "airflow_force", "0.01" );
+            ComponentSetValue( EntityGetFirstComponent( circle, "ParticleEmitterComponent" ), "image_animation_speed", "3" );
             for i = 1, 10 do
                 ComponentSetValue( EntityGetFirstComponent( circle, "ParticleEmitterComponent" ), "emitted_material_name", mats[ Random( 1, #mats ) ] );
                 wait(20)
