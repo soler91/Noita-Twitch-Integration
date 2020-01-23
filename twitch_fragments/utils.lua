@@ -189,6 +189,26 @@ function spawn_twitch_stuff(name, amount)
     end)
 end
 
+function append_text(entity, text)
+    local component = EntityAddComponent( entity, "SpriteComponent", {
+        _tags = "enabled_in_world",
+        image_file = text.font or "data/fonts/font_pixel_white.xml",
+        emissive = "1",
+        is_text_sprite = "1",
+        offset_x = text.offset_x or "0",
+        offset_y = text.offset_y or "0",
+        alpha = text.alpha or "1",
+        update_transform = "1",
+        update_transform_rotation = "0",
+        text = text.string or "",
+        has_special_scale = "1",
+        special_scale_x = text.scale_x or "1",
+        special_scale_y = text.scale_y or "1",
+        z_index = "-9000"
+    } )
+    return component
+end
+
 function spawn_healer_pikku( username )
     local PIKKU_TYPES = {
         Healer=1,
