@@ -4,7 +4,7 @@
 --60
 --Makes the player stomp cause damage to the terrain
 function twitch_chonky()
-    local duration = 60 * 240
+    local duration = 60 * 120
 
     if GlobalsGetValue("twitch_chonky_active", "0") == "1" then
         local current = tonumber(GlobalsGetValue("twitch_chonky_deathframe", "0"))
