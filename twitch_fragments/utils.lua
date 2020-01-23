@@ -209,6 +209,25 @@ function append_text(entity, text)
     return component
 end
 
+function make_badge(info)
+    if info == nil then
+        return nil
+    end
+    local eid = EntityCreateNew( info.long_name )
+    local badge = EntityAddComponent(eid, "UIIconComponent", {
+        icon_sprite_file= info.sprite or "mods/gkbrkn_noita/files/gkbrkn/badges/badge.png",
+        name= info.name or "WIP",
+        description= info.description or "Nothing to see here."
+    })
+
+    return eid, badge
+end
+
+function remove_badge(name) 
+    local eid = EntityGetWithName(name)
+    EntityKill(eid)
+end
+
 function spawn_healer_pikku( username )
     local PIKKU_TYPES = {
         Healer=1,
@@ -350,3 +369,48 @@ function spawn_healer_pikku( username )
         script_damage_received="mods/ti_pikku_tracker/files/pikku_damage_received.lua"
     } );
 end
+
+--effect tracker
+async_loop(function()
+    local dryspell = GlobalsGetValue("twitch_dryspell_active", "0")
+    local chonky = GlobalsGetValue("twitch_chonky_active", "0")
+    local purge = GlobalsGetValue("twitch_purge_active", "0")
+    local speed = GlobalsGetValue("twitch_speed_active", "0")
+
+    if dryspell == "1" then
+        local dryspell_deathframe = tonumber(GlobalsGetValue("twitch_dryspell_deathframe", "0"))
+        GamePrint(tostring(GameGetFrameNum()) .. " " .. tostring(dryspell_deathframe))
+        if GameGetFrameNum() >= dryspell_deathframe then
+            remove_badge("twitch_badge_dryspell")
+            remove_dryspell()
+        end
+    end
+
+    if chonky == "1" then
+        local chonky_deathframe = tonumber(GlobalsGetValue("twitch_chonky_deathframe", "0"))
+
+        if GameGetFrameNum() >= chonky_deathframe then
+            remove_badge("twitch_badge_chonky")
+            remove_chonky()
+        end
+    end
+
+    if purge == "1" then
+        local purge_deathframe = tonumber(GlobalsGetValue("twitch_purge_deathframe", "0"))
+
+        if GameGetFrameNum() >= purge_deathframe then
+            remove_badge("twitch_badge_purge")
+            remove_the_purge()
+        end
+    end
+
+    if speed == "1" then
+        local speed_deathframe = tonumber(GlobalsGetValue("twitch_speed_deathframe", "0"))
+
+        if GameGetFrameNum() >= speed_deathframe then
+            remove_badge("twitch_badge_speed")
+            GlobalsSetValue("twitch_speed_active", "0")
+        end
+    end
+    wait(10)
+end)
