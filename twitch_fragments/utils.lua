@@ -379,7 +379,6 @@ async_loop(function()
 
     if dryspell == "1" then
         local dryspell_deathframe = tonumber(GlobalsGetValue("twitch_dryspell_deathframe", "0"))
-        GamePrint(tostring(GameGetFrameNum()) .. " " .. tostring(dryspell_deathframe))
         if GameGetFrameNum() >= dryspell_deathframe then
             remove_badge("twitch_badge_dryspell")
             remove_dryspell()
