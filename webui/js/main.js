@@ -359,8 +359,7 @@ Vue.component("comp-twitch", {
     },
     computed: {
         rewards: function() {
-            let keys = this.temp["custom-rewards"] && Object.keys(this.temp["custom-rewards"])
-            return 
+            return Object.keys(this.temp["custom-rewards"]);
         }
     },
     methods: {
