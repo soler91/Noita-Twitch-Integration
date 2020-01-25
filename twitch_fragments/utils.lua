@@ -376,6 +376,7 @@ async_loop(function()
     local chonky = GlobalsGetValue("twitch_chonky_active", "0")
     local purge = GlobalsGetValue("twitch_purge_active", "0")
     local speed = GlobalsGetValue("twitch_speed_active", "0")
+    local counter = GlobalsGetValue("twitch_counter_active", "0")
 
     if dryspell == "1" then
         local dryspell_deathframe = tonumber(GlobalsGetValue("twitch_dryspell_deathframe", "0"))
@@ -409,6 +410,15 @@ async_loop(function()
         if GameGetFrameNum() >= speed_deathframe then
             remove_badge("twitch_badge_speed")
             GlobalsSetValue("twitch_speed_active", "0")
+        end
+    end
+
+    if counter == "1" then
+        local counter_deathframe = tonumber(GlobalsGetValue("twitch_counter_deathframe", "0"))
+
+        if GameGetFrameNum() >= counter_deathframe then
+            remove_badge("twitch_badge_counter")
+            GlobalsSetValue("twitch_counter_active", "0")
         end
     end
     wait(10)
