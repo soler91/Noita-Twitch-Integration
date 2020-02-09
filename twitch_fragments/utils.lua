@@ -240,7 +240,7 @@ function spawn_healer_pikku( username )
         [PIKKU_TYPES.Warrior]=" the Fighter",
     }
     local x, y = get_player_pos();
-    local pikku = EntityLoad( "data/entities/animals/firebug.xml", x, y );
+    local pikku = EntityLoad( "data/entities/pikku.xml", x, y );
     SetRandomSeed( GameGetFrameNum(), x + y + tonumber( pikku ) );
     local pikku_type = Random( 1, 3 );
     EntityAddComponent( pikku, "SpriteComponent", {
@@ -299,7 +299,6 @@ function spawn_healer_pikku( username )
         local animal_ais = EntityGetComponent( pikku, "AnimalAIComponent" ) or {};
         for _, animal_ai in pairs( animal_ais ) do
             ComponentSetValue( animal_ai, "attack_melee_enabled", "0" );
-            ComponentSetValue( animal_ai, "attack_dash_enabled", "0" );
             ComponentSetValue( animal_ai, "attack_ranged_enabled", "0" );
             ComponentSetValue( animal_ai, "aggressiveness_min", "0" );
             ComponentSetValue( animal_ai, "aggressiveness_max", "0" );
