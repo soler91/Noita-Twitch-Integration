@@ -228,7 +228,7 @@ function remove_badge(name)
     EntityKill(eid)
 end
 
-function spawn_healer_pikku( username )
+function spawn_healer_pikku( username , msg)
     local PIKKU_TYPES = {
         Healer=1,
         Tank=2,
@@ -243,6 +243,19 @@ function spawn_healer_pikku( username )
     local pikku = EntityLoad( "data/entities/pikku.xml", x, y );
     SetRandomSeed( GameGetFrameNum(), x + y + tonumber( pikku ) );
     local pikku_type = Random( 1, 3 );
+    if (msg ~= nil) then
+        for word in string.gmatch(msg, "%a+") do
+            if (string.lower(word) == "#healer") then
+                pikku_type = 1
+            
+            elseif (string.lower(word) == "#tank") then
+                pikku_type = 2
+            
+            elseif (string.lower(word) == "#warrior") then
+                pikku_type = 3
+            end
+        end
+    end
     EntityAddComponent( pikku, "SpriteComponent", {
         _tags = "enabled_in_world",
         image_file = "data/fonts/font_pixel_white.xml",
