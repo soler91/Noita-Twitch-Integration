@@ -228,21 +228,36 @@ function remove_badge(name)
     EntityKill(eid)
 end
 
-function spawn_healer_pikku( username )
+function spawn_healer_pikku( username, message )
     local PIKKU_TYPES = {
         Healer=1,
         Tank=2,
-        Warrior=3
+        Warrior=3,
+        Bomber=4,
     };
     local PIKKU_TITLES = {
         [PIKKU_TYPES.Healer]=" the Healer",
         [PIKKU_TYPES.Tank]=" the Tank",
         [PIKKU_TYPES.Warrior]=" the Fighter",
+        [PIKKU_TYPES.Bomber]=" the Bomber",
     }
     local x, y = get_player_pos();
-    local pikku = EntityLoad( "data/entities/pikku.xml", x, y );
+    local pikku = EntityLoad( "data/entities/animals/firebug.xml", x, y );
     SetRandomSeed( GameGetFrameNum(), x + y + tonumber( pikku ) );
-    local pikku_type = Random( 1, 3 );
+    local pikku_type = Random( 1, 4 );
+    
+    if message ~= nil then
+        if string.find( message, "#healer" ) then
+            pikku_type = 1
+        elseif string.find( message, "#tank" ) then
+            pikku_type = 2
+        elseif string.find( message, "#warrior" ) then
+            pikku_type = 3
+        elseif string.find( message, "#bomber" ) then
+            pikku_type = 4
+        end
+    end
+    
     EntityAddComponent( pikku, "SpriteComponent", {
         _tags = "enabled_in_world",
         image_file = "data/fonts/font_pixel_white.xml",
@@ -295,13 +310,33 @@ function spawn_healer_pikku( username )
             ComponentSetValue( animal_ai, "max_distance_to_move_from_home", "0" );
             ComponentSetValue( animal_ai, "attack_ranged_entity_file", "data/entities/projectiles/deck/light_bullet.xml" );
         end
-    elseif pikku_type == PIKKU_TYPES.Tank then
+    elseif pikku_type == PIKKU_TYPES.Bomber then
         local animal_ais = EntityGetComponent( pikku, "AnimalAIComponent" ) or {};
         for _, animal_ai in pairs( animal_ais ) do
             ComponentSetValue( animal_ai, "attack_melee_enabled", "0" );
+            ComponentSetValue( animal_ai, "attack_dash_enabled", "0" );
+            ComponentSetValue( animal_ai, "attack_ranged_min_distance", "0" );
+            ComponentSetValue( animal_ai, "attack_ranged_max_distance", "12" );
+            ComponentSetValue( animal_ai, "aggressiveness_min", "100" );
+            ComponentSetValue( animal_ai, "aggressiveness_max", "100" );
+            ComponentSetValue( animal_ai, "escape_if_damaged_probability", "0" );
+            ComponentSetValue( animal_ai, "hide_from_prey", "0" );
+            ComponentSetValue( animal_ai, "sense_creatures", "1" );
+            ComponentSetValue( animal_ai, "attack_only_if_attacked", "0" );
+            ComponentSetValue( animal_ai, "dont_counter_attack_own_herd", "1" );
+            ComponentSetValue( animal_ai, "max_distance_to_move_from_home", "0" );
+            ComponentSetValue( animal_ai, "attack_ranged_entity_file", "data/entities/projectiles/deck/explosion.xml" );
+        end
+    elseif pikku_type == PIKKU_TYPES.Tank then
+        local animal_ais = EntityGetComponent( pikku, "AnimalAIComponent" ) or {};
+        for _, animal_ai in pairs( animal_ais ) do
+            ComponentSetValue( animal_ai, "attack_melee_enabled", "1" );
+            ComponentSetValue( animal_ai, "attack_dash_enabled", "0" );
             ComponentSetValue( animal_ai, "attack_ranged_enabled", "0" );
-            ComponentSetValue( animal_ai, "aggressiveness_min", "0" );
-            ComponentSetValue( animal_ai, "aggressiveness_max", "0" );
+            ComponentSetValue( animal_ai, "aggressiveness_min", "100" );
+            ComponentSetValue( animal_ai, "aggressiveness_max", "100" );
+            ComponentSetValue( animal_ai, "attack_only_if_attacked", "0" );
+            ComponentSetValue( animal_ai, "sense_creatures", "1" );
             ComponentSetValue( animal_ai, "attack_ranged_entity_file", "data/entities/projectiles/healshot.xml" );
             ComponentSetValue( animal_ai, "max_distance_to_move_from_home", "0" );
             ComponentSetValue( animal_ai, "dont_counter_attack_own_herd", "1" );
