@@ -242,7 +242,7 @@ function spawn_healer_pikku( username, message )
         [PIKKU_TYPES.Bomber]=" the Bomber",
     }
     local x, y = get_player_pos();
-    local pikku = EntityLoad( "data/entities/animals/firebug.xml", x, y );
+    local pikku = EntityLoad( "data/entities/pikku.xml", x, y );
     SetRandomSeed( GameGetFrameNum(), x + y + tonumber( pikku ) );
     local pikku_type = Random( 1, 4 );
     
