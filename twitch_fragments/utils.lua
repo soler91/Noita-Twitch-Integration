@@ -51,14 +51,13 @@ function generate_value_in_range(max_range, min_range, limit_axis)
     return (Random(0, range) + (min_range or 0)) * limit_axis
 end
 
-function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole, callback, delay)
+function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole, callback)
     async(function()
-		delay = delay or 20
         local x, y = get_player_pos()
         y = y + 110
         local dx = generate_value_in_range(max_dist, min_dist, 0)
         local dummy = EntityLoad("data/entities/dummy_hax.xml", x + dx, y)
-        wait(delay)
+        wait(20)
         local dummy_x, dummy_y = EntityGetTransform(dummy)
 
         EntityKill(dummy)
