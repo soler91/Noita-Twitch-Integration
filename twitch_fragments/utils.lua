@@ -421,7 +421,7 @@ async_loop(function()
     local purge = GlobalsGetValue("twitch_purge_active", "0")
     local speed = GlobalsGetValue("twitch_speed_active", "0")
     local counter = GlobalsGetValue("twitch_counter_active", "0")
-	local gate = GlobalsGetValue("twitch_collapse_gate", "0")
+    local gate = GlobalsGetValue("twitch_collapse_gate", "0")
 	
 
     if dryspell == "1" then
@@ -468,9 +468,9 @@ async_loop(function()
         end
     end
 	
-	if(gate ~= "0") then 
-		CheckCollapseGate()
-	end
+    if(gate ~= "0") then 
+        CheckCollapseGate()
+    end
 	
     wait(10)
 end)
