@@ -51,13 +51,14 @@ function generate_value_in_range(max_range, min_range, limit_axis)
     return (Random(0, range) + (min_range or 0)) * limit_axis
 end
 
-function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole, callback)
+function spawn_something(entity_path, min_dist, max_dist, from_above, black_hole, callback, delay)
     async(function()
+		delay = delay or 20
         local x, y = get_player_pos()
         y = y + 110
         local dx = generate_value_in_range(max_dist, min_dist, 0)
         local dummy = EntityLoad("data/entities/dummy_hax.xml", x + dx, y)
-        wait(20)
+        wait(delay)
         local dummy_x, dummy_y = EntityGetTransform(dummy)
 
         EntityKill(dummy)
@@ -421,6 +422,8 @@ async_loop(function()
     local purge = GlobalsGetValue("twitch_purge_active", "0")
     local speed = GlobalsGetValue("twitch_speed_active", "0")
     local counter = GlobalsGetValue("twitch_counter_active", "0")
+	local gate = GlobalsGetValue("twitch_collapse_gate", "0")
+	
 
     if dryspell == "1" then
         local dryspell_deathframe = tonumber(GlobalsGetValue("twitch_dryspell_deathframe", "0"))
@@ -465,5 +468,10 @@ async_loop(function()
             GlobalsSetValue("twitch_counter_active", "0")
         end
     end
+	
+	if(gate ~= "0") then 
+		CheckCollapseGate()
+	end
+	
     wait(10)
 end)
