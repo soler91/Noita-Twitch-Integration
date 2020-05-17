@@ -69,3 +69,31 @@ function SpawnFast(path, x, y, rad)
 	y = y + Random(-rad, rad)
 	EntityLoad(path, x, y)
 end
+
+function MirageWand()
+	local countString = GlobalsGetValue("twitch_mirage_wand", "0")
+	local countNumber = tonumber(countString)
+	if(countNumber > 0) then
+		local id = EntityGetWithTag( "player_unit" )[1]
+		local x, y = EntityGetTransform(id)
+		
+		local wands = EntityGetWithTag( "wand" )
+		for index, wandId in ipairs(wands) do
+			local wx, wy = EntityGetTransform(wandId)
+			local distance = math.abs(wx-x)+math.abs(wy-y)
+			if (distance > 21 and distance < 60 and not EntityHasTag(wandId, "mirage_safe")) then
+				local r = math.random(100)
+				if( r > 59 )then
+					EntityLoad( "data/entities/particles/poof_pink.xml", wx, wy )
+					EntityKill( wandId )
+					GlobalsSetValue("twitch_mirage_wand", tostring(countNumber - 1))
+				else
+					EntityAddTag(wandId, "mirage_safe")
+				end
+				GamePrint("rng! "..r)
+				--[[ ]]--
+			end
+		
+		end
+	end
+end
