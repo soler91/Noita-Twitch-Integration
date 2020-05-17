@@ -8,7 +8,7 @@ function CheckCollapseGate()
 		local teleports = EntityGetWithTag("not_collapsed_gate")
 		for i,v in ipairs(teleports) do 
 			local x, y = EntityGetTransform(v)
-			if(py + 50 < y) then
+			if(py + 50 < y and y - py < 235 ) then
 				BlockExit(v)
 				countNumber = countNumber - 1
 				if(countNumber < 1) then break end
@@ -31,6 +31,7 @@ function CollapseGate(entity_id)
 	for i = 1, 3 do
         SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
+        SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
@@ -51,6 +52,16 @@ function CollapseGate(entity_id)
         SpawnFast("data/entities/props/physics_cart.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_minecart.xml", x, y, rad)
     end
+	
+	local points = y
+	while points > 3000 do
+		SpawnFast("data/entities/animals/shotgunner.xml", x, y - 65, 10)
+		points = points - 3000
+	end
+	while points > 1050 do
+		SpawnFast("data/entities/animals/shotgunner_weak.xml", x, y - 65, 10)
+		points = points - 1050
+	end
 end
 
 function SpawnFast(path, x, y, rad)
