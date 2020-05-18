@@ -422,7 +422,7 @@ async_loop(function()
     local speed = GlobalsGetValue("twitch_speed_active", "0")
     local counter = GlobalsGetValue("twitch_counter_active", "0")
     local gate = GlobalsGetValue("twitch_collapse_gate", "0")
-	
+	local wandmirage = GlobalsGetValue("twitch_mirage_wand", "0")
 
     if dryspell == "1" then
         local dryspell_deathframe = tonumber(GlobalsGetValue("twitch_dryspell_deathframe", "0"))
@@ -471,6 +471,11 @@ async_loop(function()
     if(gate ~= "0") then 
         CheckCollapseGate()
     end
+	
+	if(wandmirage ~= "0") then
+		GamePrint("! "..wandmirage)
+		MirageWand()
+	end
 	
     wait(10)
 end)

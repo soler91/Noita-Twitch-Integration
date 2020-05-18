@@ -8,7 +8,7 @@ function CheckCollapseGate()
 		local teleports = EntityGetWithTag("not_collapsed_gate")
 		for i,v in ipairs(teleports) do 
 			local x, y = EntityGetTransform(v)
-			if(py + 50 < y) then
+			if(py + 50 < y and y - py < 235 ) then
 				BlockExit(v)
 				countNumber = countNumber - 1
 				if(countNumber < 1) then break end
@@ -31,6 +31,7 @@ function CollapseGate(entity_id)
 	for i = 1, 3 do
         SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
+        SpawnFast("data/entities/props/physics_chair_1.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_chair_2.xml", x, y, rad)
@@ -51,10 +52,48 @@ function CollapseGate(entity_id)
         SpawnFast("data/entities/props/physics_cart.xml", x, y, rad)
         SpawnFast("data/entities/props/physics_minecart.xml", x, y, rad)
     end
+	
+	local points = y
+	while points > 3000 do
+		SpawnFast("data/entities/animals/shotgunner.xml", x, y - 65, 10)
+		points = points - 3000
+	end
+	while points > 1050 do
+		SpawnFast("data/entities/animals/shotgunner_weak.xml", x, y - 65, 10)
+		points = points - 1050
+	end
 end
 
 function SpawnFast(path, x, y, rad)
 	x = x + Random(-rad, rad)
 	y = y + Random(-rad, rad)
 	EntityLoad(path, x, y)
+end
+
+function MirageWand()
+	local countString = GlobalsGetValue("twitch_mirage_wand", "0")
+	local countNumber = tonumber(countString)
+	if(countNumber > 0) then
+		local id = EntityGetWithTag( "player_unit" )[1]
+		local x, y = EntityGetTransform(id)
+		
+		local wands = EntityGetWithTag( "wand" )
+		for index, wandId in ipairs(wands) do
+			local wx, wy = EntityGetTransform(wandId)
+			local distance = math.abs(wx-x)+math.abs(wy-y)
+			if (distance > 21 and distance < 60 and not EntityHasTag(wandId, "mirage_safe")) then
+				local r = math.random(100)
+				if( r > 59 )then
+					EntityLoad( "data/entities/particles/poof_pink.xml", wx, wy )
+					EntityKill( wandId )
+					GlobalsSetValue("twitch_mirage_wand", tostring(countNumber - 1))
+				else
+					EntityAddTag(wandId, "mirage_safe")
+				end
+				GamePrint("rng! "..r)
+				--[[ ]]--
+			end
+		
+		end
+	end
 end
