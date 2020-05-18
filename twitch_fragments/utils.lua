@@ -484,6 +484,6 @@ end
 async_loop(function()
 	local status, err = pcall(loop)
 	if not status then
-		GamePrint("Error: " .. tostring(err))
+		--GamePrint("Error: " .. tostring(err))
 	end
 end)
