@@ -414,7 +414,7 @@ function spawn_healer_pikku( username, message )
     EntityRemoveTag( pikku, "homing_target" );
 end
 
-function loop()
+async_loop(function()
 
     local dryspell = GlobalsGetValue("twitch_dryspell_active", "0")
     local chonky = GlobalsGetValue("twitch_chonky_active", "0")
@@ -477,13 +477,4 @@ function loop()
 	end
 	
     wait(10)
-end
-end
-
---effect tracker
-async_loop(function()
-	local status, err = pcall(loop)
-	if not status then
-		--GamePrint("Error: " .. tostring(err))
-	end
 end)
