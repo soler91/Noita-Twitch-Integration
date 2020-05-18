@@ -90,7 +90,6 @@ function MirageWand()
 				else
 					EntityAddTag(wandId, "mirage_safe")
 				end
-				GamePrint("rng! "..r)
 				--[[ ]]--
 			end
 		

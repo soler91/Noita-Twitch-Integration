@@ -414,8 +414,8 @@ function spawn_healer_pikku( username, message )
     EntityRemoveTag( pikku, "homing_target" );
 end
 
---effect tracker
 async_loop(function()
+
     local dryspell = GlobalsGetValue("twitch_dryspell_active", "0")
     local chonky = GlobalsGetValue("twitch_chonky_active", "0")
     local purge = GlobalsGetValue("twitch_purge_active", "0")
@@ -473,7 +473,6 @@ async_loop(function()
     end
 	
 	if(wandmirage ~= "0") then
-		GamePrint("! "..wandmirage)
 		MirageWand()
 	end
 	
