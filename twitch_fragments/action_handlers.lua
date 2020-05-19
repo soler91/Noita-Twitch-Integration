@@ -76,21 +76,22 @@ function MirageWand()
 	if(countNumber > 0) then
 		local id = EntityGetWithTag( "player_unit" )[1]
 		local x, y = EntityGetTransform(id)
-		
 		local wands = EntityGetWithTag( "wand" )
+		
 		for index, wandId in ipairs(wands) do
-			local wx, wy = EntityGetTransform(wandId)
-			local distance = math.abs(wx-x)+math.abs(wy-y)
-			if (distance > 21 and distance < 60 and not EntityHasTag(wandId, "mirage_safe")) then
-				local r = math.random(100)
-				if( r > 59 )then
-					EntityLoad( "data/entities/particles/poof_pink.xml", wx, wy )
-					EntityKill( wandId )
-					GlobalsSetValue("twitch_mirage_wand", tostring(countNumber - 1))
-				else
-					EntityAddTag(wandId, "mirage_safe")
+			if (not IsPlayer(EntityGetRootEntity(wandId)) and not EntityHasTag(wandId, "mirage_safe")) then 
+				local wx, wy = EntityGetTransform(wandId)
+				local distance = math.max(math.abs(wx-x), math.abs(wy-y))
+				if (distance < 25) then
+					local r = math.random(100)
+					if( r > 69 )then
+						EntityLoad( "data/entities/particles/poof_pink.xml", wx, wy )
+						EntityKill( wandId )
+						GlobalsSetValue("twitch_mirage_wand", tostring(countNumber - 1))
+					else
+						EntityAddTag(wandId, "mirage_safe")
+					end
 				end
-				--[[ ]]--
 			end
 		
 		end
