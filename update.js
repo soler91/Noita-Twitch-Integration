@@ -36,7 +36,7 @@ class Updater extends EventEmitter {
         this.branch = branch;
     }
 
-    buildPath(relpath) { return path.join(__dirname, '..', relpath); }
+    buildPath(relpath) { return path.join(__dirname, relpath); }
     buildURL(serverIndex, relpath) { return `${AutoUpdateServers[serverIndex]}${this.branch}/${relpath}`; }
     async downloadRaw(serverIndex, relpath) { return await (await fetch(this.buildURL(serverIndex, relpath))).buffer(); }
     async downloadJSON(serverIndex, relpath) { return await (await fetch(this.buildURL(serverIndex, relpath))).json(); }
