@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "open": "^7.0.0",
     "tmi.js": "^1.4.2",
     "ws": "^5.1.0"
