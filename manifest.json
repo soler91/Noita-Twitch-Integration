@@ -1,6 +1,5 @@
 {
     "files": {
-        "README.md": "27b99d92a7ca002aea89dfd9dd99466aad7dce95fc349e0da1a4c7e7c044b290",
         "data/entities/bloody.xml": "b9f4f641c3cc61787aa71fc16c3b7e9d5d8dcbd442d198c1f53ca93c5df39be9",
         "data/entities/buildings/teleport.xml": "914c3892506ecd9b99cdbb9fc45740b8d2f28e594e60befc931decd3f16ae531",
         "data/entities/buildings/teleport_ending.xml": "3f353c6714a663292177973ef62260d004dcfad28c6a0acf5a0693f49cae8391",
