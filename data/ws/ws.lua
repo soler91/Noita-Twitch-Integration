@@ -45,7 +45,7 @@ if not pollws then
   unsigned int pollws_pop(struct pollsocket* ctx, char* dest, unsigned int dest_size);
   ]]
   print("CDEF was OK")
-  pollws = ffi.load("pollws")
+  pollws = ffi.load("mods\\twitch-integration\\data\\pollws.dll")
   print("FFI was OK")
 
   function open_socket(url, scratch_size)
