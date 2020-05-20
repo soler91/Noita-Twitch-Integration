@@ -1,18 +1,12 @@
 # Noita-Twitch-Integration
 
 ## Installation
-* Install [nodejs](https://nodejs.org/en/)
+* Install [nodejs](https://nodejs.org/en/) **don't install build tools when asked on the node installer**
 
-* Download noita-ws-api and unzip the folders `TwitchIntegration` and `mod_ws_api` into your noita Mods folder
-[Download here](https://github.com/soler91/noita-ws-api/archive/master.zip)
+[Download](https://github.com/soler91/Noita-Twitch-Integration/archive/master.zip) this repository and unzip the folder **inside noita's mods folder** and rename it to **twitch-integration**
 
-* Grab the [pollws binaries](https://github.com/probable-basilisk/pollws/releases/download/0.1.0/pollws_0_1_0_windows.zip): copy
-the `pollws.dll` from the **win32** folder into your Noita install dir **(so it should be in the same directory as `Noita.exe`).**
-
-* Enable the `TwitchIntegration` and `mod_ws_api` mods in the Noita mods menu. It will ask for full permissions (in order to use the FFI); presumably
+* Enable the `Twitch Integration` mod in the Noita mods menu. It will ask for full permissions (in order to use the FFI); presumably
 you understand what that means and the risks involved.
-
-* Clone or [Download](https://github.com/soler91/Noita-Twitch-Integration/archive/master.zip) this repository and unzip the folder anywhere
 
 * Open `install.bat` and wait for it to finish
 
@@ -20,5 +14,6 @@ you understand what that means and the risks involved.
 
 * It will require you to restart the bot after making changes to the twitch channel name so close the command prompt and open ``start_twitch.bat`` once again
 
+* [Optional] make a shortcut of start_twitch.bat and put it on your desktop for ease of access
 
 More instructions on how to use it soon
