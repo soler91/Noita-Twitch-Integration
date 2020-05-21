@@ -5,8 +5,7 @@
 --some random comment
 function twitch_broken_trap()
 
-	local id = EntityGetWithTag( "player_unit" )[1]
-	local px, py = EntityGetTransform(id)
+	local px, py = get_player_pos()
     
 	local xx = 350
 	local yy = 100
