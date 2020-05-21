@@ -109,6 +109,7 @@ function GetInven()
             end
         end
     end
+    return inven
 end
 
 function GetWands()
