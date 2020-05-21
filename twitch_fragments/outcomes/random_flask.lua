@@ -18,6 +18,6 @@ function twitch_random_flask()
     end
     local x, y = get_player_pos()
     -- just go ahead and assume cheatgui is installed
-    local entity = EntityLoad("data/hax/potion_empty.xml", x, y)
+    local entity = EntityLoad("data/entities/items/pickup/twitch_flask.xml", x, y)
     AddMaterialInventoryMaterial(entity, potion_material, 1000)
 end
