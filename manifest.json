@@ -8,6 +8,7 @@
         "data/entities/dummy_hax.xml": "be62309989ea3ea46fff8b7a6834e2d9207f3f3cc0d85ad5d5f689a5d0434fa8",
         "data/entities/items/pickup/twitch_thunderball.xml": "c65114861507147cc15308a6b32fc8dfa6fcb44d30987dfbc5b81666ef395763",
         "data/entities/pikku.xml": "3e8511a660e7ffc3ff546ad877b1d702f7b429c9c5fb8598ac98725229be6223",
+        "data/entities/projectiles/deck/sea_ice.xml": "ca6401546adf7143962898986f423777f8ebcf01379575488328e3003643f5d5",
         "data/items_gfx/twitch.png": "e66a920e3cd163db3f677d2cd002defba174279bdcc271c6f13fd2a33c8d9640",
         "data/items_gfx/twitch_thunderball.png": "b3fe08358ee3197678ebb4acba72fd573e9b2aeb9f0cc7df9a1276a84a9e8303",
         "data/pollws.dll": "18499bcf362f50b678029b2904656a71eb04d8f308e8725f616699744501eed3",
