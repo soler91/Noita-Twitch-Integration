@@ -102,10 +102,10 @@
         "twitch_fragments/outcomes/unshuffle.lua": "7e86b25283462755ca15105b97d4c23fbb69247940ddaefbccb636440a5c495a",
         "twitch_fragments/outcomes/void_circle.lua": "88754b20a2a67bc0bce555b42931ed8219f102691d10e96663fc220279b2025c",
         "twitch_fragments/outcomes/wand_mirage.lua": "6c4a62acdef6885fc9b63390c68f1e6a4eebddbfd3e02d89b056f11c5d818622",
-        "twitch_fragments/outcomes/wand_replacement.lua": "9ba7dd5938f898b6945b7cb4b47d595ae5f61eff7865b48a346a4b9ef6295535",
+        "twitch_fragments/outcomes/wand_replacement.lua": "b7a1e4b883d649db72b7243acf77b812ed3e55e3cf065a9025559e7246c6e41e",
         "twitch_fragments/outcomes/worm_can.lua": "feeb3b318f8eb4452ffdb46928c218a060829abfa5862cf71ca9aa14e2f69705",
         "twitch_fragments/potion_material.lua": "d4b1260c058bd01409e5fb19c18a7ac4a08bfaeda28418473dccbabc50c0882d",
-        "twitch_fragments/utils.lua": "e42fa755447d2112aa3efba6256d3287556c5f2c890a2c624af5e3d134345355",
+        "twitch_fragments/utils.lua": "8b385a6dbf54f7bf12917bbd95859ab38e730b454137bfec37d1b4ec0d30b8d8",
         "update.js": "d09ad2528877016d7d73429274acd0137773060f0eabe56a0f93168d912e1a36",
         "webui/index.html": "b7192d14328d734f7c1365dd09e88b3460d1a42a68558a1effcd31f92f22fe5e",
         "webui/js/main.js": "3f53c94f48849faa0e0b3eab98c40237dd71ca77ecc20854b87fa5d0059e9a14"
