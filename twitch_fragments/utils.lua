@@ -99,6 +99,18 @@ function spawn_item(path, min_range, max_range, spawn_blackhole)
                                0, 0, spawn_blackhole)
 end
 
+function GetInven()
+    local childs = EntityGetAllChildren(get_player())
+    local inven = nil
+    if childs ~= nil then
+        for _, child in ipairs(childs) do
+            if EntityGetName(child) == "inventory_quick" then
+                inven = child
+            end
+        end
+    end
+end
+
 function GetWands()
     local childs = EntityGetAllChildren(get_player())
     local inven = nil
