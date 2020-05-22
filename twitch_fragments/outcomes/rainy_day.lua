@@ -5,7 +5,7 @@
 -- todo
 function twitch_rainy_day()
     local material_choices = {
-        "blood", "radioactive_liquid", "water", "slime", "magic_liquid_charm"
+        "blood", "radioactive_liquid", "water", "slime", "magic_liquid_charm", "acid", "lava"
     };
     local min_distance = 24;
     local max_distance = 36;
@@ -21,8 +21,8 @@ function twitch_rainy_day()
                              sx, sy);
     local cloud_children = EntityGetAllChildren(cloud) or {};
     for _, cloud_child in pairs(cloud_children) do
-        local child_components = FindComponentByType(cloud_child,
-                                                     "ParticleEmitterComponent") or
+        local child_components = EntityGetComponent(cloud_child,
+                                                    "ParticleEmitterComponent") or
                                      {};
         for _, component in pairs(child_components) do
             if ComponentGetValue(component, "emitted_material_name") == "water" then
@@ -32,4 +32,5 @@ function twitch_rainy_day()
             end
         end
     end
+
 end
