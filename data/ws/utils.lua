@@ -1,3 +1,4 @@
+dofile_once("data/scripts/lib/utilities.lua")
 function hello()
     GamePrintImportant("Hello", "Hello")
     GamePrint("Hello")
