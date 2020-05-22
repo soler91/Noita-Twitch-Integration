@@ -48,6 +48,7 @@ function twitch_noitlocke() -- Make work after game restart
                             ComponentSetValueVector2(velocity, "mVelocity",
                                                      math.random() * 90 + 35,
                                                      math.random() * -75 - 25);
+                            EntityAddTag(wandId, "noitlocke_safe")
                         end
                     end
 
