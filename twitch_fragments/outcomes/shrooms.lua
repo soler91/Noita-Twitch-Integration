@@ -1,8 +1,8 @@
--- Shrooms
--- What a trip
--- bad
--- 1
--- todo
+--Shrooms
+--What a trip
+--bad_effects
+--1
+--todo
 function twitch_shrooms()
     local player = get_player()
     local drugs = EntityGetComponent(player, "DrugEffectComponent")

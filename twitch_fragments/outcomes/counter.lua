@@ -1,6 +1,6 @@
 --Counter!
 --No u
---good
+--good_effects
 --6
 --counters melee hits
 function twitch_counter()

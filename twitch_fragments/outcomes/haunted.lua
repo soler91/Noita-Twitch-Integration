@@ -1,8 +1,8 @@
--- Haunted!
--- Good'ol temporal curse
--- bad
--- 20
--- todo
+--Haunted!
+--Good'ol temporal curse
+--curses
+--20
+--todo
 function twitch_haunted()
     local from_avove = false
     if Random(0, 1) > 0 then from_avove = true end

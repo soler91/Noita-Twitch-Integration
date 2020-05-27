@@ -1,6 +1,6 @@
 --Biggest Worm
 --OH NONONONO
---bad
+--worms
 --15
 --todo
 function twitch_biggest_worm()

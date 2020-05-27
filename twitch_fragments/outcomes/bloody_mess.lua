@@ -1,6 +1,6 @@
 --Bloody Mess
 --Blood all over me
---unknown
+--enviromental
 --10
 --todo
 function twitch_bloody_mess()

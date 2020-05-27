@@ -1,6 +1,6 @@
 --Big Confuse
 --?????????
---bad
+--bad_effects
 --6
 --confuses player?
 function twitch_big_confuse()

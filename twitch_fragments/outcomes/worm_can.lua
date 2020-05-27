@@ -1,6 +1,6 @@
 --Can of Worms
 --That's annoying
---bad
+--worms
 --45.5
 --todo
 function twitch_worm_can()

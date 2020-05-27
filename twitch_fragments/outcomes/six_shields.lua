@@ -1,6 +1,6 @@
 --6 SHIELDS WHAT?!?!?
 --But projectiles hit like a truck!
---good
+--curses
 --15
 --todo
 function twitch_six_shields()

@@ -1,6 +1,6 @@
 --Ukko in a box
 --What are the odds of that?
---bad
+--traps
 --10
 --todo
 function twitch_ukko_in_a_box()

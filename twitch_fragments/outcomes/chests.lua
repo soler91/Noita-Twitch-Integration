@@ -1,6 +1,6 @@
 --Chests
 --Which one is the real one?
---unknown
+--traps
 --38
 --Spawns mimics and a chest
 function twitch_chests()

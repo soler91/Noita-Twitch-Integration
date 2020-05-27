@@ -1,6 +1,6 @@
 --THUNDERSTONES!?!
 --Ay
---unknown
+--enviromental
 --39
 --todo
 function twitch_thunderstone_madness()

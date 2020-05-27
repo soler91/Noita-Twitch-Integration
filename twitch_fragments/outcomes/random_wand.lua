@@ -1,6 +1,6 @@
 --Random Wand
 --WOW!!
---good
+--helpful
 --18
 --todo
 function twitch_random_wand()

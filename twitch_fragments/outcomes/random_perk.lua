@@ -1,6 +1,6 @@
 --Random Perk
 --Lucky... or maybe not?
---unknown
+--perks
 --10
 --todo
 function twitch_random_perk()

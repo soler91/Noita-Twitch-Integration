@@ -1,6 +1,6 @@
 --Gold Rush
 --Quick, before it disappears!
---good
+--helpful
 --50
 --todo
 function twitch_gold_rush()

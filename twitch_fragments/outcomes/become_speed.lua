@@ -1,6 +1,6 @@
 --Become speed
 --I AM SPEED
---unknown
+--bad_effects
 --30
 --
 function twitch_become_speed()

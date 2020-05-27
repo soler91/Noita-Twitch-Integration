@@ -1,6 +1,6 @@
 --Dryspell
 --Cool?
---good
+--perks
 --50
 --todo
 function twitch_dryspell()

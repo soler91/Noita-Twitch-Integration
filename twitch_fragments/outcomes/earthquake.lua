@@ -1,6 +1,6 @@
 --Earthquake!
 --Take cover!
---bad
+--enviromental
 --10
 --todo
 function twitch_earthquake()

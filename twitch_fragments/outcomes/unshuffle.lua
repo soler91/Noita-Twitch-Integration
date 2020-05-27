@@ -1,6 +1,6 @@
 --Unshuffle
 --Yay!
---good
+--helpful
 --22.5
 --todo
 function twitch_unshuffle()

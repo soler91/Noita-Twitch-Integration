@@ -1,8 +1,8 @@
--- Blindness
--- Good luck
--- bad
--- 7
--- todo
+--Blindness
+--Good luck
+--bad_effects
+--7
+--todo
 function twitch_blindness()
     local player = get_player()
     local game_effect = GetGameEffectLoadTo(player, "BLINDNESS", false);

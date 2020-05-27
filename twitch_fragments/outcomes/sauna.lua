@@ -1,6 +1,6 @@
 --Sauna
 --It's hard to breathe
---bad
+--enviromental
 --3
 --todo
 function twitch_sauna()

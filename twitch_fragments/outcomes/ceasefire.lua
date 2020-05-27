@@ -1,6 +1,6 @@
 --Ceasefire 
 --Let's talk this out
---bad
+--curses
 --15
 --Wand on cooldown for a bit
 function twitch_ceasefire()

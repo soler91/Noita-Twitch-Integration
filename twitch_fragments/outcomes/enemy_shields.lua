@@ -1,8 +1,8 @@
--- Enemy Shields
--- Can you break them?
--- bad
--- 10
--- todo
+--Enemy Shields
+--Can you break them?
+--curses
+--10
+--todo
 function twitch_enemy_shields()
 
     local x, y = get_player_pos()

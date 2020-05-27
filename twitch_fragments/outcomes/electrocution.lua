@@ -1,6 +1,6 @@
 --Electrocution
 --Positively shocking!
---bad
+--lame
 --6
 --electrocutes player
 function twitch_electrocution()

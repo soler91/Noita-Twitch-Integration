@@ -1,6 +1,6 @@
 --Secret Ending
 --Jebaited!
---bad
+--detrimental
 --27
 --Spawns the portal to the hentai dimension (tentacles)
 function twitch_secret_ending()

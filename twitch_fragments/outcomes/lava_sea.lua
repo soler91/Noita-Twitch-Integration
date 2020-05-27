@@ -1,6 +1,6 @@
 --Sea of Lava
 --Watch your step
---bad
+--enviromental
 --42
 --todo
 function twitch_lava_sea()

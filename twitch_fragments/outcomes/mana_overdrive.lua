@@ -1,6 +1,6 @@
 --Mana Overdrive
 --Lots of mana for now
---good
+--good_effects
 --5
 --todo
 function twitch_mana_overdrive()

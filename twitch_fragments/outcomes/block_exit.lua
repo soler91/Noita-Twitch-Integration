@@ -1,6 +1,6 @@
 --Block Exit
 --Don't jump head first
---bad
+--traps
 --25
 --todo
 function twitch_block_exit()

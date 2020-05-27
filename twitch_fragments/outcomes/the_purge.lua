@@ -1,6 +1,6 @@
 --The Purge
 --BATTLE ROYALE
---unknown
+--perks
 --44
 --Everyone against eachother
 function twitch_the_purge()

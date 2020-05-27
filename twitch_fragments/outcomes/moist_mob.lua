@@ -1,6 +1,6 @@
 --THE MOIST MOB
 --Slurp slurp slurp
---bad
+--enemies
 --34
 --todo
 function twitch_moist_mob()

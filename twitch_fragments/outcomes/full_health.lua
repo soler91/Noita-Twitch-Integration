@@ -1,6 +1,6 @@
 --Full Health
 --Chat giveth
---good
+--helpful
 --20
 --todo
 function twitch_full_health()

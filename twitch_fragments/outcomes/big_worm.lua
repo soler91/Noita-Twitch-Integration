@@ -1,6 +1,6 @@
 --Big Worm
 --That's one big worm
---bad
+--worms
 --30
 --todo
 function twitch_big_worm()

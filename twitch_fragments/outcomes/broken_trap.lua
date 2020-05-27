@@ -1,6 +1,6 @@
 --Broken Trap
 --As long as it stays broken...
---bad
+--traps
 --15
 --some random comment
 function twitch_broken_trap()

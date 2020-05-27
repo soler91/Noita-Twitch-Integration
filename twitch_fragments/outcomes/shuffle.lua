@@ -1,6 +1,6 @@
 --Shuffle
 --OOF
---bad
+--detrimental
 --22.5
 --todo
 function twitch_shuffle()

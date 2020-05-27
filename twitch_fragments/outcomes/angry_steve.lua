@@ -1,6 +1,6 @@
 --Angry Steve
 --Steve is out to getcha!
---bad
+--enemies
 --20
 --todo
 function twitch_angry_steve()

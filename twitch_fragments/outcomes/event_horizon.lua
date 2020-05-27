@@ -1,8 +1,8 @@
--- Event Horizon
--- Watch your step
--- unknown
--- 10
--- todo
+--Event Horizon
+--Watch your step
+--enviromental
+--10
+--todo
 function twitch_event_horizon()
     local how_many = 3;
     local min_distance = 96;

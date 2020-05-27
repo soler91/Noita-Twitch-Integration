@@ -1,6 +1,6 @@
 --Swimming Pool
 --Beach episode
---unknown
+--enviromental
 --49
 --todo
 function twitch_swimming_pool()

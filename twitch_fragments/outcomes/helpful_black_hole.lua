@@ -1,8 +1,8 @@
--- Helpful Blackhole
--- It's trying its best
--- unknown
--- 10
--- todo
+--Helpful Blackhole
+--It's trying its best
+--unknown
+--10
+--todo
 function twitch_helpful_black_hole()
     local x, y = get_player_pos()
     local black_hole = EntityLoad(

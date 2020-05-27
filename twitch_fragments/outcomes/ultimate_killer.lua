@@ -1,6 +1,6 @@
 --Ultimate Killer
 --Get ready...
---unknown
+--enemies
 --1
 --Spawns the ultimate killer
 function twitch_ultimate_killer()

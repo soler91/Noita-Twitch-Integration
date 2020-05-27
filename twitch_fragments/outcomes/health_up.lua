@@ -1,6 +1,6 @@
 --Health Up
 --Lucky you!
---good
+--helpful
 --30
 --todo
 function twitch_health_up()

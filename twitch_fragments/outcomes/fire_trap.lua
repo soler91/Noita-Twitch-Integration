@@ -1,6 +1,6 @@
 --Fiery Circle
 --Now that's hot
---bad
+--enviromental
 --40
 --todo
 function twitch_fire_trap()

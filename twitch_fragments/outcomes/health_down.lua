@@ -1,6 +1,6 @@
 --Health Down
 --Unlucky :(
---bad
+--detrimental
 --30
 --todo
 function twitch_health_down()

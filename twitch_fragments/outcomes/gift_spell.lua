@@ -1,8 +1,8 @@
--- Random Spell
--- A small favour
--- good
--- 15
--- todo
+--Random Spell
+--A small favour
+--helpful
+--15
+--todo
 function twitch_gift_spell()
     local x, y = get_player_pos()
     SetRandomSeed(GameGetFrameNum(), x + y);

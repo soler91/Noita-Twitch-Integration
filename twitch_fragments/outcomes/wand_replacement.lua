@@ -1,8 +1,8 @@
--- Replace wand
--- Was it always like this ???
--- unknown
--- 2
--- todo
+--Replace wand
+--Was it always like this ???
+--unknown
+--2
+--todo
 function twitch_wand_replacement()
     local inventory = GetInven()
     local inventory_items = GetWands()

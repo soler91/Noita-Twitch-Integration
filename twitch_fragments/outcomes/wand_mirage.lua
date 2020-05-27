@@ -1,6 +1,6 @@
 --Wand Mirage
 --Is that real wand?
---bad
+--curses
 --20
 --todo
 function twitch_wand_mirage()

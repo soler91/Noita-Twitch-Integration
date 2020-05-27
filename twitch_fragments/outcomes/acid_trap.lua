@@ -1,6 +1,6 @@
 --ACID??
 --Who thought this was a good idea
---bad
+--enviromental
 --25
 --some random comment
 function twitch_acid_trap()

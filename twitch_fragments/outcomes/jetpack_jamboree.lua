@@ -1,8 +1,8 @@
--- Jetpack Jamboree
--- Everyone gets a jetpack!
--- bad
--- 10
--- todo
+--Jetpack Jamboree
+--Everyone gets a jetpack!
+--curses
+--10
+--todo
 function twitch_jetpack_jamboree()
     local x, y = get_player_pos()
     for _, entity in pairs(EntityGetInRadiusWithTag(x, y, 1024, "enemy") or {}) do

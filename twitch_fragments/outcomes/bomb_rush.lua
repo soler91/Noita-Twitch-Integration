@@ -1,6 +1,6 @@
 --Bomb Rush
 --BOOM
---bad
+--curses
 --30
 --Spawns waves of explosives, TNT -> Spark bomb -> Bomb -> Holy Bomb (Far from player)
 function twitch_bomb_rush()

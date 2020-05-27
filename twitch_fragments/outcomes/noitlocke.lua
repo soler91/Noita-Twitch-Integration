@@ -1,8 +1,8 @@
--- NOITLOCKE
--- Is this Pokiman?!?!
--- legendary
--- 50
--- Can't edit wands at all, not even with Edit Wands Everywhere.
+--NOITLOCKE
+--Is this Pokiman?!?!
+--detrimental
+--50
+--Can't edit wands at all, not even with Edit Wands Everywhere.
 function twitch_noitlocke() -- Make work after game restart
     if noitlocke then return end
     noitlocke = true

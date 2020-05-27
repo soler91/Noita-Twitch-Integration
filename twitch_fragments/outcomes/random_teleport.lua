@@ -1,6 +1,6 @@
 --Random Teleport
 --Where'd ya go?!?!?
---bad
+--bad_effects
 --3
 --todo
 function twitch_random_teleport()

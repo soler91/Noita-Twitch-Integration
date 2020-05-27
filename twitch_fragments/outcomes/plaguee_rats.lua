@@ -1,6 +1,6 @@
 --plaGUEE Rats
 --Hail the rat king
---bad
+--enemies
 --36
 --Spawns a bunch of normal rats, plague rats and 1 to 2 skullrats
 function twitch_plaguee_rats()

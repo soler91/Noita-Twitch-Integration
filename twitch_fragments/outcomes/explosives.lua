@@ -1,6 +1,6 @@
 --Explosives
 --Might cause explosions
---bad
+--traps
 --37
 --todo
 barrel_entities = {

@@ -1,8 +1,8 @@
--- Rainy Day
--- Some rain on your parade
--- unknown
--- 20
--- todo
+--Rainy Day
+--Some rain on your parade
+--unknown
+--20
+--todo
 function twitch_rainy_day()
     local material_choices = {
         "blood", "radioactive_liquid", "water", "slime", "magic_liquid_charm", "acid", "lava"

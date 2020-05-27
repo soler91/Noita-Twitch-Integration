@@ -1,6 +1,6 @@
 --Farts
 --Geez what did you eat!?
---unknown
+--perks
 --30
 --todo
 function twitch_farts()

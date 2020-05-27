@@ -1,6 +1,6 @@
 --A Couple Worms
 --Just a couple
---bad
+--worms
 --40
 --Spawns 2 worms
 function twitch_couple_worms()

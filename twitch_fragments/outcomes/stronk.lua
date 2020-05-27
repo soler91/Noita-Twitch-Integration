@@ -1,6 +1,6 @@
 --Stronk
 --Very stronk for a bit
---good
+--good_effects
 --3
 --todo
 function twitch_stronk()

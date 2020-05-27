@@ -1,6 +1,6 @@
 --Spell Refresher
 --Do you even need it?
---good
+--helpful
 --48
 --todo
 function twitch_spell_refresher()

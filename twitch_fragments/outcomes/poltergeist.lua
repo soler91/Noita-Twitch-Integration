@@ -1,6 +1,6 @@
 --Poltergeist
 --Spooky
---legendary
+--enemies
 --20
 --todo
 function twitch_poltergeist()
