@@ -20,102 +20,49 @@ Vue.component("comp-outcomes", {
         }
     },
     computed: {
-        sampled: function() {
-            if (Object.keys(this.temp) == 0 || !this.choices) { return }
-            let results = {}
-            for (let i = 0; i < this.sampleSize; i++) {
-                sample = this.drawByType(this.sampleChoices, this.choices)
-                for (const choice of sample) {
-                    if (typeof results[choice.id] == 'undefined') {
-                        results[choice.id] = {
-                            id: choice.id,
-                            name: choice.name,
-                            type: choice.type,
-                            rarity: choice.rarity,
-                            count: 0
-                        }
-                    }
-                    results[choice.id].count += 1
-                }
-            }
-            results = Object.values(results).sort((a,b) => a.type > b.type ? -1 : 1)
-            console.log(results)
-            return results
-        },
-        types: function() {
+        totalWeight: function () {
             if (Object.keys(this.temp) == 0) { return }
-            let types = []
-            for (const choice of Object.values(this.temp)) {
-                if (types.indexOf(choice.type) == -1) {
-                    types.push(choice.type)
-                }
-            }
-            return types
+            let weights = {}
+            Object.values(this.temp).forEach(outcome => {
+                if (!outcome.enabled) {return}
+                weights[outcome.type] = (weights[outcome.type] || 0) + outcome.rarity
+            })
+            return weights
         },
-        list: function(){
-            return Object.keys(this.model)
+        list: function () {
+            let sorted = Object.values(this.model).sort((a, b) => {
+                let nameA = a.name.toUpperCase()
+                let nameB = b.name.toUpperCase()
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+
+                return 0;
+            }).sort((a, b) => {
+                let typeA = a.type.toUpperCase()
+                let typeB = b.type.toUpperCase()
+                if (typeA < typeB) {
+                    return -1;
+                }
+                if (typeA > typeB) {
+                    return 1;
+                }
+
+                return 0;
+            })
+            return sorted
         }
     },
     methods: {
-        drawByType: function(num, types) {
-            const options = Object.values(JSON.parse(JSON.stringify(this.temp)))
-            const counter = {}
-            for (let i = 1; i <= num; i++) {
-                let type = this.pickRandom(types)
-                if (typeof counter[type.name] == "undefined") {
-                    counter[type.name] = 0
-                }
-                counter[type.name] += 1
-            }
-            let final = []
-            for (const option of Object.keys(counter)) {
-                const filtered = options.filter((val) => {
-                    return val.enabled && val.type == option
-                })
-    
-                for (let i = 0; i < counter[option]; i++) {
-                    final.push(this.pickRandom(filtered, true))
-                }
-            }
-    
-            final = JSON.parse(JSON.stringify(final)).map(val => {
-                return val
-            })
-            return final
-        },
-        pickRandom: function(options, trim = false) {
-            let sum = options.reduce((accumulator, val) => accumulator + val.rarity, 0)
-            let rand = Math.random() * sum
-            let total = 0
-            let lastIdx = -1
-            let selectedIdx = null
-    
-            for (let i in options) {
-                let rarity = options[i].rarity
-                total += rarity
-                if (rarity > 0) {
-                    if (rand <= total) {
-                        selectedIdx = i
-                        break
-                    }
-                    lastIdx = i
-                }
-    
-                if (i === options.length - 1) {
-                    selectedIdx = lastIdx
-                }
-            }
-    
-            let result = options[selectedIdx]
-    
-            if (trim) {
-                options.splice(selectedIdx, 1)
-            }
-    
-            return result
-        },
-        reset: function(){
+        reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.model))
+        },
+        calculateOdds: function(type, weight) {
+            let odds = (weight / this.totalWeight[type]) * 100
+            return `${odds.toFixed(2)}%`
         },
         apply: function (id) {
             axios.post(`/outcomes/${id}`, this.temp[id])
@@ -144,11 +91,13 @@ Vue.component("comp-outcomes", {
         <v-divider></v-divider>
 
     <v-list dense nav>
-        <v-list-item v-for="item in list" :key="item" link>
+        <v-list-item v-for="item in list" :key="item.id" link>
 
-            <v-list-item-content @click="activeKey = item">
-                <v-list-item-title>{{ temp[item].name }}</v-list-item-title>
-                <v-list-item-subtitle v-text="temp[item].rarity +' - '+ temp[item].type"></v-list-item-subtitle>
+            <v-list-item-content @click="activeKey = item.id">
+                <v-list-item-title>{{ temp[item.id].name }}</v-list-item-title>
+                <v-list-item-subtitle v-text="temp[item.id].type + ' - ' +
+                    temp[item.id].rarity + '/' + totalWeight[item.type] +
+                    ' [' + calculateOdds(temp[item.id].type, temp[item.id].rarity) + ']'"></v-list-item-subtitle>
             </v-list-item-content>
 
         </v-list-item>
@@ -166,7 +115,7 @@ Vue.component("comp-outcomes", {
                         </v-text-field>
                     </v-col>
                     <v-col cols="6" md="4">
-                        <v-text-field label="Rarity" v-model.number="temp[activeKey].rarity" type="number" :rules="[isNumber]" outlined>
+                        <v-text-field :label="'Rarity '+ calculateOdds(temp[activeKey].type, temp[activeKey].rarity)" v-model.number="temp[activeKey].rarity" type="number" :rules="[isNumber]" outlined>
                         </v-text-field>
                     </v-col>
                     <v-col cols="6" md="2">
@@ -198,34 +147,6 @@ Vue.component("comp-outcomes", {
             </v-card-text>
         </v-card>
     </v-container>
-    <v-container>
-        <v-card>
-            <v-card-title>Sample size {{sampleSize}} rolls x {{sampleChoices}} choices</v-card-title>
-            <v-divider></v-divider>
-            <v-simple-table :fixed-header="true" :height="600" >
-                <template v-slot:default>
-                    <thead>
-                    <tr>
-                        <th class="text-left">Type</th>
-                        <th class="text-left">Name</th>
-                        <th class="text-left">Rarity</th>
-                        <th class="text-left">Count</th>
-                        <th class="text-left">%</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="item in sampled" :key="item.id">
-                        <td>{{ item.type }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.rarity }}</td>
-                        <td>{{ item.count }}</td>
-                        <td>{{ (100*item.count)/(sampleSize*sampleChoices) }}%</td>
-                    </tr>
-                    </tbody>
-                </template>
-            </v-simple-table>
-        </v-card>
-    </v-container>
     </div>`
 })
 
@@ -241,20 +162,54 @@ Vue.component("comp-noita", {
         let noita = await axios.get("/noita")
         this.$set(this, "model", noita.data)
         this.$set(this, "temp", noita.data)
-        
+        if (this.temp.option_types.length > 0) {
+            for (let option in this.temp.option_types) {
+                this.temp.option_types[option].uid = (Math.random() * 100000000) + 1000
+            }
+        }
+
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
             this.activeKey = Object.keys(this.model)[0] || ""
         }
     },
+    computed: {
+        totalWeight: function () {
+            if (this.temp && this.temp.option_types) {
+                return this.temp.option_types.reduce((accumulator, val) => accumulator + val.rarity, 0)
+            }
+            else {
+                return 0
+            }
+        }
+    },
     methods: {
-        reset: function(){
+        reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.model))
+            if (this.temp.option_types.length > 0) {
+                for (let option in this.temp.option_types) {
+                    this.temp.option_types[option].uid = (Math.random() * 100000000) + 1000
+                }
+            }
+        },
+        calculateOdds: function (weight) {
+            let odds = (weight / this.totalWeight) * 100
+            return `${odds.toFixed(2)}%`
         },
         apply: function (id) {
-            axios.post(`/noita`, this.temp)
+            let toSend = JSON.parse(JSON.stringify(this.temp))
+            if (toSend.option_types.length > 0) {
+                for (let option in toSend.option_types) {
+                    delete toSend.option_types[option].uid
+                }
+            }
+            axios.post(`/noita`, toSend)
         },
         addOption: function () {
-            this.temp.option_types.push({ name: "unnamed", rarity: 50 })
+            this.temp.option_types.push({
+                name: "unnamed",
+                rarity: 50,
+                uid: (Math.random() * 100000000) + 1000
+            })
         },
         rmOption: function (index) {
             this.temp.option_types.splice(index, 1)
@@ -309,15 +264,15 @@ Vue.component("comp-noita", {
                 </v-row>
 
                 <v-divider></v-divider>
-                <v-card-title>Options</v-card-title>
+                <v-card-title>Options {{totalWeight}}/1000</v-card-title>
                 
-                <v-row v-for="(item, index) in temp.option_types" :key="item.name">
+                <v-row v-for="(item, index) in temp.option_types" :key="item.uid">
                     <v-col cols="5" md="5">
                         <v-text-field label="Name" v-model="temp.option_types[index].name" outlined>
                         </v-text-field>
                     </v-col>
                     <v-col cols="5" md="5">
-                        <v-text-field label="Rarity" v-model.number="temp.option_types[index].rarity" type="number" :rules="[isNumber]" outlined>
+                        <v-text-field :label="'Rarity '+ calculateOdds(temp.option_types[index].rarity)" v-model.number="temp.option_types[index].rarity" type="number" :rules="[isNumber]" outlined>
                         </v-text-field>
                     </v-col>
                     <v-col cols="2" md="2">
@@ -342,7 +297,7 @@ Vue.component("comp-noita", {
 Vue.component("comp-twitch", {
     data: function () {
         return {
-            model:{},
+            model: {},
             temp: {},
             tempId: "",
             activeKey: ""
@@ -352,18 +307,18 @@ Vue.component("comp-twitch", {
         let twitch = await axios.get("/twitch")
         this.$set(this, "model", twitch.data)
         this.$set(this, "temp", twitch.data)
-        
+
         if (this.activeKey === "" || Object.keys(this.temp).length == 0) {
             this.activeKey = Object.keys(this.model)[0] || ""
         }
     },
     computed: {
-        rewards: function() {
+        rewards: function () {
             return Object.keys(this.temp["custom-rewards"]);
         }
     },
     methods: {
-        reset: function(){
+        reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.model))
         },
         apply: function (id) {
@@ -484,7 +439,7 @@ Vue.component("comp-twitch", {
 })
 
 Vue.component("comp-misc", {
-    data: function(){
+    data: function () {
         return {
             plusTime: 0,
             minusTime: 0
@@ -495,13 +450,13 @@ Vue.component("comp-misc", {
             if (isNaN(val)) {
                 return
             }
-            axios.post("/misc/timeleft", {val: Math.floor(val)})
+            axios.post("/misc/timeleft", { val: Math.floor(val) })
         },
         rmTime(val) {
             if (isNaN(val)) {
                 return
             }
-            axios.post("/misc/timeleft", {val: Math.floor(val - val*2)})
+            axios.post("/misc/timeleft", { val: Math.floor(val - val * 2) })
         },
         reloadOutcomes(val) {
             axios.post("/misc/reload_outcomes", {})
