@@ -19,13 +19,27 @@ function twitch_ceasefire()
 	
     for i = 1, table.getn(wands) do
         local ability = EntityGetAllComponents(wands[i])
+		local isActive = IsActiveWand(ability)
         for _, c in ipairs(ability) do
 			if ComponentGetTypeName(c) == "AbilityComponent" then
-                --local left = tonumber(ComponentGetValue(c, "mReloadFramesLeft"))
 				local frame = GameGetFrameNum()
-                ComponentSetValue(c, "mReloadFramesLeft", tostring(wait))
+				if isActive == true then
+					ComponentSetValue(c, "mReloadFramesLeft", tostring(wait)) -- special for currently equiped wand
+				end
                 ComponentSetValue(c, "mNextFrameUsable", tostring(frame+wait))
 			end
         end
     end
+end
+
+function IsActiveWand(ability)
+	for _, c in ipairs(ability) do
+		if ComponentGetTypeName(c) == "AudioLoopComponent" or ComponentGetTypeName(c) == "SpriteComponent" then
+			local enabled = ComponentGetIsEnabled(c)
+			if enabled ~= nil and enabled == true then
+				return true;
+			end
+		end
+	end
+	return false;
 end
