@@ -1,7 +1,7 @@
 --Shrooms
 --What a trip
 --bad_effects
---1
+--230
 --todo
 function twitch_shrooms()
     local player = get_player()

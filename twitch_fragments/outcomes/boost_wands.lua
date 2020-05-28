@@ -1,7 +1,7 @@
 --Boost Wands
 --Lucky you!!
 --helpful
---10
+--60
 --Boosts wand stats of 1 to 4 wands (in order)\nAlways boosts Mana, Mana Regen and capacity\n50% chance to boost Cast delay\n50% chance to boost Recharge delay\n50% chance to reduce Spread\n50% chance to remove Shuffle
 function twitch_boost_wands()
     local wands = GetWands()

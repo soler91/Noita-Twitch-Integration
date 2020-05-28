@@ -1,7 +1,7 @@
 --Random Flask
 --What's in it?
 --unknown
---15
+--180
 --todo
 function twitch_random_flask()
     local potion_material = ""

@@ -1,7 +1,7 @@
 --THE MOIST MOB
 --Slurp slurp slurp
 --enemies
---34
+--300
 --todo
 function twitch_moist_mob()
     local rnd = Random(10, 20)

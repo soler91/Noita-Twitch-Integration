@@ -1,7 +1,7 @@
 --Block Exit
 --Don't jump head first
 --traps
---25
+--260
 --todo
 function twitch_block_exit()
 	local countString = GlobalsGetValue("twitch_collapse_gate", "0")

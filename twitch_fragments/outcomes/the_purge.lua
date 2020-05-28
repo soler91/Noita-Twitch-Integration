@@ -1,7 +1,7 @@
 --The Purge
 --BATTLE ROYALE
 --perks
---44
+--200
 --Everyone against eachother
 function twitch_the_purge()
     local duration = 60 * 90

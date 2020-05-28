@@ -1,7 +1,7 @@
 --Random Wand
 --WOW!!
 --helpful
---18
+--80
 --todo
 function twitch_random_wand()
     local rnd = Random(0, 1000)

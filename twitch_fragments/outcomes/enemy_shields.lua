@@ -1,7 +1,7 @@
 --Enemy Shields
 --Can you break them?
 --curses
---10
+--180
 --todo
 function twitch_enemy_shields()
 

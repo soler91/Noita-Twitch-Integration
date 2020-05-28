@@ -1,7 +1,7 @@
 --Stronk
 --Very stronk for a bit
 --good_effects
---3
+--360
 --todo
 function twitch_stronk()
     local player = get_player()

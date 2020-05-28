@@ -1,7 +1,7 @@
 --Dryspell
 --Cool?
 --perks
---50
+--150
 --todo
 function twitch_dryspell()
     local duration = 60 * 240

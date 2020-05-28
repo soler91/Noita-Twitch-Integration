@@ -1,7 +1,7 @@
 --Cheese
 --GIVE ME THE CHEESE
 --enviromental
---10
+--80
 --todo
 function twitch_cheesy()
     async(function()

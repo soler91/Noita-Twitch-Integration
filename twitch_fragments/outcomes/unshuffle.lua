@@ -1,7 +1,7 @@
 --Unshuffle
 --Yay!
 --helpful
---22.5
+--120
 --todo
 function twitch_unshuffle()
     local wands = GetWands()

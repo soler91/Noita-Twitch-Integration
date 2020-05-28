@@ -1,7 +1,7 @@
 --ACID??
 --Who thought this was a good idea
 --enviromental
---25
+--70
 --some random comment
 function twitch_acid_trap()
     local above = false

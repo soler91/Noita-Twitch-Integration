@@ -1,7 +1,7 @@
 --Bomb Rush
 --BOOM
 --curses
---30
+--212
 --Spawns waves of explosives, TNT -> Spark bomb -> Bomb -> Holy Bomb (Far from player)
 function twitch_bomb_rush()
     async(function()

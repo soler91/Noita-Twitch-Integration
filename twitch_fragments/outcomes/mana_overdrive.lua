@@ -1,7 +1,7 @@
 --Mana Overdrive
 --Lots of mana for now
 --good_effects
---5
+--340
 --todo
 function twitch_mana_overdrive()
     local player = get_player()

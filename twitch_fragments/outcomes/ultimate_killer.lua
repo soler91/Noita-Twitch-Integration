@@ -1,7 +1,7 @@
 --Ultimate Killer
 --Get ready...
 --enemies
---1
+--30
 --Spawns the ultimate killer
 function twitch_ultimate_killer()
     spawn_something("data/entities/animals/ultimate_killer.xml", 50, 100)

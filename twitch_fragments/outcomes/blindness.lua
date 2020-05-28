@@ -1,7 +1,7 @@
 --Blindness
 --Good luck
 --bad_effects
---7
+--150
 --todo
 function twitch_blindness()
     local player = get_player()

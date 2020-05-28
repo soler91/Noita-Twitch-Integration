@@ -1,7 +1,7 @@
 --Become speed
 --I AM SPEED
 --bad_effects
---30
+--250
 --
 function twitch_become_speed()
     local duration = 60 * 30

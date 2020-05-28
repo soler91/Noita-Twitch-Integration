@@ -1,7 +1,7 @@
 --The Alchemic Circle
 --Yikes
 --unknown
---3.3
+--20
 --todo
 function twitch_random_circle()
     local above = false

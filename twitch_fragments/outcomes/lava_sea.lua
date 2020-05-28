@@ -1,7 +1,7 @@
 --Sea of Lava
 --Watch your step
 --enviromental
---42
+--90
 --todo
 function twitch_lava_sea()
     spawn_item_in_range("data/entities/projectiles/deck/sea_lava.xml", 0, 200,

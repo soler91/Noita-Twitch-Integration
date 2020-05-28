@@ -1,7 +1,7 @@
 --Can of Worms
 --That's annoying
 --worms
---45.5
+--200
 --todo
 function twitch_worm_can()
     for i = 1, 10 do

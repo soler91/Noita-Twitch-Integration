@@ -1,7 +1,7 @@
 --Ceasefire 
 --Let's talk this out
 --curses
---15
+--102
 --Wand on cooldown for a bit
 function twitch_ceasefire()
     local wands = GetWands()

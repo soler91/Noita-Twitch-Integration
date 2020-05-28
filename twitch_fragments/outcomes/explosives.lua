@@ -1,7 +1,7 @@
 --Explosives
 --Might cause explosions
 --traps
---37
+--165
 --todo
 barrel_entities = {
     "data/entities/props/physics_propane_tank.xml",

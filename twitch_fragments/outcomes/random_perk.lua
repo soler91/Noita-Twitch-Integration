@@ -1,7 +1,7 @@
 --Random Perk
 --Lucky... or maybe not?
 --perks
---10
+--400
 --todo
 function twitch_random_perk()
     local perk = perk_list[math.random(1, #perk_list)]

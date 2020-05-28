@@ -1,7 +1,7 @@
 --Ukko in a box
 --What are the odds of that?
 --traps
---10
+--225
 --todo
 function twitch_ukko_in_a_box()
 	local countString = GlobalsGetValue("twitch_ukko_in_box", "0")

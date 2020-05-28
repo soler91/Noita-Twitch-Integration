@@ -1,7 +1,7 @@
 --Bloody Mess
 --Blood all over me
 --enviromental
---10
+--100
 --todo
 function twitch_bloody_mess()
     async(function()

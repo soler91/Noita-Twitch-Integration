@@ -1,7 +1,7 @@
 --Random Teleport
 --Where'd ya go?!?!?
 --bad_effects
---3
+--200
 --todo
 function twitch_random_teleport()
     local player = get_player()

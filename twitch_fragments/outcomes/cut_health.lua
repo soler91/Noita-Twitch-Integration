@@ -1,7 +1,7 @@
 --Take Damage
 --The chat wants your death
 --lame
---10
+--250
 --todo
 function twitch_cut_health()
     local percent_to_remove = 0.25;

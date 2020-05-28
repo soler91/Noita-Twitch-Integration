@@ -1,7 +1,7 @@
 --Rainy Day
 --Some rain on your parade
 --unknown
---20
+--220
 --todo
 function twitch_rainy_day()
     local material_choices = {

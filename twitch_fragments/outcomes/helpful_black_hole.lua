@@ -1,7 +1,7 @@
 --Helpful Blackhole
 --It's trying its best
 --unknown
---10
+--170
 --todo
 function twitch_helpful_black_hole()
     local x, y = get_player_pos()

@@ -1,7 +1,7 @@
 --THUNDERSTONES!?!
 --Ay
 --enviromental
---39
+--100
 --todo
 function twitch_thunderstone_madness()
     for i = 1, 10 do

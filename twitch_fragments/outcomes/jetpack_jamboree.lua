@@ -1,7 +1,7 @@
 --Jetpack Jamboree
 --Everyone gets a jetpack!
 --curses
---10
+--180
 --todo
 function twitch_jetpack_jamboree()
     local x, y = get_player_pos()

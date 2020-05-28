@@ -1,7 +1,7 @@
 --Random Spell
 --A small favour
 --helpful
---15
+--190
 --todo
 function twitch_gift_spell()
     local x, y = get_player_pos()

@@ -1,7 +1,7 @@
 --Event Horizon
 --Watch your step
 --enviromental
---10
+--40
 --todo
 function twitch_event_horizon()
     local how_many = 3;

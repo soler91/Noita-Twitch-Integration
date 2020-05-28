@@ -1,7 +1,7 @@
 --Fiery Circle
 --Now that's hot
 --enviromental
---40
+--110
 --todo
 function twitch_fire_trap()
     local above = false

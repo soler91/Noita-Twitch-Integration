@@ -1,7 +1,7 @@
 --Electrocution
 --Positively shocking!
 --lame
---6
+--750
 --electrocutes player
 function twitch_electrocution()
     local player = get_player()

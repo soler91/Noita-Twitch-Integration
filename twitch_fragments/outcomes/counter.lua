@@ -1,7 +1,7 @@
 --Counter!
 --No u
 --good_effects
---6
+--300
 --counters melee hits
 function twitch_counter()
     local duration = 60 * 120

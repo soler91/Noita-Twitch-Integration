@@ -1,7 +1,7 @@
 --Deers
 --Oh dear...
 --unknown
---50
+--155
 --Spawns some normal deers with deercoys mixed in
 function twitch_deers()
     for i = 1, 5 do

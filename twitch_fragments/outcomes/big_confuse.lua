@@ -1,7 +1,7 @@
 --Big Confuse
 --?????????
 --bad_effects
---6
+--170
 --confuses player?
 function twitch_big_confuse()
     local player = get_player()

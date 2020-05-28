@@ -1,7 +1,7 @@
 --CHONKY
 --That's one CHONKY Noita
 --perks
---60
+--150
 --Makes the player stomp cause damage to the terrain
 function twitch_chonky()
     local duration = 60 * 120
