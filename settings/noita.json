@@ -8,20 +8,52 @@
   "options_per_vote": 4,
   "option_types": [
     {
-      "name": "good",
-      "rarity": 20
+      "name": "enviromental",
+      "rarity": 140
     },
     {
-      "name": "bad",
-      "rarity": 20
+      "name": "enemies",
+      "rarity": 100
+    },
+    {
+      "name": "bad_effects",
+      "rarity": 100
+    },
+    {
+      "name": "good_effects",
+      "rarity": 90
+    },
+    {
+      "name": "worms",
+      "rarity": 90
+    },
+    {
+      "name": "traps",
+      "rarity": 50
+    },
+    {
+      "name": "curses",
+      "rarity": 70
+    },
+    {
+      "name": "helpful",
+      "rarity": 90
+    },
+    {
+      "name": "detrimental",
+      "rarity": 90
+    },
+    {
+      "name": "perks",
+      "rarity": 80
     },
     {
       "name": "unknown",
-      "rarity": 40
+      "rarity": 80
     },
     {
-      "name": "legendary",
-      "rarity": 0.1
+      "name": "lame",
+      "rarity": 20
     }
   ]
 }
