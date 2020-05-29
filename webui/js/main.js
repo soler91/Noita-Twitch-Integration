@@ -24,7 +24,7 @@ Vue.component("comp-outcomes", {
             if (Object.keys(this.temp) == 0) { return }
             let weights = {}
             Object.values(this.temp).forEach(outcome => {
-                if (!outcome.enabled) {return}
+                if (!outcome.enabled) { return }
                 weights[outcome.type] = (weights[outcome.type] || 0) + outcome.rarity
             })
             return weights
@@ -60,7 +60,12 @@ Vue.component("comp-outcomes", {
         reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.model))
         },
-        calculateOdds: function(type, weight) {
+        getDefaults: async function () {
+            let defaults = await axios.get("/reset/outcomes")
+            this.$set(this, "model", defaults.data)
+            this.$set(this, "temp", defaults.data)
+        },
+        calculateOdds: function (type, weight) {
             let odds = (weight / this.totalWeight[type]) * 100
             return `${odds.toFixed(2)}%`
         },
@@ -84,7 +89,7 @@ Vue.component("comp-outcomes", {
         <v-list-item>
             <v-list-item-content>
                 <v-list-item-title class="title">
-                    Outcomes
+                    Outcomes <v-btn small @click="getDefaults()">Reset</v-btn>
                 </v-list-item-title>
             </v-list-item-content>
         </v-list-item>
@@ -174,6 +179,7 @@ Vue.component("comp-noita", {
     },
     computed: {
         totalWeight: function () {
+            if (Object.keys(this.temp.option_types || {}) == 0) { return }
             if (this.temp && this.temp.option_types) {
                 return this.temp.option_types.reduce((accumulator, val) => accumulator + val.rarity, 0)
             }
@@ -185,6 +191,16 @@ Vue.component("comp-noita", {
     methods: {
         reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.model))
+            if (this.temp.option_types.length > 0) {
+                for (let option in this.temp.option_types) {
+                    this.temp.option_types[option].uid = (Math.random() * 100000000) + 1000
+                }
+            }
+        },
+        getDefaults: async function () {
+            let defaults = await axios.get("/reset/option_types")
+            this.$set(this, "model", defaults.data)
+            this.$set(this, "temp", defaults.data)
             if (this.temp.option_types.length > 0) {
                 for (let option in this.temp.option_types) {
                     this.temp.option_types[option].uid = (Math.random() * 100000000) + 1000
@@ -264,7 +280,7 @@ Vue.component("comp-noita", {
                 </v-row>
 
                 <v-divider></v-divider>
-                <v-card-title>Options {{totalWeight}}/1000</v-card-title>
+                <v-card-title>Options {{totalWeight}}/1000      <v-btn small @click="getDefaults()">Reset</v-btn></v-card-title>
                 
                 <v-row v-for="(item, index) in temp.option_types" :key="item.uid">
                     <v-col cols="5" md="5">
