@@ -67,7 +67,7 @@
         "twitch_fragments/outcomes/dryspell.lua": "a453bac1a2dd10e058bb2ad2303efb1e94a1101209b63da6be2c3c8cfef94177",
         "twitch_fragments/outcomes/earthquake.lua": "97284f226ef5e7ae2cbba9da04d1bb19e428a86d647cf3f10be116174bb139f0",
         "twitch_fragments/outcomes/electrocution.lua": "f8c82328d3f36149013e09ebeee068b521104a3940e5942ff768fd84a0ec8ec9",
-        "twitch_fragments/outcomes/enemy_shields.lua": "85984705c69be07783dc6285ab05d5c0f0fd5b4edcde4b8be00b1b48f639e426",
+        "twitch_fragments/outcomes/enemy_shields.lua": "c77749bd43b822f6f61d73033c3083b57cd7e2bd8cc7ce265ab6f5e0f5e1d6ae",
         "twitch_fragments/outcomes/event_horizon.lua": "4fe415b04687850bd5278c8cc518c413405d89557546b41d5f595eb2d262a787",
         "twitch_fragments/outcomes/explosives.lua": "cec54b56e06c14b81e31d1a100ac1ea38d2e34930af22a7904bde3c2594c6fd6",
         "twitch_fragments/outcomes/farts.lua": "5d504494610f626b940e6fee278edf403b6a7cf4c8c8fd6fc44259ce94ac8ebe",
