@@ -1,3 +1,19 @@
+const fs = require("fs")
+const path = require("path")
+//check if workaround exists
+const workaroundPath = path.join(__dirname, "../twitch-helper")
+if (!fs.existsSync(workaroundPath)) {
+    fs.mkdirSync(workaroundPath)
+    const XML = `
+    <Mod
+        name="Twitch-helper"
+        description="Temporal workaround for twitch integration, preferably always leave enabled."
+        request_no_api_restrictions="1" 
+        > 
+    </Mod>`
+    fs.writeFileSync(path.join(workaroundPath, "mod.xml"), XML)
+    fs.writeFileSync(path.join(workaroundPath, "init.lua"), "function OnModPreInit() end")
+}
 // Update
 async function updateSelf() {
     delete require.cache[require.resolve('./update')];
@@ -50,11 +66,11 @@ function run() {
     const Twitch = require("./lib/twitch")
     const Noita = require("./lib/noita")
     const WebUI = require("./lib/webui")
-    class Main{
+    class Main {
         constructor() {
             this.initSubmodules()
         }
-    
+
         initSubmodules() {
             this.settings = new Settings()
             this.twitch = new Twitch(this)
@@ -62,7 +78,7 @@ function run() {
             this.webui = new WebUI(this)
         }
     }
-    
+
     const bot = new Main()
 }
 
