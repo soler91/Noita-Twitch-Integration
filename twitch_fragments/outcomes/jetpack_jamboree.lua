@@ -6,20 +6,18 @@
 function twitch_jetpack_jamboree()
     local x, y = get_player_pos()
     for _, entity in pairs(EntityGetInRadiusWithTag(x, y, 1024, "enemy") or {}) do
-        local animal_ais = EntityGetComponent(entity, "AnimalAIComponent") or {};
-        for _, ai in pairs(animal_ais) do
-            ComponentSetValues(ai, {can_fly = "1"});
+        local animal_ai = EntityGetFirstComponent(entity, "AnimalAIComponent") or {};
+        if animal_ai ~= nil then
+            ComponentSetValue(animal_ai, "can_fly", "1");
         end
 
-        local path_finding = EntityGetFirstComponent(entity,
-                                                     "PathFindingComponent");
+        local path_finding = EntityGetFirstComponent(entity,"PathFindingComponent");
         if path_finding ~= nil then
-            ComponentSetValues(path_finding, {can_fly = "1"});
+            ComponentSetValue(path_finding, "can_fly", "1");
         end
 
-        local jetpack_particles = EntityAddComponent(entity,
-                                                     "ParticleEmitterComponent",
-                                                     {
+        local jetpack_particles = EntityAddComponent(entity,"ParticleEmitterComponent",
+        {
             _tags = "jetpack",
             emitted_material_name = "rocket_particles",
             x_pos_offset_min = "-1",

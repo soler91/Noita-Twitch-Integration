@@ -5,9 +5,6 @@
 --todo
 function twitch_shrooms()
     local player = get_player()
-    local drugs = EntityGetComponent(player, "DrugEffectComponent")
-
-    local drugs = EntityAddComponent(player, "DrugEffectComponent", {
-        stoned_amount = "6"
-    })
+    local fungi = CellFactory_GetType("fungi")
+    EntityIngestMaterial( player, fungi, 150 )
 end
