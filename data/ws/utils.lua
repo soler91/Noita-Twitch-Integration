@@ -344,6 +344,15 @@ function spawn_twitch_stuff(name, amount)
     end)
 end
 
+function empty_player_stomach()
+    local player = get_player()
+    if player ~= nil then
+        local stomach = EntityGetFirstComponent(player, "IngestionComponent")
+        if stomach ~= nil then
+            ComponentSetValue(stomach, "ingestion_size", "0")
+        end
+    end
+end
 
 function append_text(entity, text)
     if EntityGetIsAlive(entity) == false then return nil end
