@@ -21,26 +21,26 @@ function twitch_enemy_shields()
 							tonumber(ComponentGetValue(hitbox, "aabb_min_x"));
 			end
 			radius = math.max(height, width) + 6;
-			local shield = EntityLoad("data/entities/misc/animal_energy_shield.xml",
-									  x, y);
-			local inherit_transform = EntityGetFirstComponent(shield,
-															  "InheritTransformComponent");
+			local shield = EntityLoad("data/entities/misc/animal_energy_shield.xml",x, y);
+			local stats = EntityGetFirstComponent(shield, "EnergyShieldComponent" )
+			if stats ~= nil then
+				ComponentSetValue(stats, "energy", "1");
+				ComponentSetValue(stats, "energy_required_to_shield", "0.8");
+				ComponentSetValue(stats, "recharge_speed", "0.10");
+			end
+			local inherit_transform = EntityGetFirstComponent(shield,"InheritTransformComponent");
 			if inherit_transform ~= nil then
-				ComponentSetValue(inherit_transform, "parent_hotspot_tag",
-								  "shield_center");
+				ComponentSetValue(inherit_transform, "parent_hotspot_tag","shield_center");
 			end
 			local emitters =
 				EntityGetComponent(shield, "ParticleEmitterComponent") or {};
 			for _, emitter in pairs(emitters) do
-				ComponentSetValueValueRange(emitter, "area_circle_radius", radius,
-											radius);
+				ComponentSetValueValueRange(emitter, "area_circle_radius", radius,radius);
 			end
-			local energy_shield = EntityGetFirstComponent(shield,
-														  "EnergyShieldComponent");
+			local energy_shield = EntityGetFirstComponent(shield,"EnergyShieldComponent");
 			ComponentSetValue(energy_shield, "radius", tostring(radius));
 
-			local hotspot = EntityAddComponent(entity, "HotspotComponent",
-											   {_tags = "shield_center"});
+			local hotspot = EntityAddComponent(entity, "HotspotComponent", {_tags = "shield_center"});
 			ComponentSetValueVector2(hotspot, "offset", 0, -height * 0.3);
 
 			if shield ~= nil then EntityAddChild(entity, shield); end
