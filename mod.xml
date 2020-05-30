@@ -1,6 +1,11 @@
 <Mod
-	name="Twitch Integration"
-	description="yea"
-	request_no_api_restrictions="1"
->
+	name="Twitch Integration (Gamemode)"
+	description="Chat just wants to help... or not."
+	ui_newgame_name="Twitch Integration"
+	ui_newgame_description="Be nice chat"
+	ui_newgame_gfx_banner_bg="mods/twitch-integration/files/menu_banner_background.png"
+	ui_newgame_gfx_banner_fg="mods/twitch-integration/files/menu_banner_overlay.png"
+	request_no_api_restrictions="1" 
+	is_game_mode="1"
+	> 
 </Mod>
