@@ -344,7 +344,10 @@ function spawn_twitch_stuff(name, amount)
     end)
 end
 
+
 function append_text(entity, text)
+    if EntityGetIsAlive(entity) == false then return nil end
+    text.offset_x = string.len(text.string)*1.9
     local component = EntityAddComponent( entity, "SpriteComponent", {
         _tags = "enabled_in_world",
         image_file = text.font or "data/fonts/font_pixel_white.xml",
@@ -362,6 +365,16 @@ function append_text(entity, text)
         z_index = "-9000"
     } )
     return component
+end
+
+function update_text(parent, child, text)
+    if EntityGetIsAlive(parent) == false then return nil end
+    ComponentSetValue( child, "text", text )
+end
+
+function remove_text(parent, child)
+    if EntityGetIsAlive(parent) == false then return nil end
+    EntityRemoveComponent(parent, child)
 end
 
 function make_badge(info)
