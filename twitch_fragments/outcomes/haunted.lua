@@ -1,7 +1,7 @@
 --Haunted!
 --Good'ol temporal curse
 --curses
---186
+--206
 --todo
 function twitch_haunted()
     local from_avove = false

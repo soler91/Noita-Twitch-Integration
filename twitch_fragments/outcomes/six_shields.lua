@@ -1,7 +1,7 @@
 --6 SHIELDS WHAT?!?!?
 --But projectiles hit like a truck!
 --curses
---80
+--70
 --todo
 function twitch_six_shields()
     local player = get_player()

@@ -1,7 +1,7 @@
 --Health Down
 --Unlucky :(
 --detrimental
---390
+--420
 --todo
 function twitch_health_down()
     twiddle_health(function(cur, max)

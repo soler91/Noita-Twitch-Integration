@@ -1,7 +1,7 @@
 --Chests
 --Which one is the real one?
 --traps
---225
+--200
 --Spawns mimics and a chest
 function twitch_chests()
     for i = 1, 5 do

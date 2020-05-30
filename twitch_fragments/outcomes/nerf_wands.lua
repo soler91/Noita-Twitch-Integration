@@ -1,7 +1,7 @@
 --Nerf Wands
 --Unfortunate :(
 --detrimental
---100
+--50
 --Nerfs wand stats of 1 to 4 wands (in order)\nAlways boosts Mana, Mana Regen <- intended BOOST\n50% chance to nerf Cast delay\n50% chance to nerf Recharge delay\n50% chance to add Spread\n50% chance to add Shuffle
 function twitch_nerf_wands()
     local wands = GetWands()

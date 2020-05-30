@@ -1,7 +1,7 @@
 --Wand Mirage
 --Is that real wand?
 --curses
---60
+--65
 --todo
 function twitch_wand_mirage()
 	local countString = GlobalsGetValue("twitch_mirage_wand", "0")

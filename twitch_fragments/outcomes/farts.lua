@@ -1,7 +1,7 @@
 --Farts
 --Geez what did you eat!?
 --perks
---100
+--115
 --todo
 function twitch_farts()
     if GlobalsGetValue("twitch_farts_active", "0") == "1" then

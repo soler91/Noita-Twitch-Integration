@@ -1,7 +1,7 @@
 --Blazing Enemies
 --Spicy
 --curses
---150
+--119
 --todo
 function twitch_blazing_enemies()
     local x, y = get_player_pos()

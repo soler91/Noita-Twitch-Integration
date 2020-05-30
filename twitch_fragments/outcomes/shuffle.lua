@@ -1,7 +1,7 @@
 --Shuffle
 --OOF
 --detrimental
---165
+--175
 --todo
 function twitch_shuffle()
     local wands = GetWands()

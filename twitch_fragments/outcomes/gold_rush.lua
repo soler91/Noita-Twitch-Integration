@@ -1,7 +1,7 @@
 --Gold Rush
 --Quick, before it disappears!
 --helpful
---200
+--210
 --todo
 function twitch_gold_rush()
     for i = 1, 30 do
