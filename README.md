@@ -11,6 +11,8 @@
 
 * It will require you to restart the bot after making changes to the twitch channel name so close the command prompt and open ``start_twitch.bat`` once again
 
+* Go to your mods menu and enable Twitch-helper
+
 * New game and scroll down for the twitch integration gamemode
 
 * [Optional] make a shortcut of start_twitch.bat and put it on your desktop for ease of access
