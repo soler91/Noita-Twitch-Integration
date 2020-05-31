@@ -1,0 +1,30 @@
+<Materials>
+    <CellData
+        name="twitch_big_confuse"
+        ui_name="big_confuse"
+        tags="[static]"
+        density="10"
+        cell_type="solid"
+        wang_color="ff43ff95"
+        generates_smoke="0"
+        on_fire="0"
+        wang_noise_percent="2.5"
+        hp="20"
+        gfx_glow="50"	
+        solid_restitution="0.7"
+        platform_type="1"
+        show_in_creative_mode="1"
+    >
+        <Graphics
+            texture_file="data/materials_gfx/bluefungi.png"
+            color="ff435495" 
+        >
+        </Graphics>
+
+        <StatusEffects>
+            <Ingestion>
+                <StatusEffect type="TWITCH_BIG_CONFUSE" amount="1" />
+            </Ingestion>
+        </StatusEffects>
+    </CellData>
+</Materials>

@@ -5,8 +5,7 @@
 --todo
 function twitch_mana_overdrive()
     local player = get_player()
-    for i = 1, 5 do
-        local game_effect = GetGameEffectLoadTo(player, "MANA_REGENERATION", true);
-        if game_effect ~= nil then ComponentSetValue(game_effect, "frames", 3600); end
-    end
+    local effect = CellFactory_GetType("twitch_mana_overdrive")
+    EntityIngestMaterial( player, effect, 60 )
+    empty_player_stomach()
 end

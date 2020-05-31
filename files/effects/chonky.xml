@@ -1,0 +1,22 @@
+<Entity>
+	<InheritTransformComponent only_position="1" />
+	<GameEffectComponent 
+		effect="CUSTOM"
+		custom_effect_id="TWITCH_CHONKY"
+		frames="3600">
+	</GameEffectComponent>
+	
+	<LuaComponent
+		script_source_file="mods/twitch-integration/files/effects/chonky_start.lua"
+		execute_on_added="1"
+		execute_every_n_frame="-1"
+    >
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/twitch-integration/files/effects/chonky_end.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+    >
+	</LuaComponent>
+</Entity>

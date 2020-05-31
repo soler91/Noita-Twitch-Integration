@@ -5,8 +5,7 @@
 --todo
 function twitch_stronk()
     local player = get_player()
-    for i = 1, 2 do
-        local game_effect = GetGameEffectLoadTo(player, "DAMAGE_MULTIPLIER", true);
-        if game_effect ~= nil then ComponentSetValue(game_effect, "frames", 3600); end
-    end
+    local effect = CellFactory_GetType("twitch_stronk")
+    EntityIngestMaterial( player, effect, 60 )
+    empty_player_stomach()
 end

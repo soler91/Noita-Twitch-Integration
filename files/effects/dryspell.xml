@@ -1,0 +1,20 @@
+<Entity>
+	<InheritTransformComponent only_position="1" />
+	<GameEffectComponent 
+		effect="CUSTOM"
+		custom_effect_id="TWITCH_DRYSPELL"
+		frames="3600">
+	</GameEffectComponent>
+	
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[liquid]"
+      steps_per_frame="10"
+      to_material="air"
+      clean_stains="0"
+      is_circle="1"
+      radius="32" 
+	  loop="1"
+	  >
+    </MagicConvertMaterialComponent>
+</Entity>

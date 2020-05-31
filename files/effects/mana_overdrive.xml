@@ -1,0 +1,28 @@
+<Entity>
+	<InheritTransformComponent only_position="1" />
+	<GameEffectComponent 
+		effect="CUSTOM"
+		custom_effect_id="TWITCH_MANA_OVERDRIVE"
+		frames="3600">
+	</GameEffectComponent>
+	<GameEffectComponent 
+		effect="MANA_REGENERATION"
+		frames="60">
+	</GameEffectComponent>
+	<GameEffectComponent 
+		effect="MANA_REGENERATION"
+		frames="60">
+	</GameEffectComponent>
+	<GameEffectComponent 
+		effect="MANA_REGENERATION"
+		frames="60">
+	</GameEffectComponent>
+	<GameEffectComponent 
+		effect="MANA_REGENERATION"
+		frames="60">
+	</GameEffectComponent>
+	<GameEffectComponent 
+		effect="MANA_REGENERATION"
+		frames="60">
+	</GameEffectComponent>
+</Entity>
