@@ -1,7 +1,7 @@
 --The Purge
 --BATTLE ROYALE
 --perks
---225
+--300
 --Everyone against eachother
 function twitch_the_purge()
     local player = get_player()

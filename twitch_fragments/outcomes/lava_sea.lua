@@ -1,7 +1,7 @@
 --Lava pit
 --Watch your step
 --enviromental
---90
+--80
 --todo
 function twitch_lava_sea()
     local x, y = get_player_pos()

@@ -1,7 +1,7 @@
 --Healer Bonanza
 --I don't think they like you
 --enemies
---360
+--70
 --todo
 function twitch_healer_bonanza()
     local rng = Random(1, 6)

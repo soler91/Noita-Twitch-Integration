@@ -1,7 +1,7 @@
 --CHONKY
 --That's one CHONKY Noita
 --perks
---180
+--220
 --Makes the player stomp cause damage to the terrain
 function twitch_chonky()
     local player = get_player()

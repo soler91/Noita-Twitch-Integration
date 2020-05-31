@@ -1,7 +1,7 @@
 --Hounds
 --Smithers release the hounds
 --enemies
---360
+--200
 --todo
 function twitch_hounds()
     local rng = Random(1, 2)

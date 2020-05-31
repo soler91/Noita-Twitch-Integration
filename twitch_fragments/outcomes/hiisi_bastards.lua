@@ -1,7 +1,7 @@
 --Hiisi Bastards
 --Them bastards
 --enemies
---360
+--150
 --todo
 function twitch_hiisi_bastards()
     local rng = Random(1, 2)

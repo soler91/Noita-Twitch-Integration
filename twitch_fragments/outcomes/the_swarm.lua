@@ -1,7 +1,7 @@
 --The Swarm
 --Where's the bug spray?!?
 --enemies
---360
+--160
 --todo
 function twitch_the_swarm()
     local animal = {

@@ -1,7 +1,7 @@
 --Dryspell
 --Cool?
 --perks
---180
+--220
 --todo
 function twitch_dryspell()
     local player = get_player()

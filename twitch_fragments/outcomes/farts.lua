@@ -1,7 +1,7 @@
 --Farts
 --Geez what did you eat!?
 --perks
---115
+--150
 --todo
 function twitch_farts()
     local player = get_player()
