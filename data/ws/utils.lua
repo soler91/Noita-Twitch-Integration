@@ -1,4 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
+twitch_viewers = {}
 function hello()
     GamePrintImportant("Hello", "Hello")
     GamePrint("Hello")
