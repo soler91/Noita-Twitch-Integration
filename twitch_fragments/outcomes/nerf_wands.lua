@@ -13,7 +13,6 @@ function twitch_nerf_wands()
         local nerf_speed = Random(0, 1)
         local nerf_recharge = Random(0, 1)
         local add_spread = Random(0, 1)
-        local shuffle = Random(0, 1)
         for _, c in ipairs(ability) do
             if ComponentGetTypeName(c) == "AbilityComponent" then
                 local mana_max = tonumber(ComponentGetValue(c, "mana_max"))
@@ -48,12 +47,6 @@ function twitch_nerf_wands()
                     ComponentObjectSetValue(c, "gunaction_config",
                                             "spread_degrees",
                                             tostring(cur_spread))
-                end
-                if shuffle > 0 then
-                    cur = 1
-                    ComponentObjectSetValue(c, "gun_config",
-                                            "shuffle_deck_when_empty",
-                                            tostring(cur))
                 end
             end
         end
