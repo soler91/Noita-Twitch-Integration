@@ -60,7 +60,7 @@ local twitch_effects =
         id="TWITCH_BIG_CONFUSE",
         ui_name="Big Confuse",
         ui_description="Left is Right?",
-        ui_icon="mods/twitch-integration/files/effects/status_icons/placeholder.png",
+        ui_icon="mods/twitch-integration/files/effects/status_icons/big_confuse.png",
         effect_entity="mods/twitch-integration/files/effects/big_confuse.xml"
     }
 }
