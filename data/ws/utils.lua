@@ -356,16 +356,20 @@ function empty_player_stomach()
 end
 
 function append_viewer_name(entity)
-    if #twitch_viewers == 0 then return end
-    local index = Random(1, #twitch_viewers)
-    local text = {
-        string = table.remove(twitch_viewers, index),
-        offset_y = "-4",
-        special_scale_x="0.8",
-        special_scale_y="0.8"
-    }
+    async(function()
+        if #twitch_viewers == 0 then return end
+        local index = Random(1, #twitch_viewers)
+        local name = table.remove(twitch_viewers, index)
+        wait(5)
+        local text = {
+            string = name,
+            offset_y = "-6",
+            special_scale_x="0.5",
+            special_scale_y="0.5"
+        }
 
-    append_text(entity, text)
+        append_text(entity, text)
+    end)
 end
 
 function append_text(entity, text)
