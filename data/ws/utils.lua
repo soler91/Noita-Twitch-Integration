@@ -355,6 +355,19 @@ function empty_player_stomach()
     end
 end
 
+function append_viewer_name(entity)
+    if #twitch_viewers == 0 then return end
+    local index = Random(1, #twitch_viewers)
+    local text = {
+        string = table.remove(twitch_viewers, index),
+        offset_y = "-4",
+        special_scale_x="0.8",
+        special_scale_y="0.8"
+    }
+
+    append_text(entity, text)
+end
+
 function append_text(entity, text)
     if EntityGetIsAlive(entity) == false then return nil end
     text.offset_x = string.len(text.string)*1.9

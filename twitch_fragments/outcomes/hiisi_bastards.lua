@@ -23,7 +23,7 @@ function twitch_hiisi_bastards()
     for _, entity in pairs(hiisi[selected]) do
         local amount = Random(1, 3)
         for i = 1, amount do
-            spawn_something(entity, Random(60, 90), Random(150, 190), true)
+            spawn_something(entity, Random(60, 90), Random(150, 190), true, false, append_viewer_name)
         end
     end
 end

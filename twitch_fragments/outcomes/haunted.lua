@@ -17,6 +17,7 @@ function twitch_haunted()
                 EntityAddComponent( entity_ghost, "LifetimeComponent", {
                     lifetime = "3600"
                 } )
+                append_viewer_name(entity_ghost)
             end)
         end
     end)
