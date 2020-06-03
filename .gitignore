@@ -1,5 +1,7 @@
 # Dependency directories
 node_modules/
 
-# Outcomes Settings
+# Settings
+settings/twitch.json
+settings/noita.json
 settings/outcomes.json
