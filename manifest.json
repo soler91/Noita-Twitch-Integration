@@ -62,10 +62,10 @@
         "index.js": "aace9c34ead7ab17257e8e8ced765de158522f1c7a93899101834776019689f3",
         "init.lua": "026c1e2212114346f9e684a7d226870da472863c2bcb743c44fbf95f412629d5",
         "install.bat": "73181520463e8644a6179db5bba2df73356ab81458565ddc3aabb04ce6cdd0e2",
-        "lib/noita.js": "ef29f4e962f0bbacf609bb1d45a9227862fc3082fb6f825d472ac278ca22073a",
-        "lib/settings.js": "0c50020f53e7bbf45a6f0330c8eb8ef6367203714302c67fed830f0dd494e5ed",
-        "lib/twitch.js": "4c5d1c3d483f183692cbc1880f41c5dfe2f9d7e52e041eca49061cf222257916",
-        "lib/webui.js": "59582a9c5be8ca5f40f29764922f2af9ca9e945af8a345ac679165618d0dfe26",
+        "lib/noita.js": "9f3bf7e13dec0954635705d4118e1a582822d52d29474918ffb0729e3ae70be1",
+        "lib/settings.js": "4cf39a8d0cf703d78211ce42699d5826dd591db02198ed0b51d5dbd921666842",
+        "lib/twitch.js": "f9ff248b15eacf376d34b2125c39fa8f7d4ff197a212a53fd5ebbc49bebd81e0",
+        "lib/webui.js": "2817216277c14d3d0ee33f7f08a25c4565ce91c38288f1828cbdf6e8d1267ac9",
         "mod.xml": "c2ca1fbe86f4253aaa230d77e6e53337a497a31c6034897f47cfe83a4d50c952",
         "module.json": "d1f3fcbfba381fd1a06b54be7b46d4c8737d1df029615b26f460037fbefe79b5",
         "package-lock.json": "b974400f71664f410a383b83fc3ea44aae1d3946a6b2556269e468649ab3dcdd",
@@ -149,7 +149,7 @@
         "twitch_fragments/potion_material.lua": "d4b1260c058bd01409e5fb19c18a7ac4a08bfaeda28418473dccbabc50c0882d",
         "twitch_fragments/utils.lua": "863977ff74e88f10667b66904a4eace594316f79dadb70965d9fb6877150c03f",
         "update.js": "d09ad2528877016d7d73429274acd0137773060f0eabe56a0f93168d912e1a36",
-        "webui/index.html": "b7192d14328d734f7c1365dd09e88b3460d1a42a68558a1effcd31f92f22fe5e",
-        "webui/js/main.js": "66d066b05a2b23c7b22bbd8bfafcc24328751e67f30e02135c4a34d9f94e2a35"
+        "webui/index.html": "5bc5e861ddb3ec53dec86f29effc791a0572da129b403634f8a206fcdbe09cf9",
+        "webui/js/main.js": "9a2f9fed3de210f3b3519643480936ef6b6ed301d535798533aeef65608b05bd"
     }
 }
