@@ -25,6 +25,7 @@ const TwitchView = Vue.component("ti-twitch", {
         },
         apply: function (id) {
             axios.post(`/twitch`, this.temp.twitch)
+            this.models = JSON.parse(JSON.stringify(this.temp))
         },
         addReward: function (id) {
             this.$set(this.temp.twitch["custom-rewards"], id, {
