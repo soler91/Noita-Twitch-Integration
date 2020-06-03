@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script defer src="/js/main.js"></script>
 
@@ -16,29 +17,18 @@
 
 <body>
     <div id="app">
-        <v-app id="inspire">
-            <v-app-bar app clipped-left>
+        <v-app>
+            <v-app-bar app clipped-left flat>
                 <v-toolbar-title>Control Panel</v-toolbar-title>
-
                 <v-spacer></v-spacer>
-                <v-btn text @click="tab = 'twitch'">
-                    Twitch
-                </v-btn>
-                <v-btn text @click="tab = 'noita'">
-                    Noita
-                </v-btn>
-                <v-btn text @click="tab = 'outcomes'">
-                    Outcomes
-                </v-btn>
-                <v-btn text @click="tab = 'misc'">
-                        Misc
-                </v-btn>
+                <v-btn text :to="'twitch'">Twitch</v-btn>
+                <v-btn text :to="'noita'">Noita</v-btn>
+                <v-btn text :to="'outcomes'">Outcomes</v-btn>
+                <v-btn text :to="'misc'">Misc</v-btn>
             </v-app-bar>
-
+            
             <v-content>
-                <keep-alive>
-                    <component v-bind:is="'comp-'+tab"></component>
-                </keep-alive>
+                <router-view></router-view>
             </v-content>
         </v-app>
     </div>
