@@ -14,9 +14,9 @@ async_loop(function()
                 local r = math.random(100)
                 if (r > 60) then
                     append_viewer_name(entity)
-                    EntityAddTag("dont_append_name")
+                    EntityAddTag(entity, "dont_append_name")
                 else
-                    EntityAddTag("dont_append_name")
+                    EntityAddTag(entity, "dont_append_name")
                 end
             end
         end
