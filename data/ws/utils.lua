@@ -369,8 +369,15 @@ function append_viewer_name(entity)
             scale_x="0.7",
             scale_y="0.7"
         }
+        local name_entity = EntityCreateNew("twitch_name")
+        EntityAddComponent(name_entity, "InheritTransformComponent", {
+            _tags = "enabled_in_world",
+            use_root_parent = "1"
+        })
+        append_text(name_entity, text)
 
-        append_text(entity, text)
+        EntityAddChild(entity, name_entity)
+        EntityAddTag(entity, "dont_append_name")
     end)
 end
 
