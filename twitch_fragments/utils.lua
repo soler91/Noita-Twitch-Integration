@@ -10,9 +10,11 @@ async_loop(function()
         local x, y = get_player_pos()
         for _, entity in pairs(EntityGetInRadiusWithTag(x, y, 4096, "enemy") or {}) do
             if (EntityHasTag(entity, "dont_append_name") == false) then
+                
                 local r = math.random(100)
                 if (r > 60) then
                     append_viewer_name(entity)
+                    EntityAddTag("dont_append_name")
                 else
                     EntityAddTag("dont_append_name")
                 end
