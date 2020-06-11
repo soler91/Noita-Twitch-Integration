@@ -366,8 +366,8 @@ function append_viewer_name(entity)
         local text = {
             string = name,
             offset_y = "-6",
-            special_scale_x="0.3",
-            special_scale_y="0.3"
+            scale_x="0.7",
+            scale_y="0.7"
         }
 
         append_text(entity, text)
