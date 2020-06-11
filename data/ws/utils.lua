@@ -358,14 +358,16 @@ end
 function append_viewer_name(entity)
     async(function()
         if #twitch_viewers == 0 then return end
+        local x, y = get_player_pos()
+        SetRandomSeed( GameGetFrameNum(), x + y + tonumber( entity ) )
         local index = Random(1, #twitch_viewers)
         local name = table.remove(twitch_viewers, index)
         wait(5)
         local text = {
             string = name,
             offset_y = "-6",
-            special_scale_x="0.5",
-            special_scale_y="0.5"
+            special_scale_x="0.3",
+            special_scale_y="0.3"
         }
 
         append_text(entity, text)
