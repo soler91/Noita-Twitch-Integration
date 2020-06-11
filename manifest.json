@@ -21,7 +21,7 @@
         "data/twitch/badge_1.xml": "c7af86eb5e9be9dd464d8e390a28611f066b0c5ac93670bf220045d06f5e29ef",
         "data/twitch/e.png": "5c0a821a23f22c35a82d03462a025453e410965447bc7141046b87ed1fa577f7",
         "data/twitch/e.xml": "036c9f6133db4f5d27bd9169ada51fe327032f86433907719dc1e15829a12be5",
-        "data/ws/utils.lua": "7d0559818ee736ca031f1f7df43f3e022b0246ff158770115a7c40acf8e98717",
+        "data/ws/utils.lua": "d00e10b48e3d977f1323621fe19940153b9b1db91ff56890870f6f418435d70c",
         "data/ws/ws.lua": "40696544056c5830adb82c3400d67058a8a22416cc6bec8065e2de04a4ca3b20",
         "files/effects/become_speed.xml": "1343a6404425abbfeb4d9462f2ca7c23a189a8bf851523ffcf5f7109d8fefbd7",
         "files/effects/big_confuse.xml": "ac00b1352379252e28312879d632bc8eab4ab1d7b81d4404b0916c63870fa393",
@@ -147,7 +147,7 @@
         "twitch_fragments/outcomes/wand_replacement.lua": "bf2d26f42e4c54b6e5b62a70624c060a69cb2e8c29aca53799f8bd88db3b3c75",
         "twitch_fragments/outcomes/worm_can.lua": "a9754a1d59db1a23559c01d46a0f7d0c166668e360d6ca6d8bfb1452617fb1e1",
         "twitch_fragments/potion_material.lua": "d4b1260c058bd01409e5fb19c18a7ac4a08bfaeda28418473dccbabc50c0882d",
-        "twitch_fragments/utils.lua": "863977ff74e88f10667b66904a4eace594316f79dadb70965d9fb6877150c03f",
+        "twitch_fragments/utils.lua": "e5505222899619db12dccdc2f1f93f2ed162e99285cf8248fae4b7943f2b664d",
         "update.js": "d09ad2528877016d7d73429274acd0137773060f0eabe56a0f93168d912e1a36",
         "webui/index.html": "5bc5e861ddb3ec53dec86f29effc791a0572da129b403634f8a206fcdbe09cf9",
         "webui/js/main.js": "9f1a785e9748b8e332942399a6bed52ff5618455e40eced06e36ffc6d208a0d1"
