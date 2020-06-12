@@ -62,7 +62,7 @@
         "index.js": "aace9c34ead7ab17257e8e8ced765de158522f1c7a93899101834776019689f3",
         "init.lua": "026c1e2212114346f9e684a7d226870da472863c2bcb743c44fbf95f412629d5",
         "install.bat": "73181520463e8644a6179db5bba2df73356ab81458565ddc3aabb04ce6cdd0e2",
-        "lib/noita.js": "9f3bf7e13dec0954635705d4118e1a582822d52d29474918ffb0729e3ae70be1",
+        "lib/noita.js": "9c505b81cba9b9431e8274562b3ae51fc4a271516bcbbde852546127771ebead",
         "lib/settings.js": "8575db47a5245004bee3e9ddce2a52408b0224ae2f3bec992592d59162b52008",
         "lib/twitch.js": "ccc5317fc7da0a6a39af2dc4ec2a2be7e447273be9b1071da3b462e57f326d12",
         "lib/webui.js": "8defe9a8c1a4689ff1a2f69ec58d2b4cf013fb59925942648c1b3401dfed5993",
