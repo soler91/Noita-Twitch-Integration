@@ -96,7 +96,7 @@
         "twitch_fragments/outcomes/cut_health.lua": "558c8d912c028c72087212fe59975234fa89bd007f94d874965f24f9aa0e5e71",
         "twitch_fragments/outcomes/deers.lua": "55b5db0d87a09e9abee0c0777ce6d0383fadb433ba82040a74062c6a9a4e7514",
         "twitch_fragments/outcomes/dryspell.lua": "c4bf4e0974daf04ecdb36a7adb1a2c295d7afbb455ba76c6af4c6a7ce8e72cc1",
-        "twitch_fragments/outcomes/earthquake.lua": "97284f226ef5e7ae2cbba9da04d1bb19e428a86d647cf3f10be116174bb139f0",
+        "twitch_fragments/outcomes/earthquake.lua": "d41241e35ca815609dbe933a9ddcb0ad03a3f9957ac0ae5e945634656bdcef2c",
         "twitch_fragments/outcomes/electrocution.lua": "f8c82328d3f36149013e09ebeee068b521104a3940e5942ff768fd84a0ec8ec9",
         "twitch_fragments/outcomes/enemy_shields.lua": "af7994d864c56506c590ed2f9e21cca3967a7f0784bc0f8e19b37825d02c111d",
         "twitch_fragments/outcomes/event_horizon.lua": "4fe415b04687850bd5278c8cc518c413405d89557546b41d5f595eb2d262a787",
