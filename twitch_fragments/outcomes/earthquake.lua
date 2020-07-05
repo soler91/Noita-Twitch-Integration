@@ -4,5 +4,7 @@
 --20
 --todo
 function twitch_earthquake()
-    spawn_something( "data/entities/projectiles/deck/crumbling_earth.xml", 0, 0, true, false );
+	local x, y = get_player_pos()
+	local hit, hx, hy = RaytracePlatforms(x, y, x, y - 500)
+	EntityLoad("data/entities/projectiles/deck/crumbling_earth.xml", hx, (y+hy)/2)
 end
