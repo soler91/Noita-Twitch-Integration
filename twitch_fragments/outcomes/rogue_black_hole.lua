@@ -32,6 +32,7 @@ function twitch_rogue_black_hole()
 			end
 			if ComponentGetTypeName(c) == "ProjectileComponent" then
 				ComponentSetValue(c, "lifetime", tostring(lifetime))
+				ComponentSetValue(c, "collide_with_world", tostring(0))
 			end
 			if ComponentGetTypeName(c) == "ParticleEmitterComponent" then
 				ComponentSetValue(c, "attractor_force", tostring(0))
