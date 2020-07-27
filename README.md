@@ -1,5 +1,7 @@
 # Noita-Twitch-Integration
 
+Based on an example [by probable-basilisk](https://github.com/probable-basilisk/) - [link to example](https://github.com/probable-basilisk/noita-ws-api)
+
 ## Installation
 * Install [nodejs](https://nodejs.org/en/) **don't install build tools when asked on the node installer**
 

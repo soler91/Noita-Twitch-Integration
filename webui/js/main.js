@@ -620,6 +620,44 @@ const MiscView = Vue.component("ti-misc", {
     </v-container>`
 })
 
+const CreditsView = Vue.component("ti-credits", {
+    data() {
+        return {
+            credits: [
+                {name: "Soler91", description: "Creator of the twitch integration you are using now.", github:"https://github.com/soler91/Noita-Twitch-Integration", twitch: "https://www.twitch.tv/soler91"},
+                {name: "Pyry", description: "Creator of the first twitch integration this is based off.", github: "https://github.com/probable-basilisk/noita-ws-api", twitch: "https://www.twitch.tv/fakepyry"},
+                {name: "MiczuPL", description: "Created some outcomes.", github: "https://github.com/miczupl", twitch: "https://www.twitch.tv/MiczuPL"},
+                {name: "Goki", description: "Created some outcomes.", github: "https://github.com/gokiburikin", twitch: "https://www.twitch.tv/goki_dev"},
+                {name: "AsterCastell", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/astercastell/"},
+                {name: "AndyTheIllusion", description: "Created the pixel art for the thunderballs.", twitch: "https://www.twitch.tv/andy_the_illusion/"},
+                {name: "TheSm1rk", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/theSm1rk/" },
+                {name: "Sleepylemonbug", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/sleepylemonbug/" },
+                {name: "Dunkorslam", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/dunkorslam/" }
+            ]
+        }
+    },
+    template: `<v-container fluid>
+        <v-card>
+            <v-toolbar color="deep-purple" flat>
+                <v-toolbar-title class="title">Credits</v-toolbar-title>
+            </v-toolbar>
+
+            <v-list two-line >
+                <v-list-item v-for="entry in credits" :key="entry.name">
+                    <v-list-item-content>
+                        <v-list-item-title>{{entry.name}}
+                            <v-btn icon x-small v-if="entry.twitch" target="blank" :href="entry.twitch"><v-icon>mdi-twitch</v-icon></v-btn>
+                            <v-btn icon x-small v-if="entry.github" target="blank" :href="entry.github"><v-icon>mdi-github</v-icon></v-btn>
+                        </v-list-item-title>
+                        <v-list-item-subtitle>{{entry.description}}</v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+                
+        </v-card>
+    </v-container>`
+})
+
 Vue.use(VueRouter)
 const routes = [
     { path: '/', redirect: "/twitch" },
@@ -627,6 +665,7 @@ const routes = [
     { path: '/noita', component: NoitaView },
     { path: '/outcomes', component: OutcomesView },
     { path: '/misc', component: MiscView },
+    { path: '/credits', component: CreditsView },
 ]
 const router = new VueRouter({ routes })
 /*
