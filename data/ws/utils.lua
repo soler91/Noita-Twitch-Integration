@@ -474,6 +474,23 @@ function dist(x, y, sx, sy)
 	return ((sx-x)*(sx-x)) + ((sy-y)*(sy-y))
 end
 
+function spawn_entity_in_view_random_angle(filename, min_distance, max_distance, safety)
+	safety = safety or 20
+	async(function()
+		local x, y, hit, hx, hy, angle, distance
+		repeat
+			wait(2)
+			local fraction = Random(0, 1);
+			distance = Random(min_distance, max_distance) + safety;
+			x, y = get_player_pos()
+			hit, hx, hy, angle = Raycast(x, y, distance, fraction)
+		until(not hit)
+		
+		hx, hy = ToPointFromDirection(x, y, distance - safety, angle)
+		EntityLoad(filename, hx, hy)
+	end)
+end
+
 function spawn_healer_pikku( username, message )
     local PIKKU_TYPES = {
         Healer=1,
