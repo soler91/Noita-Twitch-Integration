@@ -4,6 +4,5 @@
 --80
 --todo
 function twitch_angry_steve()
-    spawn_something("data/entities/animals/necromancer_shop.xml", 100, 100,
-                    true, true, append_viewer_name)
+	spawn_entity_in_view_random_angle("data/entities/animals/necromancer_shop.xml", 75, 160)
 end
