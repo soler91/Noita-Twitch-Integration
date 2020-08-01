@@ -1,4 +1,6 @@
 ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/twitch-integration/files/status_list_append.lua")
+ModLuaFileAppend("data/scripts/biomes/temple_wall.lua", "mods/twitch-integration/files/end_wall_append.lua")
+ModLuaFileAppend("data/scripts/biomes/temple_wall_ending.lua", "mods/twitch-integration/files/end_wall_append.lua")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/become_speed.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/big_confuse.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/chonky.xml")
