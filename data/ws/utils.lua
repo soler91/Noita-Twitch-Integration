@@ -357,7 +357,8 @@ end
 
 function append_viewer_name(entity)
     async(function()
-        if #twitch_viewers == 0 then return end
+        --if #twitch_viewers == 0 then return end
+        if #twitch_viewers == 0 then table.insert(twitch_viewers, 'Miczu') end
         local x, y = get_player_pos()
         SetRandomSeed( GameGetFrameNum(), x + y + tonumber( entity ) )
         local index = Random(1, #twitch_viewers)
@@ -472,6 +473,24 @@ end
 
 function dist(x, y, sx, sy)
 	return ((sx-x)*(sx-x)) + ((sy-y)*(sy-y))
+end
+
+function spawn_entity_in_view_random_angle(filename, min_distance, max_distance, safety, callback)
+	safety = safety or 20
+	async(function()
+		local x, y, hit, hx, hy, angle, distance
+		repeat
+			wait(2)
+			local fraction = math.random();
+			distance = Random(min_distance, max_distance) + safety;
+			x, y = get_player_pos()
+			hit, hx, hy, angle = Raycast(x, y, distance, fraction)
+		until(not hit)
+		
+		hx, hy = ToPointFromDirection(x, y, distance - safety, angle)
+		local eid = EntityLoad(filename, hx, hy)
+		if(callback) then callback(eid) end
+	end)
 end
 
 function spawn_healer_pikku( username, message )
