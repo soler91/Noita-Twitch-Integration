@@ -480,7 +480,7 @@ function spawn_entity_in_view_random_angle(filename, min_distance, max_distance,
 		local x, y, hit, hx, hy, angle, distance
 		repeat
 			wait(2)
-			local fraction = Random(0, 1);
+			local fraction = math.random();
 			distance = Random(min_distance, max_distance) + safety;
 			x, y = get_player_pos()
 			hit, hx, hy, angle = Raycast(x, y, distance, fraction)
