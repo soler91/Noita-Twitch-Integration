@@ -1,5 +1,5 @@
 ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/twitch-integration/files/status_list_append.lua")
-
+--
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right.lua", "mods/twitch-integration/files/temple_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right_snowcave.lua", "mods/twitch-integration/files/temple_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right_snowcastle.lua", "mods/twitch-integration/files/temple_append.lua")
