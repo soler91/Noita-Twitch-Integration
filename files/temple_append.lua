@@ -22,5 +22,3 @@ function TrapPerksAcid(x, y, count)
     LoadPixelScene("mods/twitch-integration/files/pixel_scenes/acid_perks.png","",x - 112, y - 35, "", true)
     GamePrint("Acid " .. GlobalsGetValue("twitch_bitterperks", "0"))
 end
-
-CheckTrapPerks()
