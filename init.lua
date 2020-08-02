@@ -1,8 +1,11 @@
 ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/twitch-integration/files/status_list_append.lua")
-
+--
+ModLuaFileAppend("data/scripts/biomes/temple_altar.lua", "mods/twitch-integration/files/temple_altar_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right.lua", "mods/twitch-integration/files/temple_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right_snowcave.lua", "mods/twitch-integration/files/temple_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_altar_right_snowcastle.lua", "mods/twitch-integration/files/temple_append.lua")
+
+ModLuaFileAppend("data/scripts/buildings/workshop_trigger_check_stats.lua", "mods/twitch-integration/files/workshop_trigger_check_stats_append.lua")
 
 ModLuaFileAppend("data/scripts/biomes/temple_wall.lua", "mods/twitch-integration/files/end_wall_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_wall_ending.lua", "mods/twitch-integration/files/end_wall_append.lua")

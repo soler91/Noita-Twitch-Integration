@@ -23,9 +23,9 @@ function twitch_boost_wands()
                                           ComponentObjectGetValue(c,
                                                                   "gun_config",
                                                                   "deck_capacity"))
-                mana_max = mana_max + Random(20, 50)
-                mana_charge = mana_charge + Random(20, 50)
-                deck_capacity = deck_capacity + Random(1, 5)
+                mana_max = mana_max + Random(20, 100)
+                mana_charge = mana_charge + Random(20, 100)
+                deck_capacity = deck_capacity + Random(1, 3)
                 ComponentSetValue(c, "mana_max", tostring(mana_max))
                 ComponentSetValue(c, "mana_charge_speed", tostring(mana_charge))
                 ComponentObjectSetValue(c, "gun_config", "deck_capacity",
@@ -33,7 +33,7 @@ function twitch_boost_wands()
                 if boost_recharge > 0 then
                     local cur_recharge =
                         ComponentObjectGetValue(c, "gun_config", "reload_time")
-                    cur_recharge = cur_recharge - 20
+                    cur_recharge = cur_recharge - 10
                     ComponentObjectSetValue(c, "gun_config", "reload_time",
                                             tostring(cur_recharge))
                 end
@@ -41,7 +41,7 @@ function twitch_boost_wands()
                     local cur_speed = ComponentObjectGetValue(c,
                                                               "gunaction_config",
                                                               "fire_rate_wait")
-                    cur_speed = cur_speed - 20
+                    cur_speed = cur_speed - 10
                     ComponentObjectSetValue(c, "gunaction_config",
                                             "fire_rate_wait",
                                             tostring(cur_speed))
@@ -50,7 +50,7 @@ function twitch_boost_wands()
                     local cur_spread = ComponentObjectGetValue(c,
                                                                "gunaction_config",
                                                                "spread_degrees")
-                    cur_spread = cur_spread - 10
+                    cur_spread = cur_spread - 5
                     ComponentObjectSetValue(c, "gunaction_config",
                                             "spread_degrees",
                                             tostring(cur_spread))

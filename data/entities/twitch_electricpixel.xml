@@ -1,0 +1,11 @@
+<Entity tags="hittable,teleportable_NOT,item_physics" >
+  <ElectricitySourceComponent
+		_tags="enabled_in_world,enabled_in_hand"
+        radius="1"
+		emission_interval_frames="94"
+		>
+    </ElectricitySourceComponent>
+  
+  <Base file="data/entities/particles/water_electrocution.xml">
+	</Base>
+</Entity>
