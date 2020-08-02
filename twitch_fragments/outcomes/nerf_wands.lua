@@ -18,15 +18,15 @@ function twitch_nerf_wands()
                 local mana_max = tonumber(ComponentGetValue(c, "mana_max"))
                 local mana_charge = tonumber(
                                         ComponentGetValue(c, "mana_charge_speed"))
-                mana_max = mana_max + Random(20, 50)
-                mana_charge = mana_charge + Random(20, 50)
+                mana_max = mana_max + Random(10, 80)
+                mana_charge = mana_charge + Random(10, 80)
                 ComponentSetValue(c, "mana_max", tostring(mana_max))
                 ComponentSetValue(c, "mana_charge_speed", tostring(mana_charge))
 
                 if nerf_recharge > 0 then
                     local cur_recharge =
                         ComponentObjectGetValue(c, "gun_config", "reload_time")
-                    cur_recharge = cur_recharge + 20
+                    cur_recharge = cur_recharge + 10
                     ComponentObjectSetValue(c, "gun_config", "reload_time",
                                             tostring(cur_recharge))
                 end
@@ -34,7 +34,7 @@ function twitch_nerf_wands()
                     local cur_speed = ComponentObjectGetValue(c,
                                                               "gunaction_config",
                                                               "fire_rate_wait")
-                    cur_speed = cur_speed + 20
+                    cur_speed = cur_speed + 10
                     ComponentObjectSetValue(c, "gunaction_config",
                                             "fire_rate_wait",
                                             tostring(cur_speed))
@@ -43,7 +43,7 @@ function twitch_nerf_wands()
                     local cur_spread = ComponentObjectGetValue(c,
                                                                "gunaction_config",
                                                                "spread_degrees")
-                    cur_spread = cur_spread + 5
+                    cur_spread = cur_spread + 3
                     ComponentObjectSetValue(c, "gunaction_config",
                                             "spread_degrees",
                                             tostring(cur_spread))
