@@ -3,7 +3,7 @@
 --traps
 --150
 --todo
-function twitch_bitter_perks()
+function twitch_shocking_perks()
 	local countString = GlobalsGetValue("twitch_electricperks", "0")
 	local countNumber = tonumber(countString) + 1
 	local newN =  tostring(countNumber)
