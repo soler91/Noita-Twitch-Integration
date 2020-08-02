@@ -66,7 +66,7 @@
         "files/pixel_scenes/lava_pit.png": "98b78d44925771b5b550c9f941f66924491e62a606ee5607f747b30a4f1667b2",
         "files/pixel_scenes/lava_pit_visuals.png": "15146d9aa769fc18860ac8701c42d8c4dcce20e5a7b2bf35e20b1979900b07d2",
         "files/status_list_append.lua": "c8c84a188bd077bb40c56c63c98bcba0f8bd26aa4c33b58b806cf9dd945c5d86",
-        "files/temple_append.lua": "33c722d60f4de7af249fa9f105868c9a4bc931e439e0917dd680fdab71b1925c",
+        "files/temple_append.lua": "77315d51c65648ca36e60a02160b27a7612514be88e7f625d48b50aade53c8d4",
         "files/workshop_trigger_check_stats_append.lua": "7355e4acd52e5891e3bdc05fa8af1f03ad09a6217de8d32a5bae4cf827060f83",
         "index.js": "aace9c34ead7ab17257e8e8ced765de158522f1c7a93899101834776019689f3",
         "init.lua": "ea3a70794adb5dd5c67f6c26b17fa7135dbc86d08f1cc2ccfb6f5111a2dabfb1",
