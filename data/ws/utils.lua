@@ -461,7 +461,7 @@ function Raycast(x, y, distance, fraction)
 	local angle = fraction * math.pi * 2
 	x, y = ToPointFromDirection(x,y,10, angle)
 	local sx, sy = ToPointFromDirection(x,y,distance-10, angle)
-	local hit, hx, hy = RaytracePlatforms(x, y, sx, sy)
+	local hit, hx, hy = RaytraceSurfaces(x, y, sx, sy)--RaytraceSurfaces RaytracePlatforms
 	return hit, hx, hy, angle;
 end
 
@@ -475,17 +475,19 @@ function dist(x, y, sx, sy)
 	return ((sx-x)*(sx-x)) + ((sy-y)*(sy-y))
 end
 
-function spawn_entity_in_view_random_angle(filename, min_distance, max_distance, safety, callback)
+function spawn_entity_in_view_random_angle(filename, min_distance, max_distance, safety, callback, inEmpty)
 	safety = safety or 20
+	if inEmpty ~= true then inEmpty = false end
+	
 	async(function()
 		local x, y, hit, hx, hy, angle, distance
 		repeat
-			wait(2)
+			wait(1)
 			local fraction = math.random();
 			distance = Random(min_distance, max_distance) + safety;
 			x, y = get_player_pos()
 			hit, hx, hy, angle = Raycast(x, y, distance, fraction)
-		until(not hit)
+		until(hit == inEmpty and dist(x, y, hx, hy) > (min_distance*min_distance))
 		
 		hx, hy = ToPointFromDirection(x, y, distance - safety, angle)
 		local eid = EntityLoad(filename, hx, hy)
