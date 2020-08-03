@@ -69,6 +69,13 @@ local twitch_effects =
         ui_description="You drop your rings when getting hit!",
         ui_icon="mods/twitch-integration/files/effects/status_icons/become_speed.png",
         effect_entity="mods/twitch-integration/files/effects/sanic_curse.xml"
+    },
+    {
+        id="TWITCH_MONEYSHOT",
+        ui_name="Money Shot",
+        ui_description="Extra damage... at a cost!",
+        ui_icon="mods/twitch-integration/files/effects/status_icons/stronk.png",
+        effect_entity="mods/twitch-integration/files/effects/moneyshot.xml"
     }
 }
 
