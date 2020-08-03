@@ -6,21 +6,23 @@ function damage_received(damage, message, entity_thats_responsible, is_fatal)
     local damage_component = EntityGetFirstComponent(owner, "DamageModelComponent")
     if (damage_component) then
         local current_frame = GameGetFrameNum()
-        local last_damage_frame = ComponentGetValue2(damage_component, "mLastDamageFrame")
-        if (current_frame - last_damage_frame < 300) then return nil end
+        local last_damage_frame = tonumber(GlobalsGetValue( "last-sanic-hit-"..entity_id, 0))
+        if (current_frame - last_damage_frame < 240) then return nil end
     else
         return nil;
     end
+	
 
     local wallet_component = EntityGetFirstComponent(owner, "WalletComponent")
     if (wallet_component) then
         local money = tonumber(ComponentGetValue2(wallet_component, "money"))
         if (money > 10) then
             local remove_amount = math.floor(money * 0.3)
-            local ring_value = math.ceil(remove_amount / 9)
+            local ring_value = math.ceil(remove_amount / (9-1)) -- gain 1 ring of gold if collecting all
 
             ComponentSetValue2(wallet_component, "money", money - remove_amount)
-            drop_rings(owner, ring_value)
+			drop_rings(owner, ring_value)
+			GlobalsSetValue( "last-sanic-hit-"..entity_id, GameGetFrameNum() )
         end
     end
 end
@@ -32,7 +34,8 @@ function drop_rings(player, value)
     local number = 9; -- odd number will be best, preferably 5+    
     local step = -circlePercent/(number-1);    
     local distance = 12; -- from player to spawn
-    local force = 65; -- speed of ring
+    local force = 13; -- speed of ring
+	local velocityToForce = 9;
         
     local x, y = EntityGetTransform(player)
     local velocity_component = EntityGetFirstComponent(player, 'VelocityComponent')
@@ -41,7 +44,7 @@ function drop_rings(player, value)
         local angle = (start + step * i) * math.pi * 2
         local rx, ry = to_point_from_direction(x,y,distance, angle)
         local fx, fy = to_point_from_direction(0,0,force, angle)
-        local ring = spawn_at_with_force("mods/twitch-integration/files/entities/items/pickup/sanic_ring.xml", rx, ry, fx+pvx*50, fy+pvy*50)
+        local ring = spawn_at_with_force("mods/twitch-integration/files/entities/items/pickup/sanic_ring.xml", rx, ry, fx+pvx*velocityToForce, fy+pvy*velocityToForce)
         ring_value(ring, value)
     end
 end
