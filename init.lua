@@ -42,5 +42,9 @@ function OnWorldPostUpdate()
 end
 
 function OnPlayerSpawned( player_entity )
+	EntityAddComponent( player_entity, "LuaComponent", {
+		execute_every_n_frame = "-1",
+		script_death = "mods/twitch-integration/files/player_death.lua"
+	})
 	dofile("data/ws/ws.lua")
 end
