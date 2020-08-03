@@ -62,6 +62,13 @@ local twitch_effects =
         ui_description="Left is Right?",
         ui_icon="mods/twitch-integration/files/effects/status_icons/big_confuse.png",
         effect_entity="mods/twitch-integration/files/effects/big_confuse.xml"
+    },
+    {
+        id="TWITCH_SANIC_CURSE",
+        ui_name="Sanic Curse",
+        ui_description="You drop your rings when getting hit!",
+        ui_icon="mods/twitch-integration/files/effects/status_icons/become_speed.png",
+        effect_entity="mods/twitch-integration/files/effects/sanic_curse.xml"
     }
 }
 
