@@ -11,7 +11,7 @@ function shot(shot_id)
             local projectile_component = EntityGetFirstComponent(shot_id, "ProjectileComponent")
             if (projectile_component ~= nil) then
                 local damage = tonumber(ComponentGetValue2(projectile_component, "damage"))
-                ComponentSetValue2(projectile_component, "damage", damage + 10)
+                ComponentSetValue2(projectile_component, "damage", damage + 0.4)
             end
         end
     end
