@@ -19,6 +19,7 @@ ModMaterialsFileAdd("mods/twitch-integration/files/materials/farts.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/mana_overdrive.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/stronk.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/the_purge.xml")
+ModMaterialsFileAdd("mods/twitch-integration/files/materials/sanic_curse.xml")
 function OnModPreInit()
 	-- Nothing to do but this function has to exist
 end
