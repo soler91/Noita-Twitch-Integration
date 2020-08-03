@@ -6,7 +6,7 @@ RegisterSpawnFunction( 0xffd6c800, "spawn_ti_props" )
 ti_props = {
     "physics_chair_1.xml",
     "physics_chair_2.xml",
-    "physics_box_harmless",
+    "physics_box_harmless.xml",
     "stonepile.xml",
     "physics_cart.xml",
     "physics_minecart.xml"
