@@ -355,14 +355,25 @@ function empty_player_stomach()
     end
 end
 
+local usedNames = {}
 function append_viewer_name(entity)
     async(function()
-        --if #twitch_viewers == 0 then return end
-        if #twitch_viewers == 0 then table.insert(twitch_viewers, 'Miczu') end
+        if #twitch_viewers == 0 then return end
+        --if #twitch_viewers == 0 then  table.insert(twitch_viewers, 'Miczu'); table.insert(twitch_viewers, 'Soler91') end
         local x, y = get_player_pos()
         SetRandomSeed( GameGetFrameNum(), x + y + tonumber( entity ) )
-        local index = Random(1, #twitch_viewers)
-        local name = table.remove(twitch_viewers, index)
+		local name, index
+		local attempt = 0
+		repeat
+			attempt = attempt + 1
+			index = Random(1, #twitch_viewers)
+			name = twitch_viewers[index]
+		until(attempt > 4 or usedNames[name] == nil)
+		table.remove(twitch_viewers, index)
+		usedNames[name] = 1
+		if (#twitch_viewers * 3 > #usedNames * 4) then
+			usedNames = {}
+		end
         wait(5)
         local text = {
             string = name,
