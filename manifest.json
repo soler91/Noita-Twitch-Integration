@@ -35,7 +35,7 @@
         "files/effects/mana_overdrive.xml": "dbfb9d14978b9e2eb76c9cbee0f3d5a1ea412c3a7a15867a09a5abcef56b7047",
         "files/effects/moneyshot.xml": "e9bc24a44090cc3162928fd584c07602e2a39a094c3703893de5e5cca68c4c1a",
         "files/effects/moneyshot_effect.lua": "2adaa64411ac1408624af280077cad7063f1420f5f2eb29eaa82c0ca82430208",
-        "files/effects/moneyshot_end.lua": "8cbdcc88270df34acb9ac270636f2d67cf1ae51767e5dff9b90cc515c180e58b",
+        "files/effects/moneyshot_end.lua": "63f900b9f72afecda924fe2d409568ff9c9e86b4bd93a35432c69db3e6ec24d2",
         "files/effects/moneyshot_start.lua": "3c952ab25f7a28f5a40333e75efa37df2d2dcd16c19f15947d532a48c2279f0f",
         "files/effects/remove_legs.lua": "9e7144106ddcb74a74283c562a42aa56beac9628ab909ac411d1f012dde34088",
         "files/effects/sanic_curse.xml": "9540d0bbcef6821c504b563a2367830c0ba763361b6ad7f4ee953828b31d65f8",

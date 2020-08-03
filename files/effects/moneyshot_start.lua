@@ -4,5 +4,5 @@ local owner = EntityGetClosestWithTag(x, y, "mortal")
 
 EntityAddComponent( owner, "LuaComponent", {
     execute_every_n_frame = "-1",
-    script_damage_received = "mods/twitch-integration/files/effects/moneyshot_effect.lua"
+    script_shot = "mods/twitch-integration/files/effects/moneyshot_effect.lua"
 })
