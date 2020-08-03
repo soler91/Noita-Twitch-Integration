@@ -4,9 +4,10 @@
 --110
 --todo
 function twitch_fire_trap()
-    local above = false
-    local rand = Random(0, 1)
-    if rand > 0 then above = true end
-    spawn_something("data/entities/projectiles/deck/circle_fire.xml", 70, 180,
-                    above, true)
+	async(function()
+		for i = 0, 3, 1 do
+			spawn_entity_in_view_random_angle("data/entities/projectiles/deck/circle_fire.xml", 55, 110)
+			wait(240 - (i * 50))
+		end
+	end)
 end
