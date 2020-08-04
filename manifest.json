@@ -56,7 +56,7 @@
         "files/effects/status_icons/the_purge.png": "cb30998d70c267c14cd31caea240bfba3dc98fd9e7e575d20879c582839a1925",
         "files/effects/stronk.xml": "bf0ab6b991ac729ec0d3e1b9feca1f19d94d57bd819951993423b8871c30279e",
         "files/effects/the_purge.xml": "518c88f9403b953fd4c83305c254d0658ffb0630586d4b06bdc1d2ecb1b8cd40",
-        "files/end_wall_append.lua": "0ee93030a4c90206599e0adf0b4091ced5c13275ece0e3bf9a9ab5cfe7e40b50",
+        "files/end_wall_append.lua": "423dac5372681d947afc42465ce43ecb1698feea6411ab4445a424cc903a50a2",
         "files/entities/items/pickup/sanic_ring.xml": "3bd5e51aa918f04f3bcfbf492c72612ddcd983a33e25cb2fc458ae03b9c5b09c",
         "files/items_gfx/sanic_ring.png": "afd7a9debf17428dbd3482af166359018f217a1c0cefcbcad28cdb95678a956f",
         "files/items_gfx/sanic_ring.xml": "0a8694346f8913ce0c2c888686301bda347c930fc3d262b95793bb3eafb4060b",
