@@ -29,6 +29,7 @@ function spawn_ti_enemies(x, y)
 end
 
 function spawn_ti_props(x, y)
+    SetRandomSeed( x, y )
     local rng = Random(1, #ti_props)
     local prop = ti_props[rng]
     EntityLoad("data/entities/props/" .. prop, x, y)
