@@ -506,6 +506,84 @@ function spawn_entity_in_view_random_angle(filename, min_distance, max_distance,
 	end)
 end
 
+function chat_follower(username, entity_path)
+    local x, y = get_player_pos()--"data/entities/animals/duck.xml"
+    local follower = EntityLoad(entity_path, x, y)
+
+    local text = {
+        string = name,
+        offset_y = "-6",
+        scale_x="0.7",
+        scale_y="0.7"
+    }
+    local name_entity = EntityCreateNew("twitch_name")
+    EntityAddComponent(name_entity, "InheritTransformComponent", {
+        _tags = "enabled_in_world",
+        use_root_parent = "1"
+    })
+    append_text(name_entity, text)
+
+    EntityAddChild(follower, name_entity)
+    EntityAddTag(follower, "dont_append_name")
+
+    local animal_ais = EntityGetComponent(follower, "AnimalAIComponent") or {}
+    for _, animal_ai in pairs(animal_ais) do
+        --ComponentSetValue( animal_ai, "preferred_job", "JobAttack" );
+        ComponentSetValue(animal_ai, "sense_creatures", "1")
+        ComponentSetValue(animal_ai, "aggressiveness_min", "100")
+        ComponentSetValue(animal_ai, "aggressiveness_max", "100")
+        ComponentSetValue(animal_ai, "creature_detection_check_every_x_frames", "10")
+        ComponentSetValue(animal_ai, "hide_from_prey", "0")
+        ComponentSetValue(animal_ai, "attack_only_if_attacked", "0")
+        ComponentSetValue(animal_ai, "attack_ranged_min_distance", "0")
+        ComponentSetValue(animal_ai, "dont_counter_attack_own_herd", "1")
+        ComponentSetValue(animal_ai, "escape_if_damaged_probability", "0")
+        ComponentSetValue(animal_ai, "max_distance_to_move_from_home", "192")
+    end
+
+    -- movement speed bonus
+    local character_platforming = EntityGetFirstComponent(follower, "CharacterPlatformingComponent")
+    local speed_multiplier = 2
+    if character_platforming ~= nil then
+        local fly_velocity_x = tonumber(ComponentGetMetaCustom(character_platforming, "fly_velocity_x"))
+        ComponentSetMetaCustom(character_platforming, "fly_velocity_x", tostring(fly_velocity_x * speed_multiplier))
+        ComponentSetValue(character_platforming, "fly_smooth_y", "0")
+        ComponentSetValue(character_platforming, "fly_speed_mult", tostring(fly_velocity_x * speed_multiplier))
+        ComponentSetValue(character_platforming, "fly_speed_max_up", tostring(fly_velocity_x * speed_multiplier))
+        ComponentSetValue(character_platforming, "fly_speed_max_down", tostring(fly_velocity_x * speed_multiplier))
+        ComponentSetValue(character_platforming, "fly_speed_change_spd", tostring(fly_velocity_x * speed_multiplier))
+    end
+
+    local genomes = EntityGetComponent(follower, "GenomeDataComponent") or {}
+    for _, genome_data in pairs(genomes) do
+        ComponentSetValue(genome_data, "herd_id", "player")
+    end
+
+    EntityAddComponent(
+        follower,
+        "LuaComponent",
+        {
+            script_source_file = "data/scripts/toofarteleport.lua",
+            execute_on_added = "1",
+            execute_every_n_frame = "20",
+            execute_times = "-1"
+        }
+    )
+
+    EntityAddComponent(
+        follower,
+        "LuaComponent",
+        {
+            script_source_file = "data/scripts/player_home.lua",
+            execute_on_added = "1",
+            execute_every_n_frame = "30",
+            execute_times = "-1"
+        }
+    )
+
+    EntityRemoveTag(follower, "homing_target")
+end
+
 function spawn_healer_pikku( username, message )
     local PIKKU_TYPES = {
         Healer=1,
