@@ -511,7 +511,7 @@ function chat_follower(username, entity_path)
     local follower = EntityLoad(entity_path, x, y)
 
     local text = {
-        string = name,
+        string = username,
         offset_y = "-6",
         scale_x="0.7",
         scale_y="0.7"
