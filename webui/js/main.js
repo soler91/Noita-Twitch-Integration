@@ -387,9 +387,16 @@ const NoitaView = Vue.component("ti-noita", {
                                 </v-col>
                             </v-row>
                         </v-card-text>
+                        <v-card-actions>
+                        <v-row align="center" justify="center">
+                            <v-btn tile @click="apply()">Apply</v-btn>
+                            <v-divider vertical></v-divider>
+                            <v-btn tile @click="reset()">Cancel</v-btn>
+                        </v-row>
+                        </v-card-actions>
                     </v-card>
                 </v-col>
-
+                
                 <v-col>
                     <v-card flat>
                         <v-toolbar color="deep-purple" flat>
