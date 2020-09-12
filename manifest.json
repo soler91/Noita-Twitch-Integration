@@ -186,7 +186,7 @@
         "twitch_fragments/potion_material.lua": "d4b1260c058bd01409e5fb19c18a7ac4a08bfaeda28418473dccbabc50c0882d",
         "twitch_fragments/utils.lua": "5c67be53a2189e515f259d7cde6907ca1b707d3416667178886da87bb56b8ecb",
         "update.js": "d09ad2528877016d7d73429274acd0137773060f0eabe56a0f93168d912e1a36",
-        "webui/index.html": "e49371dc1fdf6c5a77d8ccbfa737b46fa8951f851f4badb4a857dce964dde06b",
+        "webui/index.html": "699a48a75ebaafa51977f4e3fa0870c959edcc0e3dcd58496ece3abeab1b09d6",
         "webui/js/main.js": "bb6273b5b1301074e327352d86f6bc4ad83d2f2aec69f17db816c379ce653748"
     }
 }
