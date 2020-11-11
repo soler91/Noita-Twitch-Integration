@@ -769,3 +769,110 @@ function spawn_healer_pikku( username, message )
     -- remove homing tag
     EntityRemoveTag( pikku, "homing_target" );
 end
+
+
+function add_icon_effect(icon_file, name, description, duration, startFunction, endFunction)
+    if duration < 0 then
+        return
+    end
+    
+    startFunction = startFunction or nil
+    endFunction = endFunction or nil
+    
+    local isInEffect = is_icon_effect_active(name)
+    if isInEffect ~= false then
+        extend_icon_effect(name, duration)
+    else
+        start_icon_effect(icon_file, name, description, duration, startFunction, endFunction)
+    end
+end
+
+function start_icon_effect(icon_file, name, description, duration, startFunction, endFunction)
+    --GamePrint("New")
+    local pid = get_player()
+    if pid ~= nil then
+
+        local cid = EntityAddComponent2( pid, "UIIconComponent",
+        {
+            name = name,
+            description = description,
+            icon_sprite_file = icon_file,
+            display_above_head = false,
+            display_in_hud = true,
+            is_perk = true
+        })
+        if startFunction ~= nil then
+            startFunction()
+        end
+        add_icon_effect_state(name, duration)
+        end_icon_effect(name, pid, cid, duration, endFunction)
+    else
+        async(function()
+            wait(60)
+            add_icon_effect(icon_file, name, description, duration-60, startFunction, endFunction)
+        end)
+    end
+end
+
+function end_icon_effect(name, pid, cid, duration, endFunction)
+    async(function()
+        wait(duration+1)
+        if is_icon_effect_active(name) ~= true then
+            EntityRemoveComponent(pid, cid)
+            remove_icon_effect_state(name)
+            if endFunction ~= nil then
+                endFunction()
+            end
+        else
+            local remaining = get_remaining_duration(name)
+            end_icon_effect(name, pid, cid, remaining, endFunction)
+        end
+    end)
+end
+
+function add_icon_effect_state(name, duration)
+    local now = GameGetFrameNum()
+    local final = now + duration
+    
+    GlobalsSetValue(name, "" .. now .. "|" .. final)
+end
+
+function extend_icon_effect(name, duration)
+    local now = GameGetFrameNum()
+    local value = GlobalsGetValue(name, "" .. now .. "|" .. now)
+    local nowFinal = split(value, "%d+")
+    local final = duration + tonumber(nowFinal[2])
+    local new = nowFinal[1] .. "|" .. final
+    GlobalsSetValue(name, new)
+end
+
+function is_icon_effect_active(name)
+    local now = GameGetFrameNum()
+    local value = GlobalsGetValue(name, "" .. now .. "|" .. now)
+    local nowFinal = split(value, "%d+")
+    if (tonumber(nowFinal[1]) < now) and (now < tonumber(nowFinal[2])) then
+        return true
+    end
+    return false
+end
+
+function get_remaining_duration(name)
+    local now = GameGetFrameNum()
+    local value = GlobalsGetValue(name, "" .. now .. "|" .. now)
+    local nowFinal = split(value, "%d+")
+
+    return tonumber(nowFinal[2]) - now
+end
+
+function remove_icon_effect_state(name)
+    GlobalsGetValue(name, "")
+    return
+end
+
+function split(text, delimiter)
+    local arr = {}
+    for i in string.gmatch(text, delimiter) do
+        table.insert(arr, i)
+    end
+    return arr
+end
