@@ -4,15 +4,13 @@
 --100
 --Nearby creatures will teleport with player
 function twitch_teleport_rideshare()
-	did_teleport(-10, -10, -9, -9, -1, -1)
-	start_icon_effect("mods/twitch-integration/files/effects/status_icons/teleportitis_BAD2.png", "Swapper Curse", "I'm feeling like giving random strangers a ride", 120*60, function()
+	add_icon_effect("mods/twitch-integration/files/effects/status_icons/teleportitis_BAD2.png", "Swapper Curse", "I'm feeling like giving random strangers a ride", 120*60, function()
 		async(rideshare)
 	end)
-	did_teleport(-10, -10, -9, -9, -1, -1)
 end
 
 function rideshare()
-	wait(20)
+	wait(5)
 	local oldX, oldY = get_player_pos()
 	repeat
 		local pid = get_player()
@@ -23,7 +21,7 @@ function rideshare()
 			local vx, vy = ComponentGetValue2(cid, "mVelocity")
 			if did_teleport(x, y, oldX, oldY, vx, vy) then
 				local enemies = EntityGetInRadiusWithTag(oldX, oldY, 160, "enemy")
-				wait(20)
+				wait(12)
 				local nx, ny = get_player_pos()
 				for _, entity in pairs(enemies or {}) do
 					shoot_tele(entity, pid, nx, ny)

@@ -780,6 +780,7 @@ function add_icon_effect(icon_file, name, description, duration, startFunction, 
     endFunction = endFunction or nil
     
     local isInEffect = is_icon_effect_active(name)
+    
     if isInEffect ~= false then
         extend_icon_effect(name, duration)
     else
@@ -801,10 +802,10 @@ function start_icon_effect(icon_file, name, description, duration, startFunction
             display_in_hud = true,
             is_perk = true
         })
+        add_icon_effect_state(name, duration)
         if startFunction ~= nil then
             startFunction()
         end
-        add_icon_effect_state(name, duration)
         end_icon_effect(name, pid, cid, duration, endFunction)
     else
         async(function()
