@@ -1,5 +1,5 @@
 --Spiked Drinks
---Dont take em from strangers
+--Don't take 'em from strangers
 --detrimental
 --60
 --eeeew
