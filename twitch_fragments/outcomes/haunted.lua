@@ -1,5 +1,5 @@
 --Haunted!
---Good'ol temporal curse
+--Good ol' temporal curse
 --curses
 --206
 --todo
