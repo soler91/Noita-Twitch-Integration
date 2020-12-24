@@ -5,7 +5,7 @@
 --Swaps with enemies in unpredictable manner
 function twitch_swapper_curse()
 	local name = "Swapper Curse"
-	start_icon_effect("mods/twitch-integration/files/effects/status_icons/swapper.png", name, "You feel jealous of others position in life", 45*60, function()
+	add_icon_effect("mods/twitch-integration/files/effects/status_icons/swapper.png", name, "You feel jealous of others position in life", 45*60, function()
 		async(function()
 			--GamePrint("Start")
 			local lastSwap = GameGetFrameNum()
