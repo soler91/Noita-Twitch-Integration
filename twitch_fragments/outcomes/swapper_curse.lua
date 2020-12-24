@@ -1,5 +1,5 @@
 --Swapper Curse
---I bet his in better possition than me
+--I bet he's in a better position than me
 --curses
 --100
 --Swaps with enemies in unpredictable manner
