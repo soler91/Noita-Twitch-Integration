@@ -18,5 +18,6 @@ function twitch_shuffle()
             end
         end
     end
+    force_refresh_wands()
 end
 

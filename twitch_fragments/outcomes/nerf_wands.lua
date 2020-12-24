@@ -51,4 +51,5 @@ function twitch_nerf_wands()
             end
         end
     end
+    force_refresh_wands()
 end

@@ -64,4 +64,5 @@ function twitch_boost_wands()
             end
         end
     end
+    force_refresh_wands()
 end

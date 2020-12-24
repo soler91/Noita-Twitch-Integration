@@ -26,4 +26,5 @@ function twitch_wand_replacement()
         end
         EntityAddChild(inventory, item_entity)
     end
+    force_refresh_wands()
 end

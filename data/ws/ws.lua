@@ -1,4 +1,5 @@
 dofile("data/scripts/perks/perk.lua")
+dofile("data/scripts/game_helpers.lua")
 local HOST_URL = "ws://localhost:9090"
 
 if not async then

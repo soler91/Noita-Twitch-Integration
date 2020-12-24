@@ -18,4 +18,5 @@ function twitch_unshuffle()
             end
         end
     end
+    force_refresh_wands()
 end

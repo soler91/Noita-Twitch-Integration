@@ -291,6 +291,14 @@ function GetWandSpells(id)
     return inven or nil
 end
 
+function force_refresh_wands()
+    local inventory2 = EntityGetFirstComponent( get_player(), "Inventory2Component" );
+    if inventory2 ~= nil then
+        ComponentSetValue2( inventory2, "mForceRefresh", true );
+        ComponentSetValue2( inventory2, "mActualActiveItem", 0 );
+    end
+end
+
 function spawn_prop(entity_path, x, y)
     async(function()
         local px, py = get_player_pos()
@@ -876,4 +884,12 @@ function split(text, delimiter)
         table.insert(arr, i)
     end
     return arr
+end
+
+function speedup_enemy(entity_id)
+    for _, perk in ipairs(perk_list) do
+        if perk.id == "MOVEMENT_FASTER" or perk.id == "FASTER_LEVITATION" then
+            give_perk_to_enemy(perk, entity_id, 0)
+        end
+    end
 end
