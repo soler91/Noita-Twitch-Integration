@@ -3,7 +3,7 @@
 	
 	<LuaComponent 
         _enabled="1" 
-        execute_every_n_frame="100"
+        execute_every_n_frame="300"
         script_source_file="mods/twitch-integration/files/effects/earthquake_curse.lua" 
 	>
     </LuaComponent>
