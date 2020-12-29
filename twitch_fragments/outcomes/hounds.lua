@@ -1,5 +1,5 @@
 --Hounds
---Smithers release the hounds
+--Smithers, release the hounds
 --enemies
 --200
 --todo
