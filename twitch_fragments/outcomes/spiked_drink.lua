@@ -17,11 +17,10 @@ function twitch_spiked_drink()
     local items = EntityGetAllChildren(inventory)
     if items ~= nil then
         for _, item_id in ipairs(items) do
-            local flask_comp = EntityGetFirstComponentIncludingDisabled(flask_id, "MaterialInventoryComponent")
-
+            local flask_comp = EntityGetFirstComponentIncludingDisabled(item_id, "MaterialInventoryComponent")
             if flask_comp ~= nil then
                 local potion_material = random_from_array(drinks)
-                AddMaterialInventoryMaterial(item_id, potion_material, 100)
+                AddMaterialInventoryMaterial(item_id, potion_material, 150)
             end
         end
     end
