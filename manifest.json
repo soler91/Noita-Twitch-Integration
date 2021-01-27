@@ -107,6 +107,7 @@
         "twitch_fragments/action_handlers.lua": "6b2bda58ec5c95058f99eae954e3666cbee90f9819d794ec9a8170c43994cdfb",
         "twitch_fragments/game_ui.lua": "68c20c829f6cb2d05ffc5bfd76ef3e693210a1ca68c9f4539280f4f746cfe50c",
         "twitch_fragments/outcomes/acid_trap.lua": "07bde0f471019b1fc5b14cc2fb7a3ed84fea67fbf75069d468edda98ffa9bae5",
+        "twitch_fragments/outcomes/angry_big_steve.lua": "8ae2d29a753b1ec37f0f6755c4a0519de8d34ef7281d58441ce71046d2521856",
         "twitch_fragments/outcomes/angry_steve.lua": "ba8a1c0287d6a0e1be9b87e82e3ded703139f6b487466a448673eacbb8b4335b",
         "twitch_fragments/outcomes/become_speed.lua": "577bdbf1dc9e6b194a93faa9950ccae8a2828be57f86a9c9f4982454e93f6e46",
         "twitch_fragments/outcomes/big_confuse.lua": "c9995890dd83b625842290ff457a8d30e26beda7699fcc8249d834d5594ab461",
