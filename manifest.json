@@ -127,6 +127,7 @@
         "twitch_fragments/outcomes/bomb_rush.lua": "835bdef6b45e34f0fed77e9dd78df4182f1daa13abad383d30acf7274cc1bdac",
         "twitch_fragments/outcomes/boost_wands.lua": "313941c432757bd1f065c5c0e3928c27575f7b293fb45147dadcc43887bcbb92",
         "twitch_fragments/outcomes/broken_trap.lua": "b085ef94e9b77628de80384b5211125f89561d8558bbf0e8c1c4b8aa3d607154",
+        "twitch_fragments/outcomes/buoyancy.lua": "48f98f5745b9e30cb0900d82ee70179c1536eb83269130351b952400f9ebf126",
         "twitch_fragments/outcomes/ceasefire.lua": "7c858573d3d8ef7a1e2b61ae94684b5e4c198d86961b3017e9f3efa439421d13",
         "twitch_fragments/outcomes/cheesy.lua": "69539697a7a7bda5b74d7f3f405f71f25987c1cff272817bbd9b536c71b774c1",
         "twitch_fragments/outcomes/chests.lua": "b374b8f49a24d32e70b01e31d0f1d63c2cd24a56f4b6ee939968e0e9950e8152",
