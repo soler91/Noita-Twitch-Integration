@@ -1,0 +1,11 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/twitch-integration/files/effects/steve.lua"
+		execute_every_n_frame="2"
+    >
+	</LuaComponent>
+    <LifetimeComponent
+		lifetime="1850"
+	>
+	</LifetimeComponent>
+</Entity>
