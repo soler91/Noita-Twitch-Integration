@@ -3,6 +3,7 @@
         "data/entities/bloody.xml": "b9f4f641c3cc61787aa71fc16c3b7e9d5d8dcbd442d198c1f53ca93c5df39be9",
         "data/entities/buildings/teleport.xml": "914c3892506ecd9b99cdbb9fc45740b8d2f28e594e60befc931decd3f16ae531",
         "data/entities/buildings/teleport_ending.xml": "3f353c6714a663292177973ef62260d004dcfad28c6a0acf5a0693f49cae8391",
+        "data/entities/buildings/teleport_liquid_powered.xml": "b46dd1ce5f914172030edfdb85da88a322b637bcbe87643754af955689a03531",
         "data/entities/cheesy.xml": "695e7113350add1e5c9c39346444f2e1ce258ba52dd5151d1a0c7f199168a348",
         "data/entities/dryspell.xml": "36f42df4f3cd930ffb3b93a14f69938f6d512d15f6066ae038825ea10831bbf7",
         "data/entities/dummy_hax.xml": "be62309989ea3ea46fff8b7a6834e2d9207f3f3cc0d85ad5d5f689a5d0434fa8",
@@ -213,7 +214,7 @@
         "twitch_fragments/potion_material.lua": "d4b1260c058bd01409e5fb19c18a7ac4a08bfaeda28418473dccbabc50c0882d",
         "twitch_fragments/utils.lua": "5c67be53a2189e515f259d7cde6907ca1b707d3416667178886da87bb56b8ecb",
         "update.js": "d09ad2528877016d7d73429274acd0137773060f0eabe56a0f93168d912e1a36",
-        "webui/index.html": "FE1E877AD7805A1FEB6A97BAC5F430A2B3B8ECA8C014D8D80224652F15EDE635",
+        "webui/index.html": "fe1e877ad7805a1feb6a97bac5f430a2b3b8eca8c014d8d80224652f15ede635",
         "webui/js/main.js": "bb6273b5b1301074e327352d86f6bc4ad83d2f2aec69f17db816c379ce653748"
     }
 }
