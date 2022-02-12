@@ -10,6 +10,8 @@ ModLuaFileAppend("data/scripts/buildings/workshop_trigger_check_stats.lua", "mod
 ModLuaFileAppend("data/scripts/biomes/temple_wall.lua", "mods/twitch-integration/files/end_wall_append.lua")
 ModLuaFileAppend("data/scripts/biomes/temple_wall_ending.lua", "mods/twitch-integration/files/end_wall_append.lua")
 
+ModLuaFileAppend("data/scripts/buildings/teleport_liquid_check.lua", "mods/twitch-integration/files/teleport_liquid_check_append.lua")
+
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/become_speed.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/big_confuse.xml")
 ModMaterialsFileAdd("mods/twitch-integration/files/materials/chonky.xml")
