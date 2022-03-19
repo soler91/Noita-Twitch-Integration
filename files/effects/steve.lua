@@ -7,7 +7,7 @@ if player then
 		local enemy = enemies[i]
 		if EntityGetName(enemy) ~= "$animal_necromancer_shop" and EntityGetName(enemy) ~= "$animal_necromancer_super" and EntityGetName(enemy) ~= "$animal_boss_limbs" and EntityGetName(enemy) ~= "$animal_boss_centipede" then
 			eX, eY = EntityGetTransform(enemy)
-			EntityLoad("mods/steve/files/spawner.xml", eX, eY)
+			EntityLoad("data/entities/animals/necromancer_shop.xml", eX, eY)
 			EntityKill(enemy)
 		end
 	end
