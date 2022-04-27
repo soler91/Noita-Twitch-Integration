@@ -28,6 +28,13 @@ function drop_random_reward( x, y, entity_id )
 			
 		
 		rnd = TwitchChestLogic(x, y, entity_id, rnd)
+
+		local kuu = tonumber(GlobalsGetValue("twitch_holiday_kuu", "0"))
+		if (kuu > 0) then
+			rng = -1
+			EntityLoad( "data/entities/items/pickup/moon.xml", x + Random(-10,10), y - 4 + Random(-5,5) )
+			GlobalsSetValue("twitch_holiday_kuu", tostring(kuu-1))
+		end
 		
 		if rnd < 0 then
 			-- skip
