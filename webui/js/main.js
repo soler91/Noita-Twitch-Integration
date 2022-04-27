@@ -171,23 +171,23 @@ const NoitaView = Vue.component("ti-noita", {
         }
     },
     computed: {
-        randomizedTime: function() {
+        randomizedTime: function () {
             const timers = {
-                voting: false, 
+                voting: false,
                 between: false
             }
-            if (Object.keys(this.temp.noita).length > 0 ) {
+            if (Object.keys(this.temp.noita).length > 0) {
                 timers.voting = this.temp.noita.random_voting_time.enabled
                 timers.between = this.temp.noita.random_time_between.enabled
             }
             return timers
         },
-        getCols: function() {
+        getCols: function () {
             const cols = {
                 voting: 6,
                 between: 6
             }
-            if (Object.keys(this.temp.noita).length > 0 ) {
+            if (Object.keys(this.temp.noita).length > 0) {
                 cols.between = this.temp.noita.random_voting_time.enabled ? 12 : 6
                 cols.voting = this.temp.noita.random_time_between.enabled ? 12 : 6
                 cols.varying = cols.voting == cols.between ? 6 : 12
@@ -195,7 +195,7 @@ const NoitaView = Vue.component("ti-noita", {
             return cols
         },
         unsavedChanges: function () {
-            if (!this.temp.noita) {return}
+            if (!this.temp.noita) { return }
             let temp = JSON.parse(JSON.stringify(this.temp.noita))
             if (temp.option_types && temp.option_types.length > 0) {
                 for (let option in temp.option_types) {
@@ -216,7 +216,7 @@ const NoitaView = Vue.component("ti-noita", {
         }
     },
     methods: {
-        reset: function() {
+        reset: function () {
             this.temp = JSON.parse(JSON.stringify(this.models))
             if (this.temp.noita.option_types.length > 0) {
                 for (let option in this.temp.noita.option_types) {
@@ -317,6 +317,11 @@ const NoitaView = Vue.component("ti-noita", {
                                 <v-checkbox label="Named Enemies" v-model="temp.noita.named_enemies">
                                 </v-checkbox>
                                 <v-checkbox label="Random Winner" v-model="temp.noita.random_on_no_votes">
+                                </v-checkbox>
+
+                                <v-checkbox label="Random Winner" v-model="temp.noita.scuffed_mode">
+                                </v-checkbox>
+                                <v-checkbox label="Random Winner" v-model="temp.noita.multiple_winners">
                                 </v-checkbox>
 
                                 <template v-if="typeof temp.noita.random_voting_time !== 'undefined'">
@@ -438,8 +443,8 @@ const OutcomesView = Vue.component("ti-outcomes", {
     data() {
         return {
             snackbar: { right: true, bottom: true },
-            models: { },
-            temp: { },
+            models: {},
+            temp: {},
             activeKey: "",
             filterKey: ""
         }
@@ -459,31 +464,31 @@ const OutcomesView = Vue.component("ti-outcomes", {
         },
         list: function () {
             let key = this.filterKey.toLowerCase()
-            let filtered = Object.values(this.models).filter(val =>{
+            let filtered = Object.values(this.models).filter(val => {
                 return val.name.toLowerCase().includes(key) || val.type.toLowerCase().includes(key)
             })
             let sorted = filtered.sort((a, b) => {
                 let nameA = a.name.toUpperCase()
                 let nameB = b.name.toUpperCase()
                 if (nameA < nameB) {
-                    return -1;
+                    return -1
                 }
                 if (nameA > nameB) {
-                    return 1;
+                    return 1
                 }
 
-                return 0;
+                return 0
             }).sort((a, b) => {
                 let typeA = a.type.toUpperCase()
                 let typeB = b.type.toUpperCase()
                 if (typeA < typeB) {
-                    return -1;
+                    return -1
                 }
                 if (typeA > typeB) {
-                    return 1;
+                    return 1
                 }
 
-                return 0;
+                return 0
             })
             if (this.activeKey === "" && sorted.length > 0) {
                 this.activeKey = sorted[0].id
@@ -631,15 +636,15 @@ const CreditsView = Vue.component("ti-credits", {
     data() {
         return {
             credits: [
-                {name: "Soler91", description: "Creator of the twitch integration you are using now.", github:"https://github.com/soler91/Noita-Twitch-Integration", twitch: "https://www.twitch.tv/soler91"},
-                {name: "Pyry", description: "Creator of the first twitch integration this is based off.", github: "https://github.com/probable-basilisk/noita-ws-api", twitch: "https://www.twitch.tv/fakepyry"},
-                {name: "MiczuPL", description: "Created some outcomes.", github: "https://github.com/miczupl", twitch: "https://www.twitch.tv/MiczuPL"},
-                {name: "Goki", description: "Created some outcomes.", github: "https://github.com/gokiburikin", twitch: "https://www.twitch.tv/goki_dev"},
-                {name: "AsterCastell", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/astercastell/"},
-                {name: "AndyTheIllusion", description: "Created the pixel art for the thunderballs.", twitch: "https://www.twitch.tv/andy_the_illusion/"},
-                {name: "TheSm1rk", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/theSm1rk/" },
-                {name: "Sleepylemonbug", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/sleepylemonbug/" },
-                {name: "Dunkorslam", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/dunkorslam/" }
+                { name: "Soler91", description: "Creator of the twitch integration you are using now.", github: "https://github.com/soler91/Noita-Twitch-Integration", twitch: "https://www.twitch.tv/soler91" },
+                { name: "Pyry", description: "Creator of the first twitch integration this is based off.", github: "https://github.com/probable-basilisk/noita-ws-api", twitch: "https://www.twitch.tv/fakepyry" },
+                { name: "MiczuPL", description: "Created some outcomes.", github: "https://github.com/miczupl", twitch: "https://www.twitch.tv/MiczuPL" },
+                { name: "Goki", description: "Created some outcomes.", github: "https://github.com/gokiburikin", twitch: "https://www.twitch.tv/goki_dev" },
+                { name: "AsterCastell", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/astercastell/" },
+                { name: "AndyTheIllusion", description: "Created the pixel art for the thunderballs.", twitch: "https://www.twitch.tv/andy_the_illusion/" },
+                { name: "TheSm1rk", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/theSm1rk/" },
+                { name: "Sleepylemonbug", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/sleepylemonbug/" },
+                { name: "Dunkorslam", description: "Streamer, user and tester.", twitch: "https://www.twitch.tv/dunkorslam/" }
             ]
         }
     },
