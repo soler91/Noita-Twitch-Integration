@@ -12,8 +12,8 @@ local eff_hg_damage_min = ComponentGetValue2(character_data_component, "eff_hg_d
 local eff_hg_damage_max = ComponentGetValue2(character_data_component, "eff_hg_damage_max")
 local pixel_gravity = ComponentGetValue2(character_platforming_component, "pixel_gravity")
 
-ComponentSetValue2(character_data_component, "destroy_ground", destroy_ground - 100)
-ComponentSetValue2(character_data_component, "eff_hg_size_x", eff_hg_size_x - 25)
-ComponentSetValue2(character_data_component, "eff_hg_size_y", eff_hg_size_y - 6)
+ComponentSetValue2(character_data_component, "destroy_ground", destroy_ground - 69)
+ComponentSetValue2(character_data_component, "eff_hg_size_x", eff_hg_size_x - 12)
+ComponentSetValue2(character_data_component, "eff_hg_size_y", eff_hg_size_y - 4)
 ComponentSetValue2(character_data_component, "eff_hg_damage_min", eff_hg_damage_min - 500)
 ComponentSetValue2(character_data_component, "eff_hg_damage_max", eff_hg_damage_max - 1500)
