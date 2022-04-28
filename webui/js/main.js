@@ -319,9 +319,9 @@ const NoitaView = Vue.component("ti-noita", {
                                 <v-checkbox label="Random Winner" v-model="temp.noita.random_on_no_votes">
                                 </v-checkbox>
 
-                                <v-checkbox label="Random Winner" v-model="temp.noita.scuffed_mode">
+                                <v-checkbox label="Scuffed Mode" v-model="temp.noita.scuffed_mode">
                                 </v-checkbox>
-                                <v-checkbox label="Random Winner" v-model="temp.noita.multiple_winners">
+                                <v-checkbox label="Multiple Winners" v-model="temp.noita.multiple_winners">
                                 </v-checkbox>
 
                                 <template v-if="typeof temp.noita.random_voting_time !== 'undefined'">
