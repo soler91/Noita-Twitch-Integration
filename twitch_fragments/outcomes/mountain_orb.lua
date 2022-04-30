@@ -1,4 +1,4 @@
---Mountain Orb
+--Add Orb
 --e
 --bad_effects
 --1
@@ -6,11 +6,11 @@
 function twitch_mountain_orb()
     async(
         function()
-            locall id = 0
+            local id = 0
             local already_picked = GameGetOrbCollectedThisRun(id)
             if (already_picked) then
                 local nope = false
-                for (i=1, 11) do
+                for i=1, 11 do
                     nope = GameGetOrbCollectedThisRun(id)
                     if (nope == false) then
                         id = i
