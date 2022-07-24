@@ -123,7 +123,7 @@
 
 	<!-- 0.5 minute lifetime -->
 	<LifetimeComponent
-		lifetime="1800"
+		lifetime="2400"
 	></LifetimeComponent>
 
 </Entity>
