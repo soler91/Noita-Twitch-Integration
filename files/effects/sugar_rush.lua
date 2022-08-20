@@ -13,6 +13,7 @@ if player then
         ComponentSetValue2(animal_ai_comp, "creature_detection_check_every_x_frames", 10)
         ComponentSetValue2(animal_ai_comp, "aggressiveness_min", 99)
         ComponentSetValue2(animal_ai_comp, "aggressiveness_max", 100)
+        ComponentSetValue2(animal_ai_comp, "sense_creatures_through_walls", true)
         EntityAddTag(enemy, TI_SUGAR)
       end
 		end
