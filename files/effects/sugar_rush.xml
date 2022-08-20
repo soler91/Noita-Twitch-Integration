@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/twitch-integration/files/effects/sugar_rush.lua"
+		execute_every_n_frame="5"
+    >
+	</LuaComponent>
+</Entity>
