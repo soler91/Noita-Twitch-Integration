@@ -142,7 +142,7 @@
         "twitch_fragments/outcomes/chests.lua": "b374b8f49a24d32e70b01e31d0f1d63c2cd24a56f4b6ee939968e0e9950e8152",
         "twitch_fragments/outcomes/chonky.lua": "8ecd9a40160a4a8aeeab9683e2c791794238fbdac6c911507a5c6933a5233363",
         "twitch_fragments/outcomes/cluttered_shop.lua": "2443f8501c65ebf891bc20cc6a337f7eaf4120794757600cb601f711b00cc981",
-        "twitch_fragments/outcomes/cold_weather.lua": "101038bc70070e088a066d0099c989be814b7bbc21b1a98ec086992bf8964798",
+        "twitch_fragments/outcomes/cold_weather.lua": "018df517ccf11b6e39d37523cf9aa92af3a3d56b6e0099fd169f976e66da1617",
         "twitch_fragments/outcomes/counter.lua": "35da66a9b239fdf56aae81833d78679f96fcf09bb23afa054ca8c24073e9c6ca",
         "twitch_fragments/outcomes/couple_worms.lua": "0be2bc3572e0149479bc0ea26a685cfa9e3fcd7b97a7a44a73e57d62490256e3",
         "twitch_fragments/outcomes/cut_health.lua": "558c8d912c028c72087212fe59975234fa89bd007f94d874965f24f9aa0e5e71",
