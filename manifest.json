@@ -10,6 +10,7 @@
         "data/entities/items/pickup/twitch_flask.xml": "3cba3fd3dfa536316dcf8028b40070b454fb2aab5d1a38aea4467d177478ab3f",
         "data/entities/items/pickup/twitch_thunderball.xml": "c65114861507147cc15308a6b32fc8dfa6fcb44d30987dfbc5b81666ef395763",
         "data/entities/pikku.xml": "3e8511a660e7ffc3ff546ad877b1d702f7b429c9c5fb8598ac98725229be6223",
+        "data/entities/projectiles/weak_glue_shot.xml": "2fd00585c7ee3d7eca949ae35d546c6affa8206a34989c7f67d7adae7494f793",
         "data/entities/projectiles/deck/sea_ice.xml": "ca6401546adf7143962898986f423777f8ebcf01379575488328e3003643f5d5",
         "data/entities/projectiles/deck/sea_steam.xml": "71d1d3cdefefca678b7d0d35429f19d787aa35637812306e66b68889779d8d9f",
         "data/entities/teleport_beacon.xml": "45a612c5de9678b93d1b335efb4a518bcf2e71bd8067c35e4b6815137b2f5926",
