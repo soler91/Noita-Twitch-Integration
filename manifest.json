@@ -20,6 +20,7 @@
         "data/pollws.dll": "18499bcf362f50b678029b2904656a71eb04d8f308e8725f616699744501eed3",
         "data/scripts/intermittent_charm.lua": "901b4fb4a2f31e60718e94eea95a727cf792abc73b1081c21b3b162457f54614",
         "data/scripts/items/chest_random.lua": "c057afa0d91439d942987f645f2b74677fc16f3469779cd266346768c147bd0b",
+        "data/scripts/glue_curse.lua": "25bd832fffbf32fb39f44d1f28202b6b547978350bb013dca2e006b520a354dc",
         "data/scripts/player_home.lua": "5ca8b330ba6afa8ae31f11a2926cbfc8ec2a85cab54ff3c91e90883eab1d2bba",
         "data/scripts/toofarteleport.lua": "d41ab5ae2b63a1eb9abe55605d31990892dbe06ac08f4f95cba6eb9c0a28528a",
         "data/twitch/badge_1.xml": "c7af86eb5e9be9dd464d8e390a28611f066b0c5ac93670bf220045d06f5e29ef",
