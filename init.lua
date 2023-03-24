@@ -48,3 +48,4 @@ function OnPlayerSpawned( player_entity )
 	})
 	dofile("data/ws/ws.lua")
 end
+
