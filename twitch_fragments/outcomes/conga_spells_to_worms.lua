@@ -1,7 +1,7 @@
 --Spells 2 Worms
 --I hope you like gardening
 --curses
---150
+--100
 --
 function twitch_conga_spells_to_worms()
     local players = EntityGetWithTag("player_unit")
