@@ -247,7 +247,7 @@
 	_enabled="1" 
 	hunt_box_radius="512" 
 	new_hunt_target_check_every="60" 
-	speed="30" 
+	speed="27" 
 	velocity.x="-0.37877" 
 	velocity.y="-0.307411"
 	target_tag="player_unit"
