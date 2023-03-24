@@ -31,11 +31,13 @@
 		execute_every_n_frame="70"
 		>
 	</LuaComponent>
-	
-	<AudioComponent
+
+	<AudioLoopComponent
 		file="data/audio/Desktop/misc.bank"
-		event_root="game_effect/blindness" >
-	</AudioComponent>
+		event_name="game_effect/blindness/create"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
 	
 	
 </Entity>
