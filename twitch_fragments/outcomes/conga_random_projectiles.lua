@@ -1,7 +1,7 @@
 --Randomise Enemy Attacks
 --Creature Corruption
 --curses
---100
+--110
 --
 function twitch_conga_random_projectiles()
     local players = EntityGetWithTag("player_unit")

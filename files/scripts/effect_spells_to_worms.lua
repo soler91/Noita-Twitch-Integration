@@ -31,7 +31,7 @@ if ( #projectiles > 0 ) then
 				end)
 			end
 			
-			shoot_projectile_from_projectile( projectile_id, "mods/Twitch-integration/files/entities/projectiles/worm_shot.xml", px, py, vel_x, vel_y )
+			shoot_projectile_from_projectile( projectile_id, "mods/Twitch-integration/files/entities/projectiles/worm_shot.xml", px, py, vel_x * 0.8, vel_y * 0.8 )
 			EntityKill( projectile_id )
 		end
 	end
