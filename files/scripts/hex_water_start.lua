@@ -16,7 +16,7 @@ if comp ~= 0 then
     }
 
     for k=1,#materials do
-        EntitySetDamageFromMaterial( entity_id, materials[k], 0.001)
+        EntitySetDamageFromMaterial( entity_id, materials[k], 0.0003)
     end
 
 end

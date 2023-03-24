@@ -10,7 +10,7 @@ function twitch_conga_steal_wand()
         local x,y = EntityGetTransform(player)
         local c = EntityLoad("mods/Twitch-integration/files/entities/misc/effect_steal_wand.xml",x,y)
         EntityAddChild(v,c)
-        GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/blindness/create", x, y );
+        GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/blindness/create",x,y)
     end
 end
 
