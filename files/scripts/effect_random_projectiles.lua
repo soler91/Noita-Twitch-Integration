@@ -125,8 +125,8 @@ local projPool = {
     "radioactive_blob",
     "radioactive_blob_trail",
     "radioactive_liquid",
-    --"rain_gold",
-    --"remove_ground",
+    "rain_gold",
+    "remove_ground",
     "rocket_tank",
     "rocket_tiny",
     "rocket_tiny_roll",
@@ -217,15 +217,6 @@ do  v = targets[k]
 
         local projFile = projPool[Random(1,#projPool)]
 
-        --Highly impactful, rarer projectiles to roll into
-        if Random(1,400) == 1 then
-            if Random(1,2) == 1 then
-                projFile = "rain_gold"
-            else
-                projFile = "remove_ground"
-            end
-        end
-
         local comp = EntityGetFirstComponentIncludingDisabled(v,"AnimalAIComponent")
         if comp then
             ComponentSetValue2( comp, "attack_ranged_entity_file", "data/entities/projectiles/" .. projFile .. ".xml" )
@@ -245,11 +236,11 @@ do  v = targets[k]
         local attackComp = EntityGetComponentIncludingDisabled( enemy, "AIAttackComponent" )
         if attackComp then
             for z=1,#attackComp
-            do c = attackComp[z] 
+            do local c = attackComp[z] 
                 SetRandomSeed(z + pos_x, z * pos_y) --Randomised additionally here so each individual AiAttackComponent has a different attack, for example, Steve will have two different projectiles for his two different attacks
                 local projFile = projPool[Random(1,#projPool)]
 
-                ComponentSetValue2( comp, "attack_ranged_entity_file", "data/entities/projectiles/" .. projFile .. ".xml" )
+                ComponentSetValue2( c, "attack_ranged_entity_file", "data/entities/projectiles/" .. projFile .. ".xml" )
             end
         end
 
