@@ -640,6 +640,7 @@ const CreditsView = Vue.component("ti-credits", {
                 { name: "Pyry", description: "Creator of the first twitch integration this is based off.", github: "https://github.com/probable-basilisk/noita-ws-api", twitch: "https://www.twitch.tv/fakepyry" },
                 { name: "MiczuPL", description: "Created some outcomes.", github: "https://github.com/miczupl", twitch: "https://www.twitch.tv/MiczuPL" },
                 { name: "Goki", description: "Created some outcomes.", github: "https://github.com/gokiburikin", twitch: "https://www.twitch.tv/goki_dev" },
+                { name: "Conga Lyne", description: "Created some outcomes.", github: "https://github.com/Conga0", twitch: "https://www.twitch.tv/conga_lyne" },
                 { name: "AsterCastell", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/astercastell/" },
                 { name: "AndyTheIllusion", description: "Created the pixel art for the thunderballs.", twitch: "https://www.twitch.tv/andy_the_illusion/" },
                 { name: "TheSm1rk", description: "Created some pixel art for the temporal \"perks\".", twitch: "https://www.twitch.tv/theSm1rk/" },

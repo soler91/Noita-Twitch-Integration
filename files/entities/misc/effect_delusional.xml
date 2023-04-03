@@ -1,0 +1,26 @@
+<Entity >
+	<InheritTransformComponent />
+   
+	<LuaComponent
+		script_source_file="mods/Twitch-integration/files/scripts/delusional_populator.lua"
+		execute_every_n_frame="120"
+		_enabled="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="3600"
+		>
+	</LifetimeComponent>
+
+	<UIIconComponent
+		name="Delusional"
+		description="You're seeing things old man."
+		icon_sprite_file="mods/Twitch-integration/files/ui_gfx/status_indicators/delusional.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+  
+</Entity>
