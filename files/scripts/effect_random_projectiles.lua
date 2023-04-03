@@ -210,7 +210,7 @@ local projPool = {
 
 local targets = EntityGetWithTag("enemy")
 for k=1,#targets
-do  v = targets[k]
+do v = targets[k]
     if EntityHasTag(v, "ti_randomized") == false then
         local pos_x, pos_y = EntityGetTransform(v)
         SetRandomSeed(pos_x + pos_y, pos_x * pos_y)
@@ -233,7 +233,7 @@ do  v = targets[k]
             end
         end
 
-        local attackComp = EntityGetComponentIncludingDisabled( enemy, "AIAttackComponent" )
+        local attackComp = EntityGetComponentIncludingDisabled(v, "AIAttackComponent" )
         if attackComp then
             for z=1,#attackComp
             do local c = attackComp[z] 
