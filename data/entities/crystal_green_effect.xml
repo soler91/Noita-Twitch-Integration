@@ -1,0 +1,51 @@
+<Entity>
+		<MagicConvertMaterialComponent
+			kill_when_finished="1"
+			from_material_tag="[liquid]"
+			steps_per_frame="1"
+			to_material="poison"
+			clean_stains="0"
+			is_circle="1"
+			radius="40" >
+		</MagicConvertMaterialComponent>
+
+		<MagicConvertMaterialComponent
+			kill_when_finished="1"
+			from_material_tag="[sand_other]"
+			steps_per_frame="1"
+			to_material="poison"
+			clean_stains="0"
+			is_circle="1"
+			radius="40" >
+		</MagicConvertMaterialComponent>
+
+		<MagicConvertMaterialComponent
+			kill_when_finished="1"
+			from_material_tag="[sand_ground]"
+			steps_per_frame="1"
+			to_material="poison"
+			clean_stains="0"
+			is_circle="1"
+			radius="40" >
+		</MagicConvertMaterialComponent>
+
+		<MagicConvertMaterialComponent
+			kill_when_finished="1"
+			from_material_tag="[static]"
+			steps_per_frame="1"
+			to_material="rock_static_cursed"
+			clean_stains="0"
+			is_circle="1"
+			radius="30" >
+		</MagicConvertMaterialComponent>
+		<MagicConvertMaterialComponent
+			kill_when_finished="1"
+			from_material_tag="[solid]"
+			steps_per_frame="1"
+			to_material="rock_static_cursed"
+			clean_stains="0"
+			is_circle="1"
+			radius="30" >
+		</MagicConvertMaterialComponent>
+</Entity>
+
