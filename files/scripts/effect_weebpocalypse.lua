@@ -6,7 +6,9 @@ if plyr_y >= 6300 then
     filepath = "data/entities/animals/crypt"
 end
 
-local targets = EntityGetWithTag("enemy")
+local plyr_x,plyr_y = EntityGetTransform(GetUpdatedEntityID())
+
+local targets = EntityGetInRadiusWithTag(plyr_x, plyr_y, 256, "enemy")
 for k=1,#targets
 do local v = targets[k]
     if EntityHasTag(v, "ti_weebed") == false then

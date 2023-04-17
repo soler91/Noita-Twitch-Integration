@@ -77,7 +77,7 @@ local projPoolDangerous = {
         "orb_dark",
         "orb_pink_big_super_shrapnel",
         "remove_ground",
-        "lightning",
+        --"lightning", Kind of just unfun as a stunlock
         "pollen_ball",
         --"polyorb",
         "present",
@@ -254,7 +254,9 @@ function chooseSpell(rng1,rng2)
     return spellid, iconid, threatlevel
 end
 
-local targets = EntityGetWithTag("enemy")
+local plyr_x,plyr_y = EntityGetTransform(GetUpdatedEntityID())
+
+local targets = EntityGetInRadiusWithTag(plyr_x, plyr_y, 256, "enemy")
 for k=1,#targets
 do v = targets[k]
     if EntityHasTag(v, "ti_randomized") == false then
@@ -291,8 +293,8 @@ do v = targets[k]
             do local c = attackComp[z] 
                 --SetRandomSeed(z + pos_x, z * pos_y) --Randomised additionally here so each individual AiAttackComponent has a different attack, for example, Steve will have two different projectiles for his two different attacks
                 --local projFile = projPool[Random(1,#projPool)]
-                local projFile, iconid, threatlevel = chooseSpell(pos_x,pos_y)
-                if current_threat_level > threatlevel then
+                local projFile, iconid, threatlevel = chooseSpell(pos_x + (z * 5),pos_y + (z * 5))
+                if current_threat_level < threatlevel then
                     threat_icon = iconid
                 end
 

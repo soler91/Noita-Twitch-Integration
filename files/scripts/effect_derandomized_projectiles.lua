@@ -1,8 +1,9 @@
 local projFile = GlobalsGetValue("TI_randomproj","healshot")
 local threat_icon = GlobalsGetValue("TI_randomprojicon","randomatk_easy.png")
 local threatlevel = tonumber(GlobalsGetValue("TI_randomprojthreat","1"))
+local plyr_x,plyr_y = EntityGetTransform(GetUpdatedEntityID())
 
-local targets = EntityGetWithTag("enemy")
+local targets = EntityGetInRadiusWithTag(plyr_x, plyr_y, 256, "enemy")
 for k=1,#targets
 do v = targets[k]
     if EntityHasTag(v, "ti_randomized") == false then

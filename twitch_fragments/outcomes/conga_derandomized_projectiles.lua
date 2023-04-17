@@ -91,7 +91,7 @@ function twitch_conga_derandomized_projectiles()
             "orb_dark",
             "orb_pink_big_super_shrapnel",
             "remove_ground",
-            "lightning",
+            --"lightning", Kind of just unfun as a stunlock
             "pollen_ball",
             --"polyorb",
             "present",
