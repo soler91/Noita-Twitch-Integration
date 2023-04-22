@@ -31,7 +31,7 @@ do local v = targets[k]
         EntityLoad("data/entities/particles/polymorph_explosion.xml",x,y)
         --GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/polymorph/create", x,y )
 
-        if EntityHasTag(v, "boss") then
+        if EntityHasTag(v, "boss_centipede") then
             EntityAddComponent2(
                 weeb,
                 "LuaComponent",
