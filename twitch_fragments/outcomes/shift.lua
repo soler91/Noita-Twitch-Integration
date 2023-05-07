@@ -13,4 +13,14 @@ function twitch_shift()
 	end
     EntityIngestMaterial( player, fungi, 600 )
     empty_player_stomach()
+	async(shift_warning)
+end
+
+function shift_warning()
+	wait(10*60-70)
+    local player = get_player()
+	local x,y = EntityGetTransform(player)
+	local c = EntityLoad("mods/Twitch-integration/files/entities/misc/effect_standard_warning.xml",x,y)
+	EntityAddChild(player,c)
+	GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/blindness/create",x,y)
 end
