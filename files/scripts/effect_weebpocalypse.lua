@@ -6,13 +6,10 @@ if plyr_y >= 6300 then
     filepath = "data/entities/animals/crypt"
 end
 
-local plyr_x,plyr_y = EntityGetTransform(GetUpdatedEntityID())
-
 local targets = EntityGetInRadiusWithTag(plyr_x, plyr_y, 256, "enemy")
 for k=1,#targets
 do local v = targets[k]
     if EntityHasTag(v, "ti_weebed") == false then
-		EntityKill(v)
         local x,y = EntityGetTransform(v)
         local rng = math.random(1,4)
         local weeb = 0
@@ -33,5 +30,20 @@ do local v = targets[k]
 
         EntityLoad("data/entities/particles/polymorph_explosion.xml",x,y)
         --GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/polymorph/create", x,y )
+
+        if EntityHasTag(v, "boss_centipede") then
+            EntityAddComponent2(
+                weeb,
+                "LuaComponent",
+                {
+                    execute_on_added = false,
+                    script_death = "mods/Twitch-Integration/files/scripts/effect_weebpocalypse_kolmifix.lua",
+                    execute_every_n_frame = -1,
+                    remove_after_executed = false,
+                    execute_times=-1
+                }
+            )
+        end
+		EntityKill(v)
     end
 end
