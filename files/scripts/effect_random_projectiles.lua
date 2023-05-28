@@ -82,7 +82,7 @@ local projPoolDangerous = {
         --"polyorb",
         "present",
         "thunderball_line",
-        "deck/all_deathcrosses",
+        --"deck/all_deathcrosses",
         "deck/all_discs",
         --"deck/all_nukes",
         "deck/all_rockets",

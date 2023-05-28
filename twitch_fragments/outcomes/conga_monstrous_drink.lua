@@ -12,7 +12,7 @@ function twitch_conga_monstrous_drink()
         for k=1,#items
         do local v = items[k]
             if EntityHasTag(v,"potion") == true then
-                AddMaterialInventoryMaterial(v, "monster_powder_test", 10)
+                AddMaterialInventoryMaterial(v, "monster_powder_test", 20)
             end
         end
     end

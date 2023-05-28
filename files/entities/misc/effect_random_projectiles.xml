@@ -6,11 +6,12 @@
 		execute_every_n_frame="45"
 		>
 	</LuaComponent>
-	
-	<LifetimeComponent
-		lifetime="3600"
+
+	<GameEffectComponent 
+		effect="NONE"
+		frames="2400"
 		>
-	</LifetimeComponent>
+	</GameEffectComponent >
 
 	<UIIconComponent
 		name="Random Enemy Attacks"
